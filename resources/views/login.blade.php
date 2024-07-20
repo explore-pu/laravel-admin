@@ -3,12 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{config('admin.title')}} | {{ admin_trans('admin.login') }}</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-
-    @if(!is_null($favicon = Admin::favicon()))
-        <link rel="shortcut icon" href="{{$favicon}}">
-    @endif
+    <title>{{config('admin.title')}} | {{ admin_trans('admin.login') }}</title>
+    <link rel="icon" href="/vendor/laravel-admin/img/favicon.ico">
 
     <link rel="stylesheet" href="{{ admin_asset("vendor/laravel-admin/css/fontawesome-free/css/all.min.css") }}">
     <link rel="stylesheet" href="{{ admin_asset("vendor/laravel-admin/css/icheck-bootstrap/icheck-bootstrap.min.css") }}">
