@@ -1,0 +1,42 @@
+{
+    "name": "elegant/laravel-admin",
+    "description": "laravel admin",
+    "type": "library",
+    "keywords": ["laravel", "admin", "table", "form", "tree"],
+    "homepage": "https://github.com/explore-pu/laravel-admin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "xiaozhi",
+            "email": "xiaozhi2015@hotmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "laravel/laravel": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Elegant\\Admin\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "suggest": {
+        "intervention/image": "Required to handling and manipulation upload images (~2.3).",
+        "spatie/eloquent-sortable": "Required to built orderable gird."
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Elegant\\Admin\\AdminServiceProvider"
+            ],
+            "aliases": {
+                "Admin": "Elegant\\Admin\\Facades\\Admin"
+            }
+        }
+    }
+}

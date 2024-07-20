@@ -1,0 +1,69 @@
+<?php
+
+namespace DummyNamespace;
+
+use DummyModelNamespace;
+use Elegant\Admin\Http\Controllers\AdminController;
+use Elegant\Admin\Form;
+use Elegant\Admin\Table;
+use Elegant\Admin\Show;
+
+class DummyClass extends AdminController
+{
+    /**
+     * Title for current resource.
+     *
+     * @var string
+     */
+    protected $title = 'DummyTitle';
+
+    /**
+     * Model for current resource.
+     *
+     * @var string
+     */
+    protected $model = DummyModel::class;
+
+    /**
+     * Make a table builder.
+     *
+     * @return Table
+     */
+    protected function table()
+    {
+        $table = new Table(new $this->model());
+
+DummyTable
+
+        return $table;
+    }
+
+    /**
+     * Make a show builder.
+     *
+     * @param mixed $id
+     * @return Show
+     */
+    protected function detail($id)
+    {
+        $show = new Show($this->model::findOrFail($id));
+
+DummyShow
+
+        return $show;
+    }
+
+    /**
+     * Make a form builder.
+     *
+     * @return Form
+     */
+    protected function form()
+    {
+        $form = new Form(new $this->model());
+
+DummyForm
+
+        return $form;
+    }
+}

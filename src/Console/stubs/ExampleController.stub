@@ -1,0 +1,74 @@
+<?php
+
+namespace DummyNamespace;
+
+use Elegant\Admin\Http\Controllers\AdminController;
+use Elegant\Admin\Form;
+use Elegant\Admin\Table;
+use Elegant\Admin\Show;
+
+class ExampleController extends AdminController
+{
+    /**
+     * Title for current resource.
+     *
+     * @var string
+     */
+    protected $title = 'Example controller';
+
+    /**
+     * Model for current resource.
+     *
+     * @var string
+     */
+    protected $model = 'Model::class';
+
+    /**
+     * Make a table builder.
+     *
+     * @return Table
+     */
+    protected function table()
+    {
+        $table = new Table(new $this->model());
+
+        $table->column('id', __('ID'))->sortable();
+        $table->column('created_at', __('Created at'));
+        $table->column('updated_at', __('Updated at'));
+
+        return $table;
+    }
+
+    /**
+     * Make a show builder.
+     *
+     * @param mixed   $id
+     * @return Show
+     */
+    protected function detail($id)
+    {
+        $show = new Show($this->model::findOrFail($id));
+
+        $show->field('id', __('ID'));
+        $show->field('created_at', __('Created at'));
+        $show->field('updated_at', __('Updated at'));
+
+        return $show;
+    }
+
+    /**
+     * Make a form builder.
+     *
+     * @return Form
+     */
+    protected function form()
+    {
+        $form = new Form(new $this->model());
+
+        $form->display('id', __('ID'));
+        $form->display('created_at', __('Created At'));
+        $form->display('updated_at', __('Updated At'));
+
+        return $form;
+    }
+}
