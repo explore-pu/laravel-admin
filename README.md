@@ -7,10 +7,6 @@
 > - Modern applications are basically separated from the front and back, which is easy to deploy
 > - It is more secure to deploy the management side and the user side separately
 
-```shell
-composer require elegant/laravel-admin:dev-master
-```
-
 - [Documentation](https://laravel-admin.org/docs)
 - [中文文档](https://laravel-admin.org/docs/zh)
 - [Demo](https://demo.laravel-admin.org)
