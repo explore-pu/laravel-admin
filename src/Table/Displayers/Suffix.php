@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Admin\Table\Displayers;
+namespace Elegant\Utils\Table\Displayers;
 
 class Suffix extends AbstractDisplayer
 {

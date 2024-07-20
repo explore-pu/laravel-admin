@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Table;
+namespace Elegant\Utils\Table;
 
-use Elegant\Admin\Widgets\Tooltip;
+use Elegant\Utils\Widgets\Tooltip;
 use Illuminate\Support\Arr;
 
 class ColumnGroup

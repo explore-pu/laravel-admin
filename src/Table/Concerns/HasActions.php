@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Admin\Table\Concerns;
+namespace Elegant\Utils\Table\Concerns;
 
 use Closure;
-use Elegant\Admin\Table;
+use Elegant\Utils\Table;
 
 trait HasActions
 {

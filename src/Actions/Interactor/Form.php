@@ -1,11 +1,11 @@
 <?php
 
-namespace Elegant\Admin\Actions\Interactor;
+namespace Elegant\Utils\Actions\Interactor;
 
-use Elegant\Admin\Actions\RowAction;
-use Elegant\Admin\Admin;
-use Elegant\Admin\Form\Field;
-use Elegant\Admin\Form\Layout\Row;
+use Elegant\Utils\Actions\RowAction;
+use Elegant\Utils\Admin;
+use Elegant\Utils\Form\Field;
+use Elegant\Utils\Form\Layout\Row;
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
 use Illuminate\Validation\ValidationException;
@@ -423,7 +423,7 @@ class Form extends Interactor
      *
      * @param Closure $callback
      *
-     * @return \Elegant\Admin\Form
+     * @return \Elegant\Utils\Form
      */
     public function row(\Closure $callback = null)
     {

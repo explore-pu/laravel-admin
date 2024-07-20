@@ -1,12 +1,12 @@
 <?php
 
-namespace Elegant\Admin\Form;
+namespace Elegant\Utils\Form;
 
 use Closure;
-use Elegant\Admin\AbstractForm;
-use Elegant\Admin\Admin;
-use Elegant\Admin\Form;
-use Elegant\Admin\Widgets\Form as WidgetForm;
+use Elegant\Utils\AbstractForm;
+use Elegant\Utils\Admin;
+use Elegant\Utils\Form;
+use Elegant\Utils\Widgets\Form as WidgetForm;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Arr;
@@ -1128,7 +1128,7 @@ class Field implements Renderable
     /**
      * @param \Closure $callback
      *
-     * @return \Elegant\Admin\Form\Field
+     * @return \Elegant\Utils\Form\Field
      */
     public function with(Closure $callback): self
     {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Table\Filter\Layout;
+namespace Elegant\Utils\Table\Filter\Layout;
 
-use Elegant\Admin\Table\Filter;
+use Elegant\Utils\Table\Filter;
 use Illuminate\Support\Collection;
 
 class Layout

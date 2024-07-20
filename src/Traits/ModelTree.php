@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Traits;
+namespace Elegant\Utils\Traits;
 
-use Elegant\Admin\Tree;
+use Elegant\Utils\Tree;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;

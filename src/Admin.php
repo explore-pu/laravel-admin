@@ -1,14 +1,14 @@
 <?php
 
-namespace Elegant\Admin;
+namespace Elegant\Utils;
 
 use Closure;
-use Elegant\Admin\Models\Menu;
-use Elegant\Admin\Models\MenuGroup;
-use Elegant\Admin\Traits\BuiltinRoutes;
-use Elegant\Admin\Traits\HasAssets;
-use Elegant\Admin\Traits\RenderView;
-use Elegant\Admin\Widgets\Navbar;
+use Elegant\Utils\Models\Menu;
+use Elegant\Utils\Models\MenuGroup;
+use Elegant\Utils\Traits\BuiltinRoutes;
+use Elegant\Utils\Traits\HasAssets;
+use Elegant\Utils\Traits\RenderView;
+use Elegant\Utils\Widgets\Navbar;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Traits\Macroable;
 
@@ -136,7 +136,7 @@ class Admin
     /**
      * Get navbar object.
      *
-     * @return \Elegant\Admin\Widgets\Navbar
+     * @return \Elegant\Utils\Widgets\Navbar
      */
     public function getNavbar()
     {

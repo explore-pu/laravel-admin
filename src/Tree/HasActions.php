@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Admin\Tree;
+namespace Elegant\Utils\Tree;
 
 use Closure;
-use Elegant\Admin\Tree\Displayers\IconActions;
+use Elegant\Utils\Tree\Displayers\IconActions;
 
 trait HasActions
 {

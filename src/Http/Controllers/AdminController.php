@@ -1,11 +1,11 @@
 <?php
 
-namespace Elegant\Admin\Http\Controllers;
+namespace Elegant\Utils\Http\Controllers;
 
-use Elegant\Admin\Admin;
-use Elegant\Admin\Form;
-use Elegant\Admin\Layout\Content;
-use Elegant\Admin\Traits\HasResourceActions;
+use Elegant\Utils\Admin;
+use Elegant\Utils\Form;
+use Elegant\Utils\Layout\Content;
+use Elegant\Utils\Traits\HasResourceActions;
 use Illuminate\Routing\Controller;
 use Symfony\Component\DomCrawler\Crawler;
 

@@ -64,7 +64,7 @@
         });
     };
 
-@if($relation == \Elegant\Admin\Table\Displayers\BelongsTo::class)
+@if($relation == \Elegant\Utils\Table\Displayers\BelongsTo::class)
     var selected = null;
 
     var load = function (url) {

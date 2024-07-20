@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Admin\Console;
+namespace Elegant\Utils\Console;
 
-use Elegant\Admin\Admin;
-use Elegant\Admin\Facades\Admin as AdminFacade;
+use Elegant\Utils\Admin;
+use Elegant\Utils\Facades\Admin as AdminFacade;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use MatthiasMullie\Minify;

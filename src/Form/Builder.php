@@ -1,10 +1,10 @@
 <?php
 
-namespace Elegant\Admin\Form;
+namespace Elegant\Utils\Form;
 
-use Elegant\Admin\Admin;
-use Elegant\Admin\Form;
-use Elegant\Admin\Form\Field\Hidden;
+use Elegant\Utils\Admin;
+use Elegant\Utils\Form;
+use Elegant\Utils\Form\Field\Hidden;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\URL;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Tree\Actions;
+namespace Elegant\Utils\Tree\Actions;
 
-use Elegant\Admin\Actions\TreeAction;
+use Elegant\Utils\Actions\TreeAction;
 
 class Destroy extends TreeAction
 {

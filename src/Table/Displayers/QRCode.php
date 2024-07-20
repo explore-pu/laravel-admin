@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Table\Displayers;
+namespace Elegant\Utils\Table\Displayers;
 
-use Elegant\Admin\Admin;
+use Elegant\Utils\Admin;
 
 /**
  * Class QRCode.

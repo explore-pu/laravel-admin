@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Admin\Table\Filter\Presenter;
+namespace Elegant\Utils\Table\Filter\Presenter;
 
 use Illuminate\Contracts\Support\Arrayable;
 

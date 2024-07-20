@@ -102,7 +102,7 @@ return [
 
         'providers' => [
             'users' => [
-                'model'  => env('AUTH_MODEL', Elegant\Admin\Models\Administrator::class),
+                'model'  => env('AUTH_MODEL', Elegant\Utils\Models\Administrator::class),
             ],
         ],
 
@@ -157,18 +157,18 @@ return [
 
         // Administrator tables and model.
         'administrator_table' => 'administrators',
-        'administrator_model' => Elegant\Admin\Models\Administrator::class,
-        'administrator_controller' => Elegant\Admin\Http\Controllers\AdministratorController::class,
+        'administrator_model' => Elegant\Utils\Models\Administrator::class,
+        'administrator_controller' => Elegant\Utils\Http\Controllers\AdministratorController::class,
 
         // Menu table and model.
         'menus_table' => 'menus',
-        'menus_model' => Elegant\Admin\Models\Menu::class,
-        'menus_controller' => Elegant\Admin\Http\Controllers\MenuController::class,
+        'menus_model' => Elegant\Utils\Models\Menu::class,
+        'menus_controller' => Elegant\Utils\Http\Controllers\MenuController::class,
 
         // Menu table and model.
         'menu_groups_table' => 'menu_groups',
-        'menu_groups_model' => Elegant\Admin\Models\MenuGroup::class,
-        'menu_groups_controller' => Elegant\Admin\Http\Controllers\MenuGroupController::class,
+        'menu_groups_model' => Elegant\Utils\Models\MenuGroup::class,
+        'menu_groups_controller' => Elegant\Utils\Http\Controllers\MenuGroupController::class,
     ],
 
     /*
@@ -280,7 +280,7 @@ return [
     | The global Table action display class.
     |--------------------------------------------------------------------------
     */
-    'table_action_class' => \Elegant\Admin\Table\Displayers\DropdownActions::class,
+    'table_action_class' => \Elegant\Utils\Table\Displayers\DropdownActions::class,
 
     /*
     |--------------------------------------------------------------------------

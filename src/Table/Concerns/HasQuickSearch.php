@@ -1,10 +1,10 @@
 <?php
 
-namespace Elegant\Admin\Table\Concerns;
+namespace Elegant\Utils\Table\Concerns;
 
-use Elegant\Admin\Table\Column;
-use Elegant\Admin\Table\Model;
-use Elegant\Admin\Table\Tools;
+use Elegant\Utils\Table\Column;
+use Elegant\Utils\Table\Model;
+use Elegant\Utils\Table\Tools;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;

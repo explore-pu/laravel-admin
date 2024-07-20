@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Form\Field;
+namespace Elegant\Utils\Form\Field;
 
-use Elegant\Admin\Form\Field;
+use Elegant\Utils\Form\Field;
 use Illuminate\Support\Arr;
 
 class CheckTree extends Field

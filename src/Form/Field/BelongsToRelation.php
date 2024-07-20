@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Form\Field;
+namespace Elegant\Utils\Form\Field;
 
-use Elegant\Admin\Table\Selectable;
+use Elegant\Utils\Table\Selectable;
 
 trait BelongsToRelation
 {
@@ -31,7 +31,7 @@ trait BelongsToRelation
     {
         if (!class_exists($selectable) || !is_subclass_of($selectable, Selectable::class)) {
             throw new \InvalidArgumentException(
-                "[Class [{$selectable}] must be a sub class of Elegant\Admin\Table\Selectable"
+                "[Class [{$selectable}] must be a sub class of Elegant\Utils\Table\Selectable"
             );
         }
 
@@ -58,7 +58,7 @@ trait BelongsToRelation
     }
 
     /**
-     * @return \Elegant\Admin\Table
+     * @return \Elegant\Utils\Table
      */
     protected function makeTable()
     {

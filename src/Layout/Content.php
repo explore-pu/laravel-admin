@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Admin\Layout;
+namespace Elegant\Utils\Layout;
 
 use Closure;
-use Elegant\Admin\Facades\Admin;
+use Elegant\Utils\Facades\Admin;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Arr;
 

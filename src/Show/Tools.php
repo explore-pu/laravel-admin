@@ -1,12 +1,12 @@
 <?php
 
-namespace Elegant\Admin\Show;
+namespace Elegant\Utils\Show;
 
-use Elegant\Admin\Show;
-use Elegant\Admin\Show\Actions\_List;
-use Elegant\Admin\Show\Actions\Action;
-use Elegant\Admin\Show\Actions\Delete;
-use Elegant\Admin\Show\Actions\Edit;
+use Elegant\Utils\Show;
+use Elegant\Utils\Show\Actions\_List;
+use Elegant\Utils\Show\Actions\Action;
+use Elegant\Utils\Show\Actions\Delete;
+use Elegant\Utils\Show\Actions\Edit;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Collection;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Form\Actions;
+namespace Elegant\Utils\Form\Actions;
 
-use Elegant\Admin\Admin;
+use Elegant\Utils\Admin;
 use Illuminate\Contracts\Support\Renderable;
 
 class _List implements Renderable

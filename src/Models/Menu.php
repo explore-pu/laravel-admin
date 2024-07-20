@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Admin\Models;
+namespace Elegant\Utils\Models;
 
-use Elegant\Admin\Traits\DefaultDatetimeFormat;
-use Elegant\Admin\Traits\ModelTree;
+use Elegant\Utils\Traits\DefaultDatetimeFormat;
+use Elegant\Utils\Traits\ModelTree;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;

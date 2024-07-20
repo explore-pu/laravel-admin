@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Table\Concerns;
+namespace Elegant\Utils\Table\Concerns;
 
-use Elegant\Admin\Table\Tools\QuickCreate;
+use Elegant\Utils\Table\Tools\QuickCreate;
 
 trait HasQuickCreate
 {

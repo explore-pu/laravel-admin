@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Admin\Table\Displayers;
+namespace Elegant\Utils\Table\Displayers;
 
-use Elegant\Admin\Table;
-use Elegant\Admin\Table\Column;
+use Elegant\Utils\Table;
+use Elegant\Utils\Table\Column;
 use Illuminate\Database\Eloquent\Model;
 
 abstract class AbstractDisplayer

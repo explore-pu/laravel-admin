@@ -27,7 +27,7 @@
     </div>
 
     <template class="{{$column}}-tpl">
-        <div class="has-many-{{$column}}-form fields-group" data-key="new_{{ \Elegant\Admin\Form\NestedForm::DEFAULT_KEY_NAME }}">
+        <div class="has-many-{{$column}}-form fields-group" data-key="new_{{ \Elegant\Utils\Form\NestedForm::DEFAULT_KEY_NAME }}">
 
             {!! $template !!}
 
@@ -58,7 +58,7 @@
     $('#has-many-{{ $column }}').off('click', '.add').on('click', '.add', function () {
         var tpl = $('template.{{ $column }}-tpl');
         index++;
-        var template = tpl.html().replace(/{{ \Elegant\Admin\Form\NestedForm::DEFAULT_KEY_NAME }}/g, index);
+        var template = tpl.html().replace(/{{ \Elegant\Utils\Form\NestedForm::DEFAULT_KEY_NAME }}/g, index);
         $('.has-many-{{ $column }}-forms').append(template);
         return false;
     });
@@ -67,7 +67,7 @@
         var $form = $(this).closest('.has-many-{{ $column }}-form');
         $form.find('input').removeAttr('required');
         $form.hide();
-        $form.find('.{{ \Elegant\Admin\Form\NestedForm::REMOVE_FLAG_CLASS }}').val(1);
+        $form.find('.{{ \Elegant\Utils\Form\NestedForm::REMOVE_FLAG_CLASS }}').val(1);
         return false;
     });
 </script>

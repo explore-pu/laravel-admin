@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Admin\Show;
+namespace Elegant\Utils\Show;
 
-use Elegant\Admin\Show;
-use Elegant\Admin\Table;
+use Elegant\Utils\Show;
+use Elegant\Utils\Table;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

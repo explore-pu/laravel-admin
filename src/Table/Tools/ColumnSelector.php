@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Admin\Table\Tools;
+namespace Elegant\Utils\Table\Tools;
 
-use Elegant\Admin\Admin;
-use Elegant\Admin\Table;
+use Elegant\Utils\Admin;
+use Elegant\Utils\Table;
 use Illuminate\Support\Collection;
 
 class ColumnSelector extends AbstractTool

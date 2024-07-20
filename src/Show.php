@@ -1,12 +1,12 @@
 <?php
 
-namespace Elegant\Admin;
+namespace Elegant\Utils;
 
-use Elegant\Admin\Show\Divider;
-use Elegant\Admin\Show\Field;
-use Elegant\Admin\Show\Panel;
-use Elegant\Admin\Show\Relation;
-use Elegant\Admin\Traits\ShouldSnakeAttributes;
+use Elegant\Utils\Show\Divider;
+use Elegant\Utils\Show\Field;
+use Elegant\Utils\Show\Panel;
+use Elegant\Utils\Show\Relation;
+use Elegant\Utils\Traits\ShouldSnakeAttributes;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

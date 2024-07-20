@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Admin\Table\Displayers;
+namespace Elegant\Utils\Table\Displayers;
 
-use Elegant\Admin\Admin;
-use Elegant\Admin\Table\Selectable;
+use Elegant\Utils\Admin;
+use Elegant\Utils\Table\Selectable;
 
 class BelongsTo extends AbstractDisplayer
 {
@@ -38,7 +38,7 @@ class BelongsTo extends AbstractDisplayer
     {
         if (!class_exists($selectable) || !is_subclass_of($selectable, Selectable::class)) {
             throw new \InvalidArgumentException(
-                "[Class [{$selectable}] must be a sub class of Elegant\Admin\Table\Selectable"
+                "[Class [{$selectable}] must be a sub class of Elegant\Utils\Table\Selectable"
             );
         }
 

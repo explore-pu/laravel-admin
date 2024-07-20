@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Admin\Show;
+namespace Elegant\Utils\Show;
 
-use Elegant\Admin\Show;
-use Elegant\Admin\Widgets\Carousel;
+use Elegant\Utils\Show;
+use Elegant\Utils\Widgets\Carousel;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Model;

@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Admin\Http\Middleware;
+namespace Elegant\Utils\Http\Middleware;
 
 use Closure;
-use Elegant\Admin\Facades\Admin;
+use Elegant\Utils\Facades\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
 use Symfony\Component\DomCrawler\Crawler;

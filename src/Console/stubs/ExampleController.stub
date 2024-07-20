@@ -2,10 +2,10 @@
 
 namespace DummyNamespace;
 
-use Elegant\Admin\Http\Controllers\AdminController;
-use Elegant\Admin\Form;
-use Elegant\Admin\Table;
-use Elegant\Admin\Show;
+use Elegant\Utils\Http\Controllers\AdminController;
+use Elegant\Utils\Form;
+use Elegant\Utils\Table;
+use Elegant\Utils\Show;
 
 class ExampleController extends AdminController
 {

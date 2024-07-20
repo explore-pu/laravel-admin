@@ -1,13 +1,13 @@
 <?php
 
-namespace Elegant\Admin\Table\Exporters;
+namespace Elegant\Utils\Table\Exporters;
 
-use Elegant\Admin\Table;
+use Elegant\Utils\Table;
 
 abstract class AbstractExporter implements ExporterInterface
 {
     /**
-     * @var \Elegant\Admin\Table
+     * @var \Elegant\Utils\Table
      */
     protected $table;
 

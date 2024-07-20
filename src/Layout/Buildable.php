@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Admin\Layout;
+namespace Elegant\Utils\Layout;
 
 interface Buildable
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Widgets\Navbar;
+namespace Elegant\Utils\Widgets\Navbar;
 
-use Elegant\Admin\Admin;
+use Elegant\Utils\Admin;
 use Illuminate\Contracts\Support\Renderable;
 
 class RefreshButton implements Renderable

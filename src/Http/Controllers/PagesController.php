@@ -1,10 +1,10 @@
 <?php
 
-namespace Elegant\Admin\Http\Controllers;
+namespace Elegant\Utils\Http\Controllers;
 
-use Elegant\Admin\Assets;
-use Elegant\Admin\Facades\Admin;
-use Elegant\Admin\Layout\Content;
+use Elegant\Utils\Assets;
+use Elegant\Utils\Facades\Admin;
+use Elegant\Utils\Layout\Content;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;

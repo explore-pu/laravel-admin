@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Admin\Table\Exporters;
+namespace Elegant\Utils\Table\Exporters;
 
 interface ExporterInterface
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Models;
+namespace Elegant\Utils\Models;
 
-use Elegant\Admin\Traits\DefaultDatetimeFormat;
+use Elegant\Utils\Traits\DefaultDatetimeFormat;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Database\Eloquent\Model;

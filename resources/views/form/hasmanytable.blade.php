@@ -25,7 +25,7 @@
                         <?php $hidden = ''; ?>
 
                         @foreach($form->fields() as $field)
-                            @if (is_a($field, \Elegant\Admin\Form\Field\Hidden::class))
+                            @if (is_a($field, \Elegant\Utils\Form\Field\Hidden::class))
                                 <?php $hidden .= $field->render(); ?>
                                 @continue
                             @endif
@@ -74,7 +74,7 @@
     $('#has-many-{{ $column }}').on('click', '.add', function () {
         var tpl = $('template.{{ $column }}-tpl');
         index++;
-        var template = tpl.html().replace(/{{ \Elegant\Admin\Form\NestedForm::DEFAULT_KEY_NAME }}/g, index);
+        var template = tpl.html().replace(/{{ \Elegant\Utils\Form\NestedForm::DEFAULT_KEY_NAME }}/g, index);
         $('.has-many-{{ $column }}-forms').append(template);
         return false;
     });
@@ -86,7 +86,7 @@
             $form.remove();
         } else {
             $form.hide();
-            $form.find('.{{ \Elegant\Admin\Form\NestedForm::REMOVE_FLAG_CLASS }}').val(1);
+            $form.find('.{{ \Elegant\Utils\Form\NestedForm::REMOVE_FLAG_CLASS }}').val(1);
             $form.find('input').removeAttr('required');
         }
         return false;

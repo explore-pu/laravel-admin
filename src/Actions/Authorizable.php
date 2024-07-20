@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Actions;
+namespace Elegant\Utils\Actions;
 
-use Elegant\Admin\Facades\Admin;
+use Elegant\Utils\Facades\Admin;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 

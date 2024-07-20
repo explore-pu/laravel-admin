@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Admin\Form\Concerns;
+namespace Elegant\Utils\Form\Concerns;
 
 use Closure;
 use Illuminate\Http\RedirectResponse;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Table\Filter;
+namespace Elegant\Utils\Table\Filter;
 
-use Elegant\Admin\Admin;
+use Elegant\Utils\Admin;
 use Illuminate\Support\Arr;
 
 class Between extends AbstractFilter

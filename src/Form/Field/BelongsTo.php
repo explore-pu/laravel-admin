@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Admin\Form\Field;
+namespace Elegant\Utils\Form\Field;
 
 class BelongsTo extends Select
 {

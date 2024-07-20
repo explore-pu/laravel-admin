@@ -2,7 +2,7 @@
 
 namespace :namespace\Http\Controllers;
 
-use Elegant\Admin\Layout\Content;
+use Elegant\Utils\Layout\Content;
 use Illuminate\Routing\Controller;
 
 class :class_nameController extends Controller

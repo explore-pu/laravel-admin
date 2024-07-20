@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Admin\Table\Concerns;
+namespace Elegant\Utils\Table\Concerns;
 
 use Closure;
-use Elegant\Admin\Table\Filter;
+use Elegant\Utils\Table\Filter;
 use Illuminate\Support\Collection;
 
 trait HasFilter
@@ -11,7 +11,7 @@ trait HasFilter
     /**
      * The table Filter.
      *
-     * @var \Elegant\Admin\Table\Filter
+     * @var \Elegant\Utils\Table\Filter
      */
     protected $filter;
 

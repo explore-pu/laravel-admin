@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Admin\Table\Filter;
+namespace Elegant\Utils\Table\Filter;
 
 class Ilike extends Like
 {

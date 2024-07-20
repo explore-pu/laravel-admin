@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Form\Field;
+namespace Elegant\Utils\Form\Field;
 
-use Elegant\Admin\Admin;
+use Elegant\Utils\Admin;
 
 class Fieldset
 {

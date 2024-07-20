@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Admin\Show;
+namespace Elegant\Utils\Show;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Model;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Form\Concerns;
+namespace Elegant\Utils\Form\Concerns;
 
-use Elegant\Admin\Form\Field;
+use Elegant\Utils\Form\Field;
 
 trait HandleCascadeFields
 {

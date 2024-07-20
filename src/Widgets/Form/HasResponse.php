@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Widgets\Form;
+namespace Elegant\Utils\Widgets\Form;
 
-use Elegant\Admin\Widgets\Table;
+use Elegant\Utils\Widgets\Table;
 use Illuminate\Contracts\Support;
 use Illuminate\Support\Fluent;
 

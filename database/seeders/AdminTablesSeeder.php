@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Elegant\Admin\Models\Administrator;
-use Elegant\Admin\Models\Menu;
-use Elegant\Admin\Models\MenuGroup;
+use Elegant\Utils\Models\Administrator;
+use Elegant\Utils\Models\Menu;
+use Elegant\Utils\Models\MenuGroup;
 use Illuminate\Database\Seeder;
 
 class AdminTablesSeeder extends Seeder

@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Admin\Widgets;
+namespace Elegant\Utils\Widgets;
 
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Renderable;

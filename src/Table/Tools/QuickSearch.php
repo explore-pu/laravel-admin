@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Table\Tools;
+namespace Elegant\Utils\Table\Tools;
 
-use Elegant\Admin\Table\Concerns\HasQuickSearch;
+use Elegant\Utils\Table\Concerns\HasQuickSearch;
 use Illuminate\Support\Arr;
 
 class QuickSearch extends AbstractTool

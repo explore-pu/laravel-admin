@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Table\Exporters;
+namespace Elegant\Utils\Table\Exporters;
 
-use Elegant\Admin\Table\Column;
+use Elegant\Utils\Table\Column;
 
 class CsvExporter extends AbstractExporter
 {

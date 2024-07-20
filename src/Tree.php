@@ -1,10 +1,10 @@
 <?php
 
-namespace Elegant\Admin;
+namespace Elegant\Utils;
 
 use Closure;
-use Elegant\Admin\Tree\HasActions;
-use Elegant\Admin\Tree\Tools;
+use Elegant\Utils\Tree\HasActions;
+use Elegant\Utils\Tree\Tools;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Model;
 use Psr\Container\ContainerExceptionInterface;

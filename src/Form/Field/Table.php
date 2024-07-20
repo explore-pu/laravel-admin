@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Form\Field;
+namespace Elegant\Utils\Form\Field;
 
-use Elegant\Admin\Form\NestedForm;
+use Elegant\Utils\Form\NestedForm;
 
 class Table extends HasMany
 {

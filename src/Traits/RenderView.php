@@ -1,10 +1,10 @@
 <?php
 
-namespace Elegant\Admin\Traits;
+namespace Elegant\Utils\Traits;
 
 use DOMDocument;
 use DOMElement;
-use Elegant\Admin\Assets;
+use Elegant\Utils\Assets;
 
 trait RenderView
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Traits;
+namespace Elegant\Utils\Traits;
 
-use Elegant\Admin\Actions\Response;
+use Elegant\Utils\Actions\Response;
 
 trait HasResponse
 {

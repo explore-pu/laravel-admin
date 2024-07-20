@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Table;
+namespace Elegant\Utils\Table;
 
-use Elegant\Admin\Table;
+use Elegant\Utils\Table;
 use Illuminate\Contracts\Support\Renderable;
 
 /**

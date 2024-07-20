@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Table\Filter\Presenter;
+namespace Elegant\Utils\Table\Filter\Presenter;
 
-use Elegant\Admin\Admin;
+use Elegant\Utils\Admin;
 
 class Text extends Presenter
 {

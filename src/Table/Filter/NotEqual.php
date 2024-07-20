@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Admin\Table\Filter;
+namespace Elegant\Utils\Table\Filter;
 
 use Illuminate\Support\Arr;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Elegant\Admin\Table\Column;
+namespace Elegant\Utils\Table\Column;
 
-use Elegant\Admin\Table\Column;
-use Elegant\Admin\Table\Model;
-use Elegant\Admin\Widgets\Tooltip;
+use Elegant\Utils\Table\Column;
+use Elegant\Utils\Table\Model;
+use Elegant\Utils\Widgets\Tooltip;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Renderable;
 

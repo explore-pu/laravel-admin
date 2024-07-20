@@ -1,10 +1,10 @@
 <?php
 
-namespace Elegant\Admin\Form\Field;
+namespace Elegant\Utils\Form\Field;
 
-use Elegant\Admin\Form;
-use Elegant\Admin\Form\Field;
-use Elegant\Admin\Form\NestedForm;
+use Elegant\Utils\Form;
+use Elegant\Utils\Form\Field;
+use Elegant\Utils\Form\NestedForm;
 use Illuminate\Database\Eloquent\Relations\HasMany as Relation;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Arr;

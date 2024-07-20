@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Admin\Console;
+namespace Elegant\Utils\Console;
 
 use Illuminate\Database\Eloquent\Model;
 

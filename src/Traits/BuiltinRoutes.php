@@ -1,11 +1,11 @@
 <?php
 
-namespace Elegant\Admin\Traits;
+namespace Elegant\Utils\Traits;
 
-use Elegant\Admin\Http\Controllers\AdministratorController;
-use Elegant\Admin\Http\Controllers\AuthController;
-use Elegant\Admin\Http\Controllers\MenuController;
-use Elegant\Admin\Http\Controllers\MenuGroupController;
+use Elegant\Utils\Http\Controllers\AdministratorController;
+use Elegant\Utils\Http\Controllers\AuthController;
+use Elegant\Utils\Http\Controllers\MenuController;
+use Elegant\Utils\Http\Controllers\MenuGroupController;
 use Illuminate\Routing\Router;
 
 trait BuiltinRoutes
@@ -47,7 +47,7 @@ trait BuiltinRoutes
             $router->get('setting', $authController.'@getSetting')->name('setting');
             $router->put('setting', $authController.'@putSetting')->name('setting_put');
 
-            $router->namespace('\Elegant\Admin\Http\Controllers')->group(function ($router) {
+            $router->namespace('\Elegant\Utils\Http\Controllers')->group(function ($router) {
                 $router->post('_handle_form_', 'HandleController@handleForm')->name('handle_form');
                 $router->post('_handle_action_', 'HandleController@handleAction')->name('handle_action');
                 $router->get('_handle_selectable_', 'HandleController@handleSelectable')->name('handle_selectable');

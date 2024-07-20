@@ -4,7 +4,7 @@
             <strong>Env</strong>&nbsp;&nbsp; {!! config('app.env') !!}
         @endif
         @if(config('admin.show_version'))
-            <b>Version</b> {!! \Elegant\Admin\Admin::VERSION !!}
+            <b>Version</b> {!! \Elegant\Utils\Admin::VERSION !!}
         @endif
     </div>
     <strong>Powered by <a href="https://github.com/z-song/laravel-admin" target="_blank">laravel-admin</a></strong>

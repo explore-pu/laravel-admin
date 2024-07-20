@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Table\Concerns;
+namespace Elegant\Utils\Table\Concerns;
 
-use Elegant\Admin\Admin;
+use Elegant\Utils\Admin;
 
 trait CanFixHeader
 {

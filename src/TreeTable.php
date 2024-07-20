@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin;
+namespace Elegant\Utils;
 
-use Elegant\Admin\Table\Column;
+use Elegant\Utils\Table\Column;
 
 class TreeTable extends Table
 {

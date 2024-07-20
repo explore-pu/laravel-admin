@@ -1,13 +1,13 @@
 <?php
 
-namespace Elegant\Admin\Http\Controllers;
+namespace Elegant\Utils\Http\Controllers;
 
-use Elegant\Admin\Form;
-use Elegant\Admin\Layout\Column;
-use Elegant\Admin\Layout\Content;
-use Elegant\Admin\Layout\Row;
-use Elegant\Admin\Models\MenuGroup;
-use Elegant\Admin\Tree;
+use Elegant\Utils\Form;
+use Elegant\Utils\Layout\Column;
+use Elegant\Utils\Layout\Content;
+use Elegant\Utils\Layout\Row;
+use Elegant\Utils\Models\MenuGroup;
+use Elegant\Utils\Tree;
 
 class MenuController extends AdminController
 {
@@ -33,7 +33,7 @@ class MenuController extends AdminController
                 $row->column(6, $this->treeView()->render());
 
                 $row->column(6, function (Column $column) {
-                    $form = new \Elegant\Admin\Widgets\Form();
+                    $form = new \Elegant\Utils\Widgets\Form();
                     $form->title(trans('admin.new'));
                     $form->action(admin_url('menus'));
 

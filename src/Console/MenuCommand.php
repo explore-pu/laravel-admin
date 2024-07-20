@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Console;
+namespace Elegant\Utils\Console;
 
-use Elegant\Admin\Facades\Admin;
+use Elegant\Utils\Facades\Admin;
 use Illuminate\Console\Command;
 
 class MenuCommand extends Command

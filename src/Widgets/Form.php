@@ -1,13 +1,13 @@
 <?php
 
-namespace Elegant\Admin\Widgets;
+namespace Elegant\Utils\Widgets;
 
 use Closure;
-use Elegant\Admin\AbstractForm;
-use Elegant\Admin\Facades\Admin;
-use Elegant\Admin\Form as BaseForm;
-use Elegant\Admin\Form\Field;
-use Elegant\Admin\Layout\Content;
+use Elegant\Utils\AbstractForm;
+use Elegant\Utils\Facades\Admin;
+use Elegant\Utils\Form as BaseForm;
+use Elegant\Utils\Form\Field;
+use Elegant\Utils\Layout\Content;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;

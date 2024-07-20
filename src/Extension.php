@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Admin;
+namespace Elegant\Utils;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;

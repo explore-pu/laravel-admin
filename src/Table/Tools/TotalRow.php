@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Table\Tools;
+namespace Elegant\Utils\Table\Tools;
 
-use Elegant\Admin\Table\Column;
+use Elegant\Utils\Table\Column;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;

@@ -1,10 +1,10 @@
 <?php
 
-namespace Elegant\Admin\Http\Controllers;
+namespace Elegant\Utils\Http\Controllers;
 
-use Elegant\Admin\Facades\Admin;
-use Elegant\Admin\Form;
-use Elegant\Admin\Layout\Content;
+use Elegant\Utils\Facades\Admin;
+use Elegant\Utils\Form;
+use Elegant\Utils\Layout\Content;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;

@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Admin\Form\Field;
+namespace Elegant\Utils\Form\Field;
 
-use Elegant\Admin\Form\EmbeddedForm;
-use Elegant\Admin\Form\Field;
+use Elegant\Utils\Form\EmbeddedForm;
+use Elegant\Utils\Form\Field;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 

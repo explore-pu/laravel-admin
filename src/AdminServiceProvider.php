@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Admin;
+namespace Elegant\Utils;
 
-use Elegant\Admin\Http\Middleware;
-use Elegant\Admin\Layout\Content;
+use Elegant\Utils\Http\Middleware;
+use Elegant\Utils\Layout\Content;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Blade;

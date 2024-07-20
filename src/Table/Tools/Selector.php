@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Admin\Table\Tools;
+namespace Elegant\Utils\Table\Tools;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Arr;

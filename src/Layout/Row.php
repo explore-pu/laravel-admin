@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Admin\Layout;
+namespace Elegant\Utils\Layout;
 
 use Illuminate\Contracts\Support\Renderable;
 

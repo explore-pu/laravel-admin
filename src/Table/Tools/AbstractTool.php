@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Table\Tools;
+namespace Elegant\Utils\Table\Tools;
 
-use Elegant\Admin\Table;
+use Elegant\Utils\Table;
 use Illuminate\Contracts\Support\Renderable;
 
 abstract class AbstractTool implements Renderable

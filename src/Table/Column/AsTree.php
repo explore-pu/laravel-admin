@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Admin\Table\Column;
+namespace Elegant\Utils\Table\Column;
 
-use Elegant\Admin\Table\Column;
-use Elegant\Admin\Table\Displayers\TreeDisplay;
+use Elegant\Utils\Table\Column;
+use Elegant\Utils\Table\Displayers\TreeDisplay;
 use Illuminate\Database\Eloquent\Collection;
 
 /**

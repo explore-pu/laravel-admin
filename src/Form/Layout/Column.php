@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Admin\Form\Layout;
+namespace Elegant\Utils\Form\Layout;
 
-use Elegant\Admin\Form;
-use Elegant\Admin\Form\Field;
+use Elegant\Utils\Form;
+use Elegant\Utils\Form\Field;
 use Illuminate\Support\Collection;
 
 /**
@@ -22,7 +22,7 @@ class Column
     protected $width;
 
     /**
-     * @var Form|\Elegant\Admin\Widgets\Form
+     * @var Form|\Elegant\Utils\Widgets\Form
      */
     protected $form;
 

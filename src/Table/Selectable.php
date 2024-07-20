@@ -1,10 +1,10 @@
 <?php
 
-namespace Elegant\Admin\Table;
+namespace Elegant\Utils\Table;
 
-use Elegant\Admin\Table;
-use Elegant\Admin\Table\Selectable\Checkbox;
-use Elegant\Admin\Table\Selectable\Radio;
+use Elegant\Utils\Table;
+use Elegant\Utils\Table\Selectable\Checkbox;
+use Elegant\Utils\Table\Selectable\Radio;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 

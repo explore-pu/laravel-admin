@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Table\Tools;
+namespace Elegant\Utils\Table\Tools;
 
-use Elegant\Admin\Admin;
+use Elegant\Utils\Admin;
 
 class FilterButton extends AbstractTool
 {

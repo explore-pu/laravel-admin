@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Admin\Traits;
+namespace Elegant\Utils\Traits;
 
 use Illuminate\Support\Str;
 

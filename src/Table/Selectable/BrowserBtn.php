@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Admin\Table\Selectable;
+namespace Elegant\Utils\Table\Selectable;
 
 use Illuminate\Contracts\Support\Renderable;
 

@@ -27,13 +27,13 @@ Installation
 First, install laravel 11.0, and make sure that the database connection settings are correct.
 
 ```
-composer require elegant/laravel-admin
+composer require elegant-utils/laravel-admin
 ```
 
 Then run these commands to publish assets and config：
 
 ```
-php artisan vendor:publish --provider="Elegant\Admin\AdminServiceProvider"
+php artisan vendor:publish --provider="Elegant\Utils\AdminServiceProvider"
 ```
 
 After run command you can find config file in `config/admin.php`, in this file you can change the install directory,db connection or table names.

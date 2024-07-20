@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Tree;
+namespace Elegant\Utils\Tree;
 
-use Elegant\Admin\Actions\Action;
+use Elegant\Utils\Actions\Action;
 use Illuminate\Http\Request;
 
 class Delete extends Action

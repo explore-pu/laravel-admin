@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Table\Actions;
+namespace Elegant\Utils\Table\Actions;
 
-use Elegant\Admin\Admin;
+use Elegant\Utils\Admin;
 
 class EditModal extends Edit
 {

@@ -1,6 +1,6 @@
 <?php
 
-use Elegant\Admin\Admin;
+use Elegant\Utils\Admin;
 use Illuminate\Support\MessageBag;
 
 if (!function_exists('admin_directory')) {
@@ -162,7 +162,7 @@ if (!function_exists('admin_assets_require')) {
      */
     function admin_assets_require($assets)
     {
-        \Elegant\Admin\Assets::require($assets);
+        \Elegant\Utils\Assets::require($assets);
     }
 }
 

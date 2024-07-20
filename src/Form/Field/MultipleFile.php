@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Admin\Form\Field;
+namespace Elegant\Utils\Form\Field;
 
-use Elegant\Admin\Form;
-use Elegant\Admin\Form\Field;
+use Elegant\Utils\Form;
+use Elegant\Utils\Form\Field;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Support\ViewErrorBag;

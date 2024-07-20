@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Admin\Widgets;
+namespace Elegant\Utils\Widgets;
 
 trait ContainsForms
 {
@@ -38,7 +38,7 @@ trait ContainsForms
 
         foreach ($forms as $name => $class) {
             if (!is_subclass_of($class, Form::class)) {
-                admin_error("Class [{$class}] must be a sub-class of [Elegant\Admin\Widgets\Form].");
+                admin_error("Class [{$class}] must be a sub-class of [Elegant\Utils\Widgets\Form].");
                 continue;
             }
 

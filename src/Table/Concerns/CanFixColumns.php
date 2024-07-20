@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Table\Concerns;
+namespace Elegant\Utils\Table\Concerns;
 
-use Elegant\Admin\Table\Tools\FixColumns;
+use Elegant\Utils\Table\Tools\FixColumns;
 use Illuminate\Support\Collection;
 
 trait CanFixColumns

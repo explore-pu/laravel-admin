@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Form;
+namespace Elegant\Utils\Form;
 
-use Elegant\Admin\Form;
+use Elegant\Utils\Form;
 
 class Tab
 {

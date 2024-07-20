@@ -2,7 +2,7 @@
 
 namespace :namespace;
 
-use Elegant\Admin\Extension;
+use Elegant\Utils\Extension;
 
 class :class_name extends Extension
 {

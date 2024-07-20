@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Actions;
+namespace Elegant\Utils\Actions;
 
-use Elegant\Admin\Table;
+use Elegant\Utils\Table;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
 

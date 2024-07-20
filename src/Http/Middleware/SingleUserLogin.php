@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Admin\Http\Middleware;
+namespace Elegant\Utils\Http\Middleware;
 
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Session\Middleware\AuthenticateSession;

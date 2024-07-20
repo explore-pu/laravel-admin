@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Form\Layout;
+namespace Elegant\Utils\Form\Layout;
 
-use Elegant\Admin\Form;
+use Elegant\Utils\Form;
 
 /**
  * @mixin Form
@@ -15,7 +15,7 @@ class Row
     protected $columns = [];
 
     /**
-     * @var Form|\Elegant\Admin\Widgets\Form
+     * @var Form|\Elegant\Utils\Widgets\Form
      */
     protected $form;
 

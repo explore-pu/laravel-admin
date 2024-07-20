@@ -1,10 +1,10 @@
 <?php
 
-namespace Elegant\Admin\Table\Tools;
+namespace Elegant\Utils\Table\Tools;
 
-use Elegant\Admin\Actions\BatchAction;
-use Elegant\Admin\Admin;
-use Elegant\Admin\Table\Actions\BatchDelete;
+use Elegant\Utils\Actions\BatchAction;
+use Elegant\Utils\Admin;
+use Elegant\Utils\Table\Actions\BatchDelete;
 use Illuminate\Support\Collection;
 
 class BatchActions extends AbstractTool

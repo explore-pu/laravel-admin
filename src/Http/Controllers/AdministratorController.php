@@ -1,10 +1,10 @@
 <?php
 
-namespace Elegant\Admin\Http\Controllers;
+namespace Elegant\Utils\Http\Controllers;
 
-use Elegant\Admin\Form;
-use Elegant\Admin\Show;
-use Elegant\Admin\Table;
+use Elegant\Utils\Form;
+use Elegant\Utils\Show;
+use Elegant\Utils\Table;
 
 class AdministratorController extends AdminController
 {

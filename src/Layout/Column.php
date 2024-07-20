@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Layout;
+namespace Elegant\Utils\Layout;
 
-use Elegant\Admin\Table;
+use Elegant\Utils\Table;
 use Illuminate\Contracts\Support\Renderable;
 
 class Column implements Buildable

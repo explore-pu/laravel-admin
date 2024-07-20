@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Admin\Table\Column;
+namespace Elegant\Utils\Table\Column;
 
-use Elegant\Admin\Table\Column;
-use Elegant\Admin\Table\Model;
+use Elegant\Utils\Table\Column;
+use Elegant\Utils\Table\Model;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Arr;
 

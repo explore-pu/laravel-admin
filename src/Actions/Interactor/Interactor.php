@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Actions\Interactor;
+namespace Elegant\Utils\Actions\Interactor;
 
-use Elegant\Admin\Actions\Action;
+use Elegant\Utils\Actions\Action;
 
 abstract class Interactor
 {

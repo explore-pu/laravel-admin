@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Form;
+namespace Elegant\Utils\Form;
 
-use Elegant\Admin\Admin;
+use Elegant\Utils\Admin;
 use Illuminate\Contracts\Support\Renderable;
 
 class Footer implements Renderable

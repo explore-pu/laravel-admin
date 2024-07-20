@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Admin\Table\Concerns;
+namespace Elegant\Utils\Table\Concerns;
 
-use Elegant\Admin\Table;
-use Elegant\Admin\Table\Tools\ColumnSelector;
+use Elegant\Utils\Table;
+use Elegant\Utils\Table\Tools\ColumnSelector;
 use Illuminate\Support\Collection;
 
 trait CanHidesColumns

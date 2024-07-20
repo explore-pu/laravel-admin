@@ -42,20 +42,20 @@
     <template class="nav-tab-tpl">
         <li class="nav-item" role="presentation">
             <a class="nav-link"
-               id="tab-{{ ($relationName ? $relationName . '-' : '') . 'new-' . \Elegant\Admin\Form\NestedForm::DEFAULT_KEY_NAME }}"
-               href="#nav-{{ ($relationName ? $relationName . '-' : '') . 'new-' . \Elegant\Admin\Form\NestedForm::DEFAULT_KEY_NAME }}"
-               aria-controls="nav-{{ ($relationName ? $relationName . '-' : '') . 'new-' . \Elegant\Admin\Form\NestedForm::DEFAULT_KEY_NAME }}"
+               id="tab-{{ ($relationName ? $relationName . '-' : '') . 'new-' . \Elegant\Utils\Form\NestedForm::DEFAULT_KEY_NAME }}"
+               href="#nav-{{ ($relationName ? $relationName . '-' : '') . 'new-' . \Elegant\Utils\Form\NestedForm::DEFAULT_KEY_NAME }}"
+               aria-controls="nav-{{ ($relationName ? $relationName . '-' : '') . 'new-' . \Elegant\Utils\Form\NestedForm::DEFAULT_KEY_NAME }}"
                data-toggle="tab"
                role="tab"
                aria-selected="true">
-                New {{ \Elegant\Admin\Form\NestedForm::DEFAULT_KEY_NAME }}<span class="close-{{$column}}-tab text-danger d-none"><i class="fas fa-times"></i></span>
+                New {{ \Elegant\Utils\Form\NestedForm::DEFAULT_KEY_NAME }}<span class="close-{{$column}}-tab text-danger d-none"><i class="fas fa-times"></i></span>
             </a>
         </li>
     </template>
     <template class="pane-tpl">
         <div class="tab-pane fields-group new"
-             id="nav-{{ ($relationName ? $relationName . '-' : '') . 'new-' . \Elegant\Admin\Form\NestedForm::DEFAULT_KEY_NAME }}"
-             aria-labelledby="tab-{{ ($relationName ? $relationName . '-' : '') . 'new-' . \Elegant\Admin\Form\NestedForm::DEFAULT_KEY_NAME }}"
+             id="nav-{{ ($relationName ? $relationName . '-' : '') . 'new-' . \Elegant\Utils\Form\NestedForm::DEFAULT_KEY_NAME }}"
+             aria-labelledby="tab-{{ ($relationName ? $relationName . '-' : '') . 'new-' . \Elegant\Utils\Form\NestedForm::DEFAULT_KEY_NAME }}"
              role="tabpanel">
             {!! $template !!}
         </div>
@@ -70,7 +70,7 @@
     // 新增
         .on('click', '.add-{{$column}}-tab', function () {
             index++;
-            var default_key_name = '{{ \Elegant\Admin\Form\NestedForm::DEFAULT_KEY_NAME }}';
+            var default_key_name = '{{ \Elegant\Utils\Form\NestedForm::DEFAULT_KEY_NAME }}';
             var reg = new RegExp(default_key_name, "g");
             var navTabHtml = $('#has-many-{{ $column }} > template.nav-tab-tpl').html().replace(reg, index);
             var paneHtml = $('#has-many-{{ $column }} > template.pane-tpl').html().replace(reg, index);
@@ -87,7 +87,7 @@
             if (pane.hasClass('new')) {
                 pane.remove();
             } else {
-                pane.removeClass('active').find('.{{ \Elegant\Admin\Form\NestedForm::REMOVE_FLAG_CLASS }}').val(1);
+                pane.removeClass('active').find('.{{ \Elegant\Utils\Form\NestedForm::REMOVE_FLAG_CLASS }}').val(1);
             }
 
             navTab.remove();

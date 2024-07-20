@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Admin\Console;
+namespace Elegant\Utils\Console;
 
 use Illuminate\Console\Command;
 
@@ -28,7 +28,7 @@ class PublishCommand extends Command
     public function handle()
     {
         $force = $this->option('force');
-        $options = ['--provider' => 'Elegant\Admin\AdminServiceProvider'];
+        $options = ['--provider' => 'Elegant\Utils\AdminServiceProvider'];
         if ($force == true) {
             $options['--force'] = true;
         }

@@ -1,16 +1,16 @@
 <?php
 
-namespace Elegant\Admin;
+namespace Elegant\Utils;
 
 use Closure;
-use Elegant\Admin\Exception\Handler;
-use Elegant\Admin\Form\Builder;
-use Elegant\Admin\Form\Concerns;
-use Elegant\Admin\Form\Field;
-use Elegant\Admin\Form\Footer;
-use Elegant\Admin\Form\Tab;
-use Elegant\Admin\Traits\HasResponse;
-use Elegant\Admin\Traits\ShouldSnakeAttributes;
+use Elegant\Utils\Exception\Handler;
+use Elegant\Utils\Form\Builder;
+use Elegant\Utils\Form\Concerns;
+use Elegant\Utils\Form\Field;
+use Elegant\Utils\Form\Footer;
+use Elegant\Utils\Form\Tab;
+use Elegant\Utils\Traits\HasResponse;
+use Elegant\Utils\Traits\ShouldSnakeAttributes;
 use Exception;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Model;
@@ -1130,7 +1130,7 @@ class Form extends AbstractForm implements Renderable
      *
      * @param Closure $callback
      *
-     * @return \Elegant\Admin\Form\Footer
+     * @return \Elegant\Utils\Form\Footer
      */
     public function footer(Closure $callback = null)
     {

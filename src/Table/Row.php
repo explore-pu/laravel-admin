@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Admin\Table;
+namespace Elegant\Utils\Table;
 
 use Closure;
 use Illuminate\Contracts\Support\Htmlable;

@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Admin\Table\Displayers;
+namespace Elegant\Utils\Table\Displayers;
 
-use Elegant\Admin\Admin;
-use Elegant\Admin\Table\Simple;
+use Elegant\Utils\Admin;
+use Elegant\Utils\Table\Simple;
 use Illuminate\Contracts\Support\Renderable;
 
 class Expand extends AbstractDisplayer

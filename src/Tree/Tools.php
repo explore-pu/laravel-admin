@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Tree;
+namespace Elegant\Utils\Tree;
 
-use Elegant\Admin\Tree;
+use Elegant\Utils\Tree;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Collection;

@@ -1,5 +1,5 @@
 {
-    "name": "elegant/laravel-admin",
+    "name": "elegant-utils/laravel-admin",
     "description": "laravel admin",
     "type": "library",
     "keywords": ["laravel", "admin", "table", "form", "tree"],
@@ -19,23 +19,19 @@
     },
     "autoload": {
         "psr-4": {
-            "Elegant\\Admin\\": "src/"
+            "Elegant\\Utils\\": "src/"
         },
         "files": [
             "src/helpers.php"
         ]
     },
-    "suggest": {
-        "intervention/image": "Required to handling and manipulation upload images (~2.3).",
-        "spatie/eloquent-sortable": "Required to built orderable gird."
-    },
     "extra": {
         "laravel": {
             "providers": [
-                "Elegant\\Admin\\AdminServiceProvider"
+                "Elegant\\Utils\\AdminServiceProvider"
             ],
             "aliases": {
-                "Admin": "Elegant\\Admin\\Facades\\Admin"
+                "Admin": "Elegant\\Utils\\Facades\\Admin"
             }
         }
     }

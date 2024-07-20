@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Traits;
+namespace Elegant\Utils\Traits;
 
-use Elegant\Admin\Http\Controllers\HandleController;
+use Elegant\Utils\Http\Controllers\HandleController;
 
 trait HasResourceActions
 {

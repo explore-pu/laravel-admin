@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Admin\Actions;
+namespace Elegant\Utils\Actions;
 
-use Elegant\Admin\Table\Column;
+use Elegant\Utils\Table\Column;
 use Illuminate\Http\Request;
 
 abstract class RowAction extends TableAction

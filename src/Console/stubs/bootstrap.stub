@@ -7,10 +7,10 @@
  * Bootstraper for Admin.
  *
  * Here you can remove builtin form field:
- * Elegant\Admin\Form::forget(['map', 'editor']);
+ * Elegant\Utils\Form::forget(['map', 'editor']);
  *
  * Or extend custom form field:
- * Elegant\Admin\Form::extend('php', PHPEditor::class);
+ * Elegant\Utils\Form::extend('php', PHPEditor::class);
  *
  * Or require js and css assets:
  * Admin::css('/packages/prettydocs/css/styles.css');
