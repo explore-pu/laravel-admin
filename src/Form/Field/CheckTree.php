@@ -41,7 +41,7 @@ class CheckTree extends Field
         $options = [
             [
                 'id'        => 0,
-                'text'      => admin_trans('admin.all_menus'),
+                'text'      => trans('admin.all_menus'),
                 'children'  => $this->options,
             ],
         ];

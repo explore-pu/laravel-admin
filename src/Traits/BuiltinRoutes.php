@@ -18,31 +18,31 @@ trait BuiltinRoutes
     public function routes()
     {
         app('router')->group([
-            'middleware' => config('admin.route.middleware'),
-            'as' => config('admin.route.as'),
+            'middleware' => config('elegant-utils.admin.route.middleware'),
+            'as' => config('elegant-utils.admin.route.as'),
         ], function ($router) {
             /* @var Router $router */
-            $administratorController = config('admin.database,administrator_controller', AdministratorController::class);
+            $administratorController = config('elegant-utils.admin.database,administrator_controller', AdministratorController::class);
             $router->resource('administrators', $administratorController)->names('administrators');
             $router->put('administrators/{administrator}/restore', $administratorController.'@restore')->name('administrators.restore');
             $router->delete('administrators/{administrator}/delete', $administratorController.'@delete')->name('administrators.delete');
 
-            $menuController = config('admin.database,menus_controller', MenuController::class);
+            $menuController = config('elegant-utils.admin.database,menus_controller', MenuController::class);
             $router->resource('menus', $menuController, ['except' => ['create', 'show']])->names('menus');
             $router->put('menus/{menu}/restore', $menuController.'@restore')->name('menus.restore');
             $router->delete('menus/{menu}/delete', $menuController.'@delete')->name('menus.delete');
 
-            $menuGroupController = config('admin.database,menu_groups_controller', MenuGroupController::class);
+            $menuGroupController = config('elegant-utils.admin.database,menu_groups_controller', MenuGroupController::class);
             $router->resource('menu_groups', $menuGroupController)->names('menu_groups');
             $router->put('menu_groups/{menu_group}/restore', $menuGroupController.'@restore')->name('menu_groups.restore');
             $router->delete('menu_groups/{menu_group}/delete', $menuGroupController.'@delete')->name('menu_groups.delete');
         });
 
         app('router')->group([
-            'middleware' => config('admin.route.middleware')
+            'middleware' => config('elegant-utils.admin.route.middleware')
         ], function ($router) {
             /* @var Router $router */
-            $authController = config('admin.auth.controller', AuthController::class);
+            $authController = config('elegant-utils.admin.auth.controller', AuthController::class);
             $router->get('logout', $authController.'@getLogout')->name('logout');
             $router->get('setting', $authController.'@getSetting')->name('setting');
             $router->put('setting', $authController.'@putSetting')->name('setting_put');
@@ -60,11 +60,11 @@ trait BuiltinRoutes
         });
 
         app('router')->group([
-            'middleware' => array_filter(config('admin.route.middleware'), function ($value) {
+            'middleware' => array_filter(config('elegant-utils.admin.route.middleware'), function ($value) {
                 return $value !== 'auth';
             })
         ], function ($router) {
-            $authController = config('admin.auth.controller', AuthController::class);
+            $authController = config('elegant-utils.admin.auth.controller', AuthController::class);
 
             /* @var Router $router */
             $router->get('login', $authController.'@getLogin')->name('login');

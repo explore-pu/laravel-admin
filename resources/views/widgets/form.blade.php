@@ -24,13 +24,13 @@
             <div class="col-{{$width['field']}}">
                 @if(in_array('reset', $buttons))
                 <div class="btn-group float-left">
-                    <button type="reset" class="btn btn-warning float-right">{{ admin_trans('admin.reset') }}</button>
+                    <button type="reset" class="btn btn-warning float-right">{{ trans('admin.reset') }}</button>
                 </div>
                 @endif
 
                 @if(in_array('submit', $buttons))
                 <div class="btn-group float-right">
-                    <button type="submit" class="btn btn-@color float-right">{{ admin_trans('admin.submit') }}</button>
+                    <button type="submit" class="btn btn-@color float-right">{{ trans('admin.submit') }}</button>
                 </div>
                 @endif
             </div>

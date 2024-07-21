@@ -73,7 +73,7 @@ class MinifyCommand extends Command
 
     protected function loadExcepts()
     {
-        $excepts = config('admin.minify_assets.excepts', []);
+        $excepts = config('elegant-utils.admin.minify_assets.excepts', []);
 
         $this->excepts = array_merge($excepts, Admin::$minifyIgnores);
     }

@@ -16,7 +16,7 @@ class Restore extends TreeAction
      */
     public function name()
     {
-        return admin_trans('admin.restore');
+        return trans('admin.restore');
     }
 
     protected function icon()
@@ -37,6 +37,6 @@ class Restore extends TreeAction
      */
     public function dialog()
     {
-        $this->question(admin_trans('admin.restore_confirm'), '', ['confirmButtonColor' => '#d33']);
+        $this->question(trans('admin.restore_confirm'), '', ['confirmButtonColor' => '#d33']);
     }
 }

@@ -14,7 +14,7 @@ if (!function_exists('admin_directory')) {
      */
     function admin_directory($path = '')
     {
-        return ucfirst(config('admin.directory')).($path ? DIRECTORY_SEPARATOR.$path : $path);
+        return ucfirst(config('elegant-utils.admin.directory')).($path ? DIRECTORY_SEPARATOR.$path : $path);
     }
 }
 
@@ -34,7 +34,7 @@ if (!function_exists('admin_url')) {
             return $path;
         }
 
-        $secure = $secure ?: (config('admin.https'));
+        $secure = $secure ?: (config('elegant-utils.admin.https'));
 
         return url(admin_base_path($path), $parameters, $secure);
     }
@@ -50,7 +50,7 @@ if (!function_exists('admin_base_path')) {
      */
     function admin_base_path($path = '')
     {
-        $prefix = '/'.trim(config('admin.route.prefix'), '/');
+        $prefix = '/'.trim(config('elegant-utils.admin.route.prefix'), '/');
 
         $prefix = ($prefix == '/') ? '' : $prefix;
 
@@ -149,7 +149,7 @@ if (!function_exists('admin_asset')) {
      */
     function admin_asset($path)
     {
-        return (config('admin.https')) ? secure_asset($path) : asset($path);
+        return (config('elegant-utils.admin.https')) ? secure_asset($path) : asset($path);
     }
 }
 
@@ -176,10 +176,10 @@ if (!function_exists('admin_color')) {
     function admin_color($tpl = '')
     {
         if ($tpl) {
-            return str_replace('%s', config('admin.theme.color'), $tpl);
+            return str_replace('%s', config('elegant-utils.admin.theme.color'), $tpl);
         }
 
-        return config('admin.theme.color');
+        return config('elegant-utils.admin.theme.color');
     }
 }
 
@@ -367,8 +367,8 @@ if (!function_exists('admin_attrs')) {
 
 function admin_login_page_backgroud()
 {
-    if (config('admin.login_background_image')) {
-        $image = config('admin.login_background_image');
+    if (config('elegant-utils.admin.login_background_image')) {
+        $image = config('elegant-utils.admin.login_background_image');
     } else {
         $hour = date('H');
 
@@ -413,7 +413,7 @@ if (!function_exists('admin_route')) {
      */
     function admin_route($name, $parameters = [], $absolute = true)
     {
-        $name = config('admin.route.as', '') . $name;
+        $name = config('elegant-utils.admin.route.as', '') . $name;
 
         return app('url')->route($name, $parameters, $absolute);
     }

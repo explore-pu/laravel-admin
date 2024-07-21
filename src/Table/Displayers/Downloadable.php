@@ -23,7 +23,7 @@ class Downloadable extends AbstractDisplayer
             } elseif ($server) {
                 $src = rtrim($server, '/').'/'.ltrim($value, '/');
             } else {
-                $src = Storage::disk(config('admin.upload.disk'))->url($value);
+                $src = Storage::disk(config('elegant-utils.admin.upload.disk'))->url($value);
             }
 
             $name = basename($value);

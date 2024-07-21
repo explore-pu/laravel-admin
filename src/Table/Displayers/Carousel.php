@@ -26,7 +26,7 @@ class Carousel extends AbstractDisplayer
             } elseif ($server) {
                 $image = rtrim($server, '/').'/'.ltrim($path, '/');
             } else {
-                $image = Storage::disk(config('admin.upload.disk'))->url($path);
+                $image = Storage::disk(config('elegant-utils.admin.upload.disk'))->url($path);
             }
 
             $caption = '';

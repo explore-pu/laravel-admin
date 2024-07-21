@@ -11,7 +11,7 @@ class CreateAdminTables extends Migration
      */
     public function getConnection()
     {
-        return config('admin.database.connection') ?: config('database.default');
+        return config('elegant-utils.admin.database.connection') ?: config('database.default');
     }
 
     /**
@@ -21,7 +21,7 @@ class CreateAdminTables extends Migration
      */
     public function up()
     {
-        Schema::create(config('admin.database.administrator_table'), function (Blueprint $table) {
+        Schema::create(config('elegant-utils.admin.database.administrator_table'), function (Blueprint $table) {
             $table->id();
             $table->string('username', 190)->unique();
             $table->string('password', 60);
@@ -32,7 +32,7 @@ class CreateAdminTables extends Migration
             $table->timestamps();
         });
 
-        Schema::create(config('admin.database.menus_table'), function (Blueprint $table) {
+        Schema::create(config('elegant-utils.admin.database.menus_table'), function (Blueprint $table) {
             $table->id();
             $table->integer('group')->default(1);
             $table->integer('parent_id')->default(0);
@@ -44,7 +44,7 @@ class CreateAdminTables extends Migration
             $table->timestamps();
         });
 
-        Schema::create(config('admin.database.menu_groups_table'), function (Blueprint $table) {
+        Schema::create(config('elegant-utils.admin.database.menu_groups_table'), function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->softDeletes();
@@ -59,8 +59,8 @@ class CreateAdminTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('admin.database.administrator_table'));
-        Schema::dropIfExists(config('admin.database.menus_table'));
-        Schema::dropIfExists(config('admin.database.menu_groups_table'));
+        Schema::dropIfExists(config('elegant-utils.admin.database.administrator_table'));
+        Schema::dropIfExists(config('elegant-utils.admin.database.menus_table'));
+        Schema::dropIfExists(config('elegant-utils.admin.database.menu_groups_table'));
     }
 }

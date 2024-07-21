@@ -8,7 +8,6 @@
         </div>
     </div>
 
-    <!-- /.card-header -->
     <div class="card-body dependencies">
         <div class="table-responsive">
             <table class="table table-striped">
@@ -20,7 +19,5 @@
                 @endforeach
             </table>
         </div>
-        <!-- /.table-responsive -->
     </div>
-    <!-- /.card-body -->
 </div>

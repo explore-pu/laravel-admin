@@ -8,11 +8,11 @@ class Session
 {
     public function handle(Request $request, \Closure $next)
     {
-        $path = '/'.trim(config('admin.route.prefix'), '/');
+        $path = '/'.trim(config('elegant-utils.admin.route.prefix'), '/');
 
         config(['session.path' => $path]);
 
-        if ($domain = config('admin.route.domain')) {
+        if ($domain = config('elegant-utils.admin.route.domain')) {
             config(['session.domain' => $domain]);
         }
 

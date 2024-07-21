@@ -276,7 +276,7 @@ abstract class Extension
      */
     protected static function createMenu($title, $uri, $icon = 'fa-bars', $parentId = 0, array $children = [])
     {
-        $menuModel = config('admin.database.menu_model');
+        $menuModel = config('elegant-utils.admin.database.menu_model');
 
         $lastOrder = $menuModel::max('order');
         /**
@@ -314,8 +314,8 @@ abstract class Extension
     {
         $attributes = array_merge(
             [
-                'prefix'     => config('admin.route.prefix'),
-                'middleware' => config('admin.route.middleware'),
+                'prefix'     => config('elegant-utils.admin.route.prefix'),
+                'middleware' => config('elegant-utils.admin.route.middleware'),
             ],
             static::config('route', [])
         );

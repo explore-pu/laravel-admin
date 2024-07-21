@@ -12,9 +12,9 @@
     <script src="{{ admin_url('_require_config') }}"></script>
 </head>
 
-<body class="hold-transition {{ join(' ', config('admin.theme.layout')) }} {{ 'accent-'.config('admin.theme.color') }}">
+<body class="hold-transition {{ join(' ', config('elegant-utils.admin.theme.layout')) }} {{ 'accent-'.config('elegant-utils.admin.theme.color') }}">
 
-@if($alert = config('admin.top_alert'))
+@if($alert = config('elegant-utils.admin.top_alert'))
     <div style="text-align: center;padding: 5px;font-size: 12px;background-color: #ffffd5;color: #ff0000;">
         {!! $alert !!}
     </div>

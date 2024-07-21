@@ -7,7 +7,7 @@
 
         @if(in_array('submit', $buttons))
         <div class="btn-group float-right">
-            <button type="submit" class="btn btn-@color">{{ admin_trans('admin.submit') }}</button>
+            <button type="submit" class="btn btn-@color">{{ trans('admin.submit') }}</button>
         </div>
 
         <div class="d-none d-md-inline-block float-right">
@@ -16,7 +16,7 @@
                     <span class="icheck-default">
                         <input id="@id" type="checkbox" class="after-submit" name="_saved" value="{{ $value }}" {{ ($default_check == $redirect) ? 'checked' : '' }}>
                         <label for="@id" class="float-right" style="margin: 5px 10px 0 0;">
-                            {{ admin_trans("admin.{$redirect}") }}
+                            {{ trans("admin.{$redirect}") }}
                         </label>
                     </span>
                 @endif
@@ -26,7 +26,7 @@
 
         @if(in_array('reset', $buttons))
         <div class="btn-group float-left">
-            <button type="reset" class="btn btn-warning">{{ admin_trans('admin.reset') }}</button>
+            <button type="reset" class="btn btn-warning">{{ trans('admin.reset') }}</button>
         </div>
         @endif
     </div>

@@ -1,15 +1,15 @@
 <div class="btn-group float-right mr-2">
-    <a href="{{ $all }}" target="_blank" class="btn btn-sm btn-default" title="{{ admin_trans('admin.export') }}">
+    <a href="{{ $all }}" target="_blank" class="btn btn-sm btn-default" title="{{ trans('admin.export') }}">
         <i class="fas fa-download"></i>
-        <span class="d-none d-md-inline-block"> {{ admin_trans('admin.export') }}</span>
+        <span class="d-none d-md-inline-block"> {{ trans('admin.export') }}</span>
     </a>
     <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
         <span class="caret"></span>
     </button>
     <ul class="dropdown-menu dropdown-menu-right" role="menu">
-        <a href="{{ $all }}" target="_blank" class="dropdown-item">{{ admin_trans('admin.all') }}</a>
-        <a href="{{ $page }}" target="_blank" class="dropdown-item">{{ admin_trans('admin.current_page') }}</a>
-        <a href="{{ $selected }}" target="_blank" class='{{ $name }} dropdown-item d-none'>{{ admin_trans('admin.selected_rows') }}</a>
+        <a href="{{ $all }}" target="_blank" class="dropdown-item">{{ trans('admin.all') }}</a>
+        <a href="{{ $page }}" target="_blank" class="dropdown-item">{{ trans('admin.current_page') }}</a>
+        <a href="{{ $selected }}" target="_blank" class='{{ $name }} dropdown-item d-none'>{{ trans('admin.selected_rows') }}</a>
     </ul>
 </div>
 

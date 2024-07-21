@@ -2,7 +2,6 @@
 
 namespace Elegant\Utils\Console;
 
-use Elegant\Utils\Admin;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Str;
@@ -41,7 +40,7 @@ LOGO;
     public function handle()
     {
         $this->line(static::$logo);
-        $this->line(Admin::getLongVersion());
+        $this->line($this->getVersion());
 
         $this->comment('');
         $this->comment('Available commands:');
@@ -105,5 +104,27 @@ LOGO;
         }
 
         return mb_strwidth($string, $encoding);
+    }
+
+    protected function getVersion()
+    {
+        $url = 'https://api.github.com/repos/explore-pu/laravel-admin/releases/latest';
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_USERAGENT, 'PHP');
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        $data = json_decode($result, true);
+
+        if(isset($data['tag_name'])) {
+            $version = $data['tag_name'];
+        } else {
+            $version = '???';
+        }
+
+        return sprintf('Laravel-admin <comment>version</comment> <info>%s</info>', $version);
     }
 }

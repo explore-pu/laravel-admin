@@ -1,11 +1,4 @@
 <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-        @if(config('admin.show_environment'))
-            <strong>Env</strong>&nbsp;&nbsp; {!! config('app.env') !!}
-        @endif
-        @if(config('admin.show_version'))
-            <b>Version</b> {!! \Elegant\Utils\Admin::VERSION !!}
-        @endif
-    </div>
-    <strong>Powered by <a href="https://github.com/z-song/laravel-admin" target="_blank">laravel-admin</a></strong>
+    {!! config('elegant-utils.admin.footer.left') !!}
+    {!! config('elegant-utils.admin.footer.right') !!}
 </footer>

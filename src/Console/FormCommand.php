@@ -65,7 +65,7 @@ class FormCommand extends GeneratorCommand
             return $namespace;
         }
 
-        return str_replace('Controllers', 'Forms', config('admin.route.namespace'));
+        return str_replace('Controllers', 'Forms', config('elegant-utils.admin.route.namespace'));
     }
 
     /**

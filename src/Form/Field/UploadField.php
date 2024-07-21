@@ -101,7 +101,7 @@ trait UploadField
      */
     protected function initStorage()
     {
-        $this->disk(config('admin.upload.disk'));
+        $this->disk(config('elegant-utils.admin.upload.disk'));
     }
 
     /**
@@ -449,7 +449,7 @@ trait UploadField
             return $this->storage->url($path);
         }
 
-        return Storage::disk(config('admin.upload.disk'))->url($path);
+        return Storage::disk(config('elegant-utils.admin.upload.disk'))->url($path);
     }
 
     /**

@@ -11,7 +11,7 @@ class Edit extends TreeAction
      */
     public function name()
     {
-        return admin_trans('admin.edit');
+        return trans('admin.edit');
     }
 
     /**

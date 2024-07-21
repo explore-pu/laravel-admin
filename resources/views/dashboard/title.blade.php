@@ -30,7 +30,5 @@
 </div>
 <div class="links">
     <a href="https://github.com/explore-pu/laravel-admin" target="_blank">Github</a>
-    <a href="https://gitee.com/explore-pu/laravel-admin" target="_blank">Gitee</a>
-    <a href="http://laravel-admin.org/docs"  target="_blank">Documentation</a>
-    <a href="http://laravel-admin.org/demo"  target="_blank">Demo</a>
+    <a href="https://explore-pu.github.io/laravel-admin-docs-cn/"  target="_blank">Documentation</a>
 </div>

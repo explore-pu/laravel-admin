@@ -33,11 +33,11 @@ class Administrator extends Model implements AuthenticatableContract
      */
     public function __construct(array $attributes = [])
     {
-        $connection = config('admin.database.connection') ?: config('database.default');
+        $connection = config('elegant-utils.admin.database.connection') ?: config('database.default');
 
         $this->setConnection($connection);
 
-        $this->setTable(config('admin.database.administrator_table'));
+        $this->setTable(config('elegant-utils.admin.database.administrator_table'));
 
         parent::__construct($attributes);
     }
@@ -55,13 +55,13 @@ class Administrator extends Model implements AuthenticatableContract
             return $avatar;
         }
 
-        $disk = config('admin.upload.disk');
+        $disk = config('elegant-utils.admin.upload.disk');
 
         if ($avatar && array_key_exists($disk, config('filesystems.disks'))) {
-            return Storage::disk(config('admin.upload.disk'))->url($avatar);
+            return Storage::disk($disk)->url($avatar);
         }
 
-        $default = config('admin.default_avatar') ?: '/vendor/laravel-admin/img/user2-160x160.jpg';
+        $default = config('elegant-utils.admin.default_avatar') ?: '/vendor/laravel-admin/img/user2-160x160.jpg';
 
         return admin_asset($default);
     }

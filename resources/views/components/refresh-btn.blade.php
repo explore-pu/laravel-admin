@@ -5,6 +5,6 @@
 </li>
 <script>
     @el.off('click').on('click', function() {
-        $.admin.reload('{{ admin_trans('admin.refresh_succeeded') }}');
+        $.admin.reload('{{ trans('admin.refresh_succeeded') }}');
     });
 </script>

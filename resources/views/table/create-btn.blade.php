@@ -1,6 +1,6 @@
 @if($modal)
     <a href="{{ $url }}" class="btn btn-sm btn-@color table-create-btn mr-2" data-toggle="modal" data-target="#table-create-modal">
-        <i class="fas fa-plus"></i><span class="d-none d-md-inline-block">&nbsp;&nbsp;{{ admin_trans('admin.new') }}</span>
+        <i class="fas fa-plus"></i><span class="d-none d-md-inline-block">&nbsp;&nbsp;{{ trans('admin.new') }}</span>
     </a>
 <script>
     $('#table-create-modal').on('show.bs.modal', function (e) {
@@ -16,7 +16,7 @@
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">{{ admin_trans('admin.new') }}</h4>
+                        <h4 class="modal-title">{{ trans('admin.new') }}</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body"></div>
@@ -26,6 +26,6 @@
     </template>
 @else
     <a href="{{ $url }}" class="btn btn-sm btn-@color table-create-btn mr-2">
-        <i class="fas fa-plus"></i><span class="d-none d-md-inline-block">&nbsp;&nbsp;{{ admin_trans('admin.new') }}</span>
+        <i class="fas fa-plus"></i><span class="d-none d-md-inline-block">&nbsp;&nbsp;{{ trans('admin.new') }}</span>
     </a>
 @endif

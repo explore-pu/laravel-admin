@@ -31,7 +31,7 @@ class File extends Field
      */
     public function defaultDirectory()
     {
-        return config('admin.upload.directory.file');
+        return config('elegant-utils.admin.upload.directory.file');
     }
 
     /**

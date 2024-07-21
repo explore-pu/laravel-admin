@@ -21,7 +21,7 @@
         return new Promise(function(resolve, reject) {
             var remove = resolve;
             $.admin.confirm({
-                title: "{{ admin_trans('admin.delete_confirm') }}",
+                title: "{{ trans('admin.delete_confirm') }}",
                 preConfirm: function() {
                     this_hidden.val('');
                     return new Promise(function(resolve) {

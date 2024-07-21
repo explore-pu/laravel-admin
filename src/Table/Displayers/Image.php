@@ -19,7 +19,7 @@ class Image extends AbstractDisplayer
             } elseif ($server) {
                 $src = rtrim($server, '/').'/'.ltrim($path, '/');
             } else {
-                $src = Storage::disk(config('admin.upload.disk'))->url($path);
+                $src = Storage::disk(config('elegant-utils.admin.upload.disk'))->url($path);
             }
 
             return "<img src='$src' style='max-width:{$width}px;max-height:{$height}px' class='img img-thumbnail' />";

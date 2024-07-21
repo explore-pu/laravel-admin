@@ -1,6 +1,6 @@
 <label class="float-right perpage-selector d-inline-block">
-    {{ admin_trans('admin.show') }}
-    <span class="dropup">
+    {{ trans('admin.show') }}
+    <span class="dropup border border-info rounded">
         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
             {{ $perpage }}
         </a>
@@ -10,7 +10,7 @@
         @endforeach
         </div>
     </span>
-    &nbsp;{{ admin_trans('admin.entries') }}
+    &nbsp;{{ trans('admin.entries') }}
 </label>
 
 <style>

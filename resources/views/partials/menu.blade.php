@@ -4,12 +4,12 @@
             @if(url()->isValidUrl($item['uri']))
                 <a href="{{ $item['uri'] }}" target="_blank" class="nav-link">
                     <i class="nav-icon {{$item['icon']}}"></i>
-                    <p>{{ admin_trans($item['title']) }}</p>
+                    <p>{{ trans($item['title']) }}</p>
                 </a>
             @else
                  <a href="{{ admin_url($item['uri']) }}" class="nav-link">
                      <i class="nav-icon {{$item['icon']}}"></i>
-                     <p>{{ admin_trans($item['title']) }}</p>
+                     <p>{{ trans($item['title']) }}</p>
                  </a>
             @endif
         </li>
@@ -18,7 +18,7 @@
             <a href="javaScript:void(0);" class="nav-link">
                 <i class="nav-icon {{ $item['icon'] }}" ></i>
                 <p>
-                    {{ admin_trans($item['title']) }}
+                    {{ trans($item['title']) }}
                     <i class="right fas fa-angle-left"></i>
                 </p>
             </a>

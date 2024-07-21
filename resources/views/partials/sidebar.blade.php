@@ -1,7 +1,7 @@
-<aside class="main-sidebar elevation-4 sidebar-light-{{ config('admin.theme.color') }}">
+<aside class="main-sidebar elevation-4 sidebar-light-{{ config('elegant-utils.admin.theme.color') }}">
     <a href="{{ admin_url('/') }}" class="brand-link">
-        <img src="{!! config('admin.logo.image') !!}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">{!! config('admin.logo.text', config('admin.name')) !!}</span>
+        <img src="{!! config('elegant-utils.admin.logo.image') !!}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">{!! config('elegant-utils.admin.logo.text', config('elegant-utils.admin.name')) !!}</span>
     </a>
 
     <div class="sidebar">

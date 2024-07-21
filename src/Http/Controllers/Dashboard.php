@@ -43,62 +43,62 @@ class Dashboard
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public static function extensions()
+    public static function utils()
     {
-        $extensions = [
-            'helpers' => [
-                'name' => 'laravel-admin-ext/helpers',
-                'link' => 'https://github.com/laravel-admin-extensions/helpers',
-                'icon' => 'fas fa-cogs',
-            ],
-            'log-viewer' => [
-                'name' => 'laravel-admin-ext/log-viewer',
-                'link' => 'https://github.com/laravel-admin-extensions/log-viewer',
-                'icon' => 'fas fa-database',
-            ],
-            'backup' => [
-                'name' => 'laravel-admin-ext/backup',
-                'link' => 'https://github.com/laravel-admin-extensions/backup',
-                'icon' => 'fas fa-copy',
-            ],
-            'config' => [
-                'name' => 'laravel-admin-ext/config',
-                'link' => 'https://github.com/laravel-admin-extensions/config',
-                'icon' => 'fas fa-toggle-on',
-            ],
-            'api-tester' => [
-                'name' => 'laravel-admin-ext/api-tester',
-                'link' => 'https://github.com/laravel-admin-extensions/api-tester',
-                'icon' => 'fas fa-mouse',
-            ],
-            'media-manager' => [
-                'name' => 'laravel-admin-ext/media-manager',
-                'link' => 'https://github.com/laravel-admin-extensions/media-manager',
-                'icon' => 'fas fa-file',
-            ],
-            'scheduling' => [
-                'name' => 'laravel-admin-ext/scheduling',
-                'link' => 'https://github.com/laravel-admin-extensions/scheduling',
-                'icon' => 'fas fa-calendar-alt',
-            ],
-            'reporter' => [
-                'name' => 'laravel-admin-ext/reporter',
-                'link' => 'https://github.com/laravel-admin-extensions/reporter',
-                'icon' => 'fas fa-bug',
-            ],
-            'redis-manager' => [
-                'name' => 'laravel-admin-ext/redis-manager',
-                'link' => 'https://github.com/laravel-admin-extensions/redis-manager',
-                'icon' => 'fas fa-flask',
-            ],
+        $utils = [
+//            'helpers' => [
+//                'name' => 'laravel-admin-ext/helpers',
+//                'link' => 'https://github.com/laravel-admin-utils/helpers',
+//                'icon' => 'fas fa-cogs',
+//            ],
+//            'log-viewer' => [
+//                'name' => 'laravel-admin-ext/log-viewer',
+//                'link' => 'https://github.com/laravel-admin-utils/log-viewer',
+//                'icon' => 'fas fa-database',
+//            ],
+//            'backup' => [
+//                'name' => 'laravel-admin-ext/backup',
+//                'link' => 'https://github.com/laravel-admin-utils/backup',
+//                'icon' => 'fas fa-copy',
+//            ],
+//            'config' => [
+//                'name' => 'laravel-admin-ext/config',
+//                'link' => 'https://github.com/laravel-admin-utils/config',
+//                'icon' => 'fas fa-toggle-on',
+//            ],
+//            'api-tester' => [
+//                'name' => 'laravel-admin-ext/api-tester',
+//                'link' => 'https://github.com/laravel-admin-utils/api-tester',
+//                'icon' => 'fas fa-mouse',
+//            ],
+//            'media-manager' => [
+//                'name' => 'laravel-admin-ext/media-manager',
+//                'link' => 'https://github.com/laravel-admin-utils/media-manager',
+//                'icon' => 'fas fa-file',
+//            ],
+//            'scheduling' => [
+//                'name' => 'laravel-admin-ext/scheduling',
+//                'link' => 'https://github.com/laravel-admin-utils/scheduling',
+//                'icon' => 'fas fa-calendar-alt',
+//            ],
+//            'reporter' => [
+//                'name' => 'laravel-admin-ext/reporter',
+//                'link' => 'https://github.com/laravel-admin-utils/reporter',
+//                'icon' => 'fas fa-bug',
+//            ],
+//            'redis-manager' => [
+//                'name' => 'laravel-admin-ext/redis-manager',
+//                'link' => 'https://github.com/laravel-admin-utils/redis-manager',
+//                'icon' => 'fas fa-flask',
+//            ],
         ];
 
-        foreach ($extensions as &$extension) {
-            $name = explode('/', $extension['name']);
-            $extension['installed'] = array_key_exists(end($name), Admin::$extensions);
+        foreach ($utils as &$util) {
+            $name = explode('/', $util['name']);
+            $util['installed'] = array_key_exists(end($name), Admin::$utils);
         }
 
-        return view('admin::dashboard.extensions', compact('extensions'));
+        return view('admin::dashboard.utils', compact('utils'));
     }
 
     /**

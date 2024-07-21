@@ -16,7 +16,7 @@ class Destroy extends TreeAction
      */
     public function name()
     {
-        return admin_trans('admin.destroy');
+        return trans('admin.destroy');
     }
 
     /**
@@ -40,6 +40,6 @@ class Destroy extends TreeAction
      */
     public function dialog()
     {
-        $this->question(admin_trans('admin.destroy_confirm'), '', ['confirmButtonColor' => '#d33']);
+        $this->question(trans('admin.destroy_confirm'), '', ['confirmButtonColor' => '#d33']);
     }
 }

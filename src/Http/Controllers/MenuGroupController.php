@@ -18,7 +18,7 @@ class MenuGroupController extends AdminController
 
     public function model()
     {
-        return config('admin.database.menu_groups_model');
+        return config('elegant-utils.admin.database.menu_groups_model');
     }
 
     /**
@@ -91,8 +91,8 @@ class MenuGroupController extends AdminController
     {
         $form = new Form(new $this->model());
 
-        $menuGroupTable = config('admin.database.menu_groups_table');
-        $connection = config('admin.database.connection');
+        $menuGroupTable = config('elegant-utils.admin.database.menu_groups_table');
+        $connection = config('elegant-utils.admin.database.connection');
 
         $form->tools(function (Form\Tools $tools) {
             $tools->disableDelete();

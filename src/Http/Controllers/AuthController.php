@@ -48,7 +48,7 @@ class AuthController extends Controller
         $remember = $request->get('remember', false);
 
         if (Auth::attempt($credentials, $remember)) {
-            if (config('admin.single_device_login')) {
+            if (config('elegant-utils.admin.single_device_login')) {
                 Auth::guard()->logoutOtherDevices($credentials['password']);
             }
 
@@ -129,7 +129,7 @@ class AuthController extends Controller
      */
     protected function settingForm()
     {
-        $class = config('admin.database.administrator_model');
+        $class = config('elegant-utils.admin.database.administrator_model');
 
         $form = new Form(new $class());
 

@@ -8,11 +8,9 @@
         </div>
     </div>
 
-    <!-- /.card-header -->
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-striped">
-
                 @foreach($envs as $env)
                 <tr>
                     <td width="120px">{{ $env['name'] }}</td>
@@ -21,7 +19,5 @@
                 @endforeach
             </table>
         </div>
-        <!-- /.table-responsive -->
     </div>
-    <!-- /.card-body -->
 </div>

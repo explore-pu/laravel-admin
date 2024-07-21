@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Route;
 Admin::routes();
 
 Route::group([
-    'namespace'     => config('admin.route.namespace'),
-    'middleware'    => config('admin.route.middleware'),
-    'as'            => config('admin.route.as'),
+    'namespace'     => config('elegant-utils.admin.route.namespace'),
+    'middleware'    => config('elegant-utils.admin.route.middleware'),
+    'as'            => config('elegant-utils.admin.route.as'),
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('home');

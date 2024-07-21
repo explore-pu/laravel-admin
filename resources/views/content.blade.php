@@ -6,8 +6,8 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h4>
-                        {!! $header ?: admin_trans('admin.title') !!}
-                        <small>{!! $description ?: admin_trans('admin.description') !!}</small>
+                        {!! $header ?: trans('admin.title') !!}
+                        <small>{!! $description ?: trans('admin.description') !!}</small>
                     </h4>
                 </div>
                 <div class="col-sm-6">
@@ -41,7 +41,7 @@
                             @endif
                         @endforeach
                     </ol>
-                    @elseif(config('admin.enable_default_breadcrumb'))
+                    @elseif(config('elegant-utils.admin.enable_default_breadcrumb'))
                     <ol class="breadcrumb float-sm-right" >
                         <li class="breadcrumb-item"><a href="{{ admin_url('/') }}"><i class="fas fa-home"></i> {{__('admin.home')}}</a></li>
                         @for($i = 2; $i <= count(Request::segments()); $i++)

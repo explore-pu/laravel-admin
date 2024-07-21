@@ -25,7 +25,7 @@ class CreateUserCommand extends Command
      */
     public function handle()
     {
-        $userModel = config('admin.database.users_model');
+        $userModel = config('elegant-utils.admin.database.users_model');
         $username = $this->ask('Please enter a username to login');
         $password = bcrypt($this->secret('Please enter a password to login'));
         $name = $this->ask('Please enter a name to display');

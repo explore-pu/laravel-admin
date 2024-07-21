@@ -14,7 +14,7 @@ class MenuController extends AdminController
 
     public function model()
     {
-        return config('admin.database.menus_model');
+        return config('elegant-utils.admin.database.menus_model');
     }
 
     /**
@@ -74,7 +74,7 @@ class MenuController extends AdminController
         });
 
         $tree->actions(function (Tree\Displayers\Actions $actions) {
-//            $actions->useColumnEdit('title', admin_trans('title'));
+//            $actions->useColumnEdit('title', trans('title'));
             if ($actions->trashed && $actions->requestTrashed) {
                 $actions->disableEdit();
                 $actions->disableDestroy();

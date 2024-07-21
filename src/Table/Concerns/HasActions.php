@@ -62,7 +62,7 @@ trait HasActions
             return $this->actionsClass;
         }
 
-        if ($class = config('admin.table_action_class')) {
+        if ($class = config('elegant-utils.admin.table_action_class')) {
             return $class;
         }
 

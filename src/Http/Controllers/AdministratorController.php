@@ -18,7 +18,7 @@ class AdministratorController extends AdminController
 
     public function model()
     {
-        return config('admin.database.administrator_model');
+        return config('elegant-utils.admin.database.administrator_model');
     }
 
     /**
@@ -93,8 +93,8 @@ class AdministratorController extends AdminController
     {
         $form = new Form(new $this->model());
 
-        $userTable = config('admin.database.administrator_table');
-        $connection = config('admin.database.connection');
+        $userTable = config('elegant-utils.admin.database.administrator_table');
+        $connection = config('elegant-utils.admin.database.connection');
 
         $form->tools(function (Form\Tools $tools) {
             $tools->disableDelete();

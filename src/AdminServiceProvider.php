@@ -111,7 +111,7 @@ PHP;
         });
 
         Blade::directive('color', function () {
-            $color = config('admin.theme.color');
+            $color = config('elegant-utils.admin.theme.color');
 
             return <<<PHP
 <?php echo "{$color}";?>
@@ -135,7 +135,7 @@ PHP;
      */
     protected function ensureHttps()
     {
-        if (config('admin.https')) {
+        if (config('elegant-utils.admin.https')) {
             url()->forceScheme('https');
             $this->app['request']->server->set('HTTPS', true);
         }
@@ -149,7 +149,7 @@ PHP;
     protected function registerPublishing()
     {
         if ($this->app->runningInConsole()) {
-            $this->publishes([__DIR__.'/../config' => config_path()], 'laravel-admin-config');
+            $this->publishes([__DIR__.'/../config' => config_path('elegant-utils')], 'laravel-admin-config');
             $this->publishes([__DIR__.'/../resources/lang' => lang_path()], 'laravel-admin-lang');
             $this->publishes([__DIR__.'/../database' => database_path()], 'laravel-admin-database');
             $this->publishes([__DIR__.'/../resources/assets' => public_path('vendor/laravel-admin')], 'laravel-admin-assets');
@@ -217,7 +217,7 @@ PHP;
      */
     protected function loadAdminAuthConfig()
     {
-        config(['auth.providers.users.model' => config('admin.auth.providers.users.model')]);
+        config(['auth.providers.users.model' => config('elegant-utils.admin.auth.providers.users.model')]);
         config(['app.timezone' => env('APP_TIMEZONE', 'UTC')]);
         config(['app.locale' => env('APP_LOCALE', 'en')]);
     }
@@ -234,7 +234,7 @@ PHP;
             app('router')->aliasMiddleware($key, $middleware);
         }
 
-        if (config('admin.single_device_login')) {
+        if (config('elegant-utils.admin.single_device_login')) {
             array_push($this->middlewareGroups['admin'], 'admin.sul');
         }
 

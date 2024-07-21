@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>{{config('admin.title')}} | {{ admin_trans('admin.login') }}</title>
+    <title>{{config('elegant-utils.admin.title')}} | {{ trans('admin.login') }}</title>
     <link rel="icon" href="/vendor/laravel-admin/img/favicon.ico">
 
     <link rel="stylesheet" href="{{ admin_asset("vendor/laravel-admin/css/fontawesome-free/css/all.min.css") }}">
@@ -21,12 +21,12 @@
     <div class="col d-flex justify-content-center align-items-center bg-light">
         <div class="login-box">
             <div class="login-logo">
-                <a href="{{ admin_url('/') }}"><b>{{config('admin.name')}}</b></a>
+                <a href="{{ admin_url('/') }}"><b>{{config('elegant-utils.admin.name')}}</b></a>
             </div>
 
             <div class="card">
                 <div class="card-body login-card-body">
-                    <p class="login-box-msg">{{ admin_trans('admin.login') }}</p>
+                    <p class="login-box-msg">{{ trans('admin.login') }}</p>
 
                     <form action="{{ admin_url('login') }}" method="post">
                         <div class="form-group">
@@ -38,7 +38,7 @@
                                 @endforeach
                             @endif
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control " placeholder="{{ admin_trans('admin.username') }}"
+                                <input type="text" class="form-control " placeholder="{{ trans('admin.username') }}"
                                        name="username" value="{{ old('username') }}">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
@@ -57,7 +57,7 @@
                                 @endforeach
                             @endif
                             <div class="input-group mb-3">
-                                <input type="password" class="form-control" placeholder="{{ admin_trans('admin.password') }}"
+                                <input type="password" class="form-control" placeholder="{{ trans('admin.password') }}"
                                        name="password">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
@@ -72,7 +72,7 @@
                                     <input type="checkbox" id="remember" name="remember"
                                            value="1" {{ (!old('username') || old('remember')) ? 'checked' : '' }}>
                                     <label for="remember">
-                                        {{ admin_trans('admin.remember_me') }}
+                                        {{ trans('admin.remember_me') }}
                                     </label>
                                 </div>
                             </div>
@@ -80,7 +80,7 @@
                             <div class="col-4">
                                 {{ csrf_field() }}
                                 <button type="submit" class="btn btn-@color btn-block">
-                                    {{ admin_trans('admin.login') }}
+                                    {{ trans('admin.login') }}
                                 </button>
                             </div>
                             <!-- /.col -->

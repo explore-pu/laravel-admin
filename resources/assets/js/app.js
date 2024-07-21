@@ -71,7 +71,7 @@ define(['jquery', 'NProgress', 'sweetalert2'], function($, NProgress, Swal) {
     });
 
     (function () {
-        var $active = $('.sidebar li.nav-item a[href$="' + (location.pathname + location.search + location.hash) + '"]');
+        var $active = $('.sidebar li.nav-item a[href$="' + location.pathname + '"]');
         $active.addClass('active').parents('.has-treeview').addClass('menu-open').children('a').addClass('active');
 
         $('.sidebar li.nav-item:not(.has-treeview) a.nav-link').click(function () {

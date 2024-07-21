@@ -406,10 +406,10 @@ class Form extends AbstractForm implements Renderable
                 return $ret;
             }
         } catch (Exception $exception) {
-            return $this->response()->error(admin_trans('admin.destroy_failed').":{$exception->getMessage()}")->send();
+            return $this->response()->error(trans('admin.destroy_failed').":{$exception->getMessage()}")->send();
         }
 
-        return $this->response()->success(admin_trans('admin.destroy_succeeded'))->refresh()->send();
+        return $this->response()->success(trans('admin.destroy_succeeded'))->refresh()->send();
     }
 
     /**
@@ -436,10 +436,10 @@ class Form extends AbstractForm implements Renderable
                 }
             });
         } catch (Exception $exception) {
-            return $this->response()->error(admin_trans('admin.restore_failed'))->send();
+            return $this->response()->error(trans('admin.restore_failed'))->send();
         }
 
-        return $this->response()->success(admin_trans('admin.restore_succeeded'))->refresh()->send();
+        return $this->response()->success(trans('admin.restore_succeeded'))->refresh()->send();
     }
 
     /**
@@ -467,10 +467,10 @@ class Form extends AbstractForm implements Renderable
                 }
             });
         } catch (Exception $exception) {
-            return $this->response()->error(admin_trans('admin.delete_failed'))->send();
+            return $this->response()->error(trans('admin.delete_failed'))->send();
         }
 
-        return $this->response()->success(admin_trans('admin.delete_succeeded'))->refresh()->send();
+        return $this->response()->success(trans('admin.delete_succeeded'))->refresh()->send();
     }
 
     /**

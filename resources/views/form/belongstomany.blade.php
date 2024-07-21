@@ -28,7 +28,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content" style="border-radius: 5px;">
                 <div class="modal-header">
-                    <h4 class="modal-title">{{ admin_trans('admin.choose') }}</h4>
+                    <h4 class="modal-title">{{ trans('admin.choose') }}</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -39,8 +39,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">{{ admin_trans('admin.cancel') }}</button>
-                    <button type="button" class="btn btn-primary submit">{{ admin_trans('admin.submit') }}</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('admin.cancel') }}</button>
+                    <button type="button" class="btn btn-primary submit">{{ trans('admin.submit') }}</button>
                 </div>
             </div>
         </div>

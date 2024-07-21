@@ -20,13 +20,6 @@ class Admin
     use HasAssets, RenderView, BuiltinRoutes, Macroable;
 
     /**
-     * The Laravel admin version.
-     *
-     * @var string
-     */
-    const VERSION = '2.0.0 Beta 5';
-
-    /**
      * @var Navbar
      */
     protected $navbar;
@@ -44,7 +37,7 @@ class Admin
     /**
      * @var array
      */
-    public static $extensions = [];
+    public static $utils = [];
 
     /**
      * @var []Closure
@@ -62,16 +55,6 @@ class Admin
     protected static $booted = false;
 
     /**
-     * Returns the long version of Laravel-admin.
-     *
-     * @return string The long application version
-     */
-    public static function getLongVersion()
-    {
-        return sprintf('Laravel-admin <comment>version</comment> <info>%s</info>', self::VERSION);
-    }
-
-    /**
      * Left sider-bar menu.
      *
      * @return array
@@ -82,7 +65,7 @@ class Admin
             return $this->menu;
         }
 
-        $menuClass = config('admin.database.menus_model');
+        $menuClass = config('elegant-utils.admin.database.menus_model');
 
         /** @var Menu $menuModel */
         $menuModel = new $menuClass();
@@ -114,7 +97,7 @@ class Admin
      */
     public function title()
     {
-        return self::$metaTitle ? self::$metaTitle : config('admin.title');
+        return self::$metaTitle ? self::$metaTitle : config('elegant-utils.admin.title');
     }
 
     /**
@@ -157,7 +140,7 @@ class Admin
      */
     public static function extend($name, $class)
     {
-        static::$extensions[$name] = $class;
+        static::$utils[$name] = $class;
     }
 
     /**
@@ -183,7 +166,7 @@ class Admin
     {
         $this->fireBootingCallbacks();
 
-        require config('admin.bootstrap', admin_directory('bootstrap.php'));
+        require config('elegant-utils.admin.bootstrap', admin_directory('bootstrap.php'));
 
         $this->fireBootedCallbacks();
 

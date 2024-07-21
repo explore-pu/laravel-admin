@@ -16,7 +16,7 @@ class Delete extends TreeAction
      */
     public function name()
     {
-        return admin_trans('admin.delete');
+        return trans('admin.delete');
     }
 
     /**
@@ -40,6 +40,6 @@ class Delete extends TreeAction
      */
     public function dialog()
     {
-        $this->question(admin_trans('admin.delete_confirm'), '', ['confirmButtonColor' => '#d33']);
+        $this->question(trans('admin.delete_confirm'), '', ['confirmButtonColor' => '#d33']);
     }
 }

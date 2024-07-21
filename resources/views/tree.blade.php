@@ -3,39 +3,39 @@
     <div class="card-header">
 
         <div class="btn-group">
-            <button class="btn btn-@color btn-sm {{ $id }}-tree-tools" data-action="expand" title="{{ admin_trans('admin.expand') }}">
+            <button class="btn btn-@color btn-sm {{ $id }}-tree-tools" data-action="expand" title="{{ trans('admin.expand') }}">
                 <i class="fas fa-plus-square"></i>
-                <span class="d-none d-md-inline-block">&nbsp;{{ admin_trans('admin.expand') }}</span>
+                <span class="d-none d-md-inline-block">&nbsp;{{ trans('admin.expand') }}</span>
             </button>
-            <button class="btn btn-@color btn-sm {{ $id }}-tree-tools" data-action="collapse" title="{{ admin_trans('admin.collapse') }}">
+            <button class="btn btn-@color btn-sm {{ $id }}-tree-tools" data-action="collapse" title="{{ trans('admin.collapse') }}">
                 <i class="fas fa-minus-square"></i>
-                <span class="d-none d-md-inline-block">&nbsp;{{ admin_trans('admin.collapse') }}</span>
+                <span class="d-none d-md-inline-block">&nbsp;{{ trans('admin.collapse') }}</span>
             </button>
         </div>
 
         @if(($useSave && !$trashed) || ($useSave && $trashed && !$requestTrashed))
         <div class="btn-group">
-            <button class="btn btn-@color btn-sm {{ $id }}-save" title="{{ admin_trans('admin.save') }}">
+            <button class="btn btn-@color btn-sm {{ $id }}-save" title="{{ trans('admin.save') }}">
                 <i class="fas fa-save"></i>
-                <span class="d-none d-md-inline-block">&nbsp;{{ admin_trans('admin.save') }}</span>
+                <span class="d-none d-md-inline-block">&nbsp;{{ trans('admin.save') }}</span>
             </button>
         </div>
         @endif
 
         @if($trashed && $requestTrashed)
             <div class="btn-group">
-                <a href="{{ $url }}" class="btn btn-default btn-sm {{ $id }}-cancel" title="{{ admin_trans('cancel') }}">
+                <a href="{{ $url }}" class="btn btn-default btn-sm {{ $id }}-cancel" title="{{ trans('cancel') }}">
                     <i class="fas fa-times"></i>
-                    <span class="d-none d-md-inline-block">&nbsp;{{ admin_trans('admin.cancel') }}</span>
+                    <span class="d-none d-md-inline-block">&nbsp;{{ trans('admin.cancel') }}</span>
                 </a>
             </div>
         @endif
 
         @if($trashed && !$requestTrashed)
             <div class="btn-group">
-                <a href="{{ $url }}?&_scope_=trashed" class="btn btn-success btn-sm {{ $id }}-trashed" title="{{ admin_trans('trashed') }}">
+                <a href="{{ $url }}?&_scope_=trashed" class="btn btn-success btn-sm {{ $id }}-trashed" title="{{ trans('trashed') }}">
                     <i class="fas fa-trash"></i>
-                    <span class="d-none d-md-inline-block">&nbsp;{{ admin_trans('admin.trashed') }}</span>
+                    <span class="d-none d-md-inline-block">&nbsp;{{ trans('admin.trashed') }}</span>
                 </a>
             </div>
         @endif
@@ -48,7 +48,7 @@
         <div class="btn-group float-right">
             <a class="btn btn-success btn-sm" href="{{ url($path) }}/create">
                 <i class="fas fa-save"></i>
-                <span class="d-none d-md-inline-block">&nbsp;{{ admin_trans('admin.new') }}</span>
+                <span class="d-none d-md-inline-block">&nbsp;{{ trans('admin.new') }}</span>
             </a>
         </div>
         @endif
@@ -84,7 +84,7 @@
             _order: JSON.stringify(serialize)
         },
         function(data){
-            $.admin.reload('{{ admin_trans('admin.save_succeeded') }}');
+            $.admin.reload('{{ trans('admin.save_succeeded') }}');
         });
     });
 
