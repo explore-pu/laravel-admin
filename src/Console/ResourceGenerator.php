@@ -84,12 +84,12 @@ class ResourceGenerator
         $output = '';
 
         foreach ($this->getTableColumns() as $column) {
-            $name = $column->Field;
+            $name = $column->COLUMN_NAME;
             if (in_array($name, $reservedColumns)) {
                 continue;
             }
-            $type = $column->Type;
-            $default = $column->Default;
+            $type = $column->DATA_TYPE;
+            $default = $column->COLUMN_DEFAULT;
 
             $defaultValue = '';
 
@@ -148,7 +148,7 @@ class ResourceGenerator
 
             $defaultValue = $defaultValue ?: $default;
 
-            $label = $this->formatLabel($name);
+            $label = $this->formatLabel($column);
 
             $output .= sprintf($this->formats['form_field'], $fieldType, $name, $label);
 
@@ -167,10 +167,10 @@ class ResourceGenerator
         $output = '';
 
         foreach ($this->getTableColumns() as $column) {
-            $name = $column->Field;
+            $name = $column->COLUMN_NAME;
 
             // set column label
-            $label = $this->formatLabel($name);
+            $label = $this->formatLabel($column);
 
             $output .= sprintf($this->formats['show_field'], $name, $label);
 
@@ -185,8 +185,8 @@ class ResourceGenerator
         $output = '';
 
         foreach ($this->getTableColumns() as $column) {
-            $name = $column->Field;
-            $label = $this->formatLabel($name);
+            $name = $column->COLUMN_NAME;
+            $label = $this->formatLabel($column);
 
             $output .= sprintf($this->formats['table_column'], $name, $label);
             $output .= ";\r\n";
@@ -220,18 +220,18 @@ class ResourceGenerator
             throw new \Exception("No $table table found");
         }
 
-        return DB::select("SHOW COLUMNS FROM $table");
+        return DB::select("SELECT column_name,data_type,column_default,column_comment FROM information_schema.columns WHERE table_name = '$table'");
     }
 
     /**
      * Format label.
      *
-     * @param string $value
+     * @param $column
      *
      * @return string
      */
-    protected function formatLabel($value)
+    protected function formatLabel($column)
     {
-        return ucfirst(str_replace(['-', '_'], ' ', $value));
+        return empty($column->COLUMN_COMMENT) ? ucfirst(str_replace(['-', '_'], ' ', $column->COLUMN_NAME)) : $column->COLUMN_COMMENT;
     }
 }
