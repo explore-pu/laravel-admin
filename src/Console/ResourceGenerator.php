@@ -214,13 +214,20 @@ class ResourceGenerator
      */
     protected function getTableColumns()
     {
+        $table = $this->getTable();
+
+        return DB::select("select column_name,data_type,column_default,column_comment from information_schema.columns where table_name = '$table'");
+    }
+
+    protected function getTable()
+    {
         $table = $this->model->getConnection()->getTablePrefix().$this->model->getTable();
 
         if (!$this->model->getConnection()->getSchemaBuilder()->hasTable($table)) {
             throw new \Exception("No $table table found");
         }
 
-        return DB::select("SELECT column_name,data_type,column_default,column_comment FROM information_schema.columns WHERE table_name = '$table'");
+        return $table;
     }
 
     /**

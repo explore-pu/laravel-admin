@@ -6,6 +6,7 @@ use Elegant\Utils\Models\Administrator;
 use Elegant\Utils\Models\Menu;
 use Elegant\Utils\Models\MenuGroup;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class AdminTablesSeeder extends Seeder
 {
@@ -17,6 +18,7 @@ class AdminTablesSeeder extends Seeder
     public function run()
     {
         $date = date('Y-m-d H:i:s');
+        $administrator_table = config('elegant-utils.admin.database.administrator_table');
 
         // create a user.
         Administrator::query()->truncate();
@@ -43,9 +45,9 @@ class AdminTablesSeeder extends Seeder
                 'group' => 1,
                 'parent_id' => 0,
                 'order' => 2,
-                'title' => 'Administrator',
+                'title' => Str::singular(ucfirst($administrator_table)),
                 'icon' => 'fas fa-users',
-                'uri' => 'administrators',
+                'uri' => $administrator_table,
                 'created_at' => $date,
                 'updated_at' => $date,
             ],

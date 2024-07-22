@@ -7,6 +7,7 @@ use Elegant\Utils\Http\Controllers\AuthController;
 use Elegant\Utils\Http\Controllers\MenuController;
 use Elegant\Utils\Http\Controllers\MenuGroupController;
 use Illuminate\Routing\Router;
+use Illuminate\Support\Str;
 
 trait BuiltinRoutes
 {
@@ -22,10 +23,12 @@ trait BuiltinRoutes
             'as' => config('elegant-utils.admin.route.as'),
         ], function ($router) {
             /* @var Router $router */
+            $administrator_table = config('elegant-utils.admin.database.administrator_table');
+
             $administratorController = config('elegant-utils.admin.database,administrator_controller', AdministratorController::class);
-            $router->resource('administrators', $administratorController)->names('administrators');
-            $router->put('administrators/{administrator}/restore', $administratorController.'@restore')->name('administrators.restore');
-            $router->delete('administrators/{administrator}/delete', $administratorController.'@delete')->name('administrators.delete');
+            $router->resource($administrator_table, $administratorController)->names($administrator_table);
+            $router->put($administrator_table . '/{' . Str::singular($administrator_table) . '}/restore', $administratorController.'@restore')->name($administrator_table . '.restore');
+            $router->delete($administrator_table . '/{' . Str::singular($administrator_table) . '}/delete', $administratorController.'@delete')->name($administrator_table . '.delete');
 
             $menuController = config('elegant-utils.admin.database,menus_controller', MenuController::class);
             $router->resource('menus', $menuController, ['except' => ['create', 'show']])->names('menus');
