@@ -15,11 +15,6 @@ use Illuminate\Support\Facades\Validator;
 class AuthController extends Controller
 {
     /**
-     * @var string
-     */
-    protected $loginView = 'admin::login';
-
-    /**
      * Show the login page.
      *
      * @return \Illuminate\Contracts\View\Factory|Redirect|\Illuminate\View\View
@@ -30,7 +25,7 @@ class AuthController extends Controller
             return redirect($this->redirectPath());
         }
 
-        return view($this->loginView);
+        return view(config('elegant-utils.admin.auth.view'));
     }
 
     /**
@@ -44,12 +39,12 @@ class AuthController extends Controller
     {
         $this->loginValidator($request->all())->validate();
 
-        $credentials = $request->only([$this->username(), 'password']);
+        $credentials = $request->only([$this->username(), $this->password()]);
         $remember = $request->get('remember', false);
 
         if (Auth::attempt($credentials, $remember)) {
             if (config('elegant-utils.admin.single_device_login')) {
-                Auth::guard()->logoutOtherDevices($credentials['password']);
+                Auth::guard()->logoutOtherDevices($credentials[$this->password()]);
             }
 
             return $this->sendLoginResponse($request);
@@ -71,7 +66,7 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             $this->username()   => 'required',
-            'password'          => 'required',
+            $this->password()   => 'required',
         ]);
     }
 
@@ -208,6 +203,16 @@ class AuthController extends Controller
      */
     protected function username()
     {
-        return 'username';
+        return config('elegant-utils.admin.auth.field.username');
+    }
+
+    /**
+     * Get the login username to be used by the controller.
+     *
+     * @return string
+     */
+    protected function password()
+    {
+        return config('elegant-utils.admin.auth.field.password');
     }
 }

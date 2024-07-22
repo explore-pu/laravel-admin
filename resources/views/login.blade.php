@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="{{ admin_asset("vendor/laravel-admin/css/fontawesome-free/css/all.min.css") }}">
     <link rel="stylesheet" href="{{ admin_asset("vendor/laravel-admin/css/icheck-bootstrap/icheck-bootstrap.min.css") }}">
     <link rel="stylesheet" href="{{ admin_asset("vendor/laravel-admin/css/admin-lte/adminlte.min.css") }}">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
     <script src="{{ admin_asset("vendor/laravel-admin/js/jquery/jquery.min.js") }}"></script>
 </head>
@@ -30,16 +29,16 @@
 
                     <form action="{{ admin_url('login') }}" method="post">
                         <div class="form-group">
-                            @if($errors->has('username'))
-                                @foreach($errors->get('username') as $message)
+                            @if($errors->has(config('elegant-utils.admin.auth.field.username')))
+                                @foreach($errors->get(config('elegant-utils.admin.auth.field.username')) as $message)
                                     <label class="col-form-label text-danger">
-                                        <i class="fa fa-times-circle-o"></i>{{$message}}
-                                    </label><br>
+                                        <i class="fas fa-times-circle-o"></i>{{$message}}
+                                    </label>
+                                    <br>
                                 @endforeach
                             @endif
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control " placeholder="{{ trans('admin.username') }}"
-                                       name="username" value="{{ old('username') }}">
+                                <input type="text" class="form-control " placeholder="{{ trans('admin.' . config('elegant-utils.admin.auth.field.username')) }}" name="{{ config('elegant-utils.admin.auth.field.username') }}" value="{{ old(config('elegant-utils.admin.auth.field.username')) }}">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <span class="fas fa-envelope"></span>
@@ -48,17 +47,16 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            @if($errors->has('password'))
-                                @foreach($errors->get('password') as $message)
+                            @if($errors->has(config('elegant-utils.admin.auth.field.password')))
+                                @foreach($errors->get(config('elegant-utils.admin.auth.field.password')) as $message)
                                     <label class="col-form-label text-danger">
-                                        <i class="fa fa-times-circle-o"></i>{{$message}}
+                                        <i class="fas fa-times-circle-o"></i>{{$message}}
                                     </label>
                                     <br>
                                 @endforeach
                             @endif
                             <div class="input-group mb-3">
-                                <input type="password" class="form-control" placeholder="{{ trans('admin.password') }}"
-                                       name="password">
+                                <input type="password" class="form-control" placeholder="{{ trans('admin.' . config('elegant-utils.admin.auth.field.password')) }}" name="{{ config('elegant-utils.admin.auth.field.password') }}">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <span class="fas fa-lock"></span>
@@ -69,29 +67,24 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="icheck-@color">
-                                    <input type="checkbox" id="remember" name="remember"
-                                           value="1" {{ (!old('username') || old('remember')) ? 'checked' : '' }}>
+                                    <input type="checkbox" id="remember" name="remember" value="1" {{ (!old(config('elegant-utils.admin.auth.field.username')) || old('remember')) ? 'checked' : '' }}>
                                     <label for="remember">
                                         {{ trans('admin.remember_me') }}
                                     </label>
                                 </div>
                             </div>
-                            <!-- /.col -->
+
                             <div class="col-4">
                                 {{ csrf_field() }}
                                 <button type="submit" class="btn btn-@color btn-block">
                                     {{ trans('admin.login') }}
                                 </button>
                             </div>
-                            <!-- /.col -->
                         </div>
                     </form>
                 </div>
-                <!-- /.login-card-body -->
             </div>
-            <!-- /.login-box-body -->
         </div>
-        <!-- /.login-box -->
     </div>
     <script type="text/javascript">
         $(function () {

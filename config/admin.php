@@ -110,6 +110,15 @@ return [
     |
     */
     'auth' => [
+        'field' => [
+            // login username field
+            'username' => 'username',
+            // login password field
+            'password' => 'password',
+        ],
+
+        'view' => 'admin::login',
+
         'controller' => App\Admin\Controllers\AuthController::class,
 
         'providers' => [
