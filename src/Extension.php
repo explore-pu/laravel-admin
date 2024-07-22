@@ -194,7 +194,7 @@ abstract class Extension
      */
     public static function config($key = null, $default = null)
     {
-        $name = array_search(get_called_class(), Admin::$extensions);
+        $name = array_search(get_called_class(), Admin::$utils);
 
         if (is_null($key)) {
             $key = sprintf('admin.extensions.%s', strtolower($name));
