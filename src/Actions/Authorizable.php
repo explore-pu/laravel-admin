@@ -2,9 +2,9 @@
 
 namespace Elegant\Utils\Actions;
 
-use Elegant\Utils\Facades\Admin;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * @mixin Action
@@ -19,7 +19,7 @@ trait Authorizable
     public function passesAuthorization($model = null)
     {
         if (method_exists($this, 'authorize')) {
-            return $this->authorize(Admin::user(), $model) == true;
+            return $this->authorize(Auth::user(), $model) == true;
         }
 
         if ($model instanceof Collection) {
@@ -27,7 +27,7 @@ trait Authorizable
         }
 
         if ($model && method_exists($model, 'actionAuthorize')) {
-            return $model->actionAuthorize(Admin::user(), get_called_class()) == true;
+            return $model->actionAuthorize(Auth::user(), get_called_class()) == true;
         }
 
         return true;

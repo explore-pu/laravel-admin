@@ -46,6 +46,16 @@ class Dashboard
     public static function utils()
     {
         $utils = [
+            'authorization' => [
+                'name' => 'laravel-admin-utils/authorization',
+                'link' => 'https://github.com/laravel-admin-utils/authorization',
+                'icon' => 'fas fa-ban',
+            ],
+            'logs' => [
+                'name' => 'laravel-admin-utils/logs',
+                'link' => 'https://github.com/laravel-admin-utils/logs',
+                'icon' => 'fas fa-history',
+            ],
 //            'helpers' => [
 //                'name' => 'laravel-admin-ext/helpers',
 //                'link' => 'https://github.com/laravel-admin-utils/helpers',
