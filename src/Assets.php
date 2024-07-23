@@ -155,9 +155,7 @@ class Assets
             'js' => [
                 'js/bootstrap-fileinput/plugins/sortable.min'
             ],
-            'export' => [
-                'Sortable'
-            ]
+            'export' => 'Sortable',
         ],
         'fileinput-base' => [
             'js' => [
@@ -244,17 +242,13 @@ class Assets
             'js' => [
                 'https://cdn.jsdelivr.net/npm/wangeditor@4.2.0/dist/wangEditor.min'
             ],
-            'export' => [
-                'wangEditor'
-            ],
+            'export' => 'wangEditor',
         ],
         'treejs' => [
             'js' => [
                 'js/treejs/tree.min'
             ],
-            'export' => [
-                'Tree'
-            ],
+            'export' => 'Tree',
         ],
     ];
 

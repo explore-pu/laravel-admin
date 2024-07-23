@@ -53,13 +53,15 @@ class Menu extends Model
     public function allNodes(bool $trash = false): array
     {
         $connection = config('elegant-utils.admin.database.connection') ?: config('database.default');
+
+        $titleColumn = $this->getTitleColumn();
         $orderColumn = DB::connection($connection)->getQueryGrammar()->wrap($this->getOrderColumn());
 
         $byOrder = 'ROOT ASC,'.$orderColumn;
 
         $query = $trash ? static::withTrashed() : static::query();
 
-        return $query->selectRaw('*, '.$orderColumn.' ROOT')->orderByRaw($byOrder)->get()->toArray();
+        return $query->selectRaw('*, '.$orderColumn.' as ROOT, ' . $titleColumn . ' as text')->orderByRaw($byOrder)->get()->toArray();
     }
 
     /**

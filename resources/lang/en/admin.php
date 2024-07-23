@@ -124,4 +124,6 @@ return [
     'restore_confirm'         => 'Restore Confirm?',
     'restore_failed'          => 'Restore Failed',
     'restore_succeeded'       => 'Restore Succeeded',
+    'http_method'             => 'Request method',
+    'http_uri'                => 'Request path',
 ];

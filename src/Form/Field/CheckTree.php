@@ -38,15 +38,9 @@ class CheckTree extends Field
 
     public function render()
     {
-        $options = [
-            [
-                'id'        => 0,
-                'text'      => trans('admin.all_menus'),
-                'children'  => $this->options,
-            ],
-        ];
+        $options = $this->options;
 
-        $checked = $this->value ?: [];
+        $checked = $this->checked;
 
         $this->filterChecked($options, $checked);
 

@@ -79,9 +79,18 @@
 }
 
 .treejs .treejs-node {
+    width: fit-content;
     margin-top: 3px;
     margin-bottom: 3px;
     padding: 2px;
+}
+
+.treejs .treejs-nodes {
+    padding-left: 10px;
+}
+
+.treejs .treejs-nodes:first-child {
+    padding-left: 0;
 }
 
 .treejs .treejs-label {

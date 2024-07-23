@@ -124,4 +124,6 @@ return [
     'restore_confirm'         => '确认恢复？',
     'restore_failed'          => '恢复失败',
     'restore_succeeded'       => '恢复成功',
+    'http_method'             => '请求方法',
+    'http_uri'                => '请求路径',
 ];
