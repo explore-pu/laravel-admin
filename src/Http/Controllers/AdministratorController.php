@@ -8,6 +8,22 @@ use Elegant\Utils\Table;
 
 class AdministratorController extends AdminController
 {
+    protected $fieldUsername = 'username';
+    
+    public function __construct()
+    {
+        if (method_exists($this, 'fieldUsername')) {
+            $this->fieldUsername = $this->fieldUsername();
+        }
+        
+        parent::__construct();
+    }
+    
+    public function fieldUsername()
+    {
+        return config('elegant-utils.admin.auth.field.username');
+    }
+    
     /**
      * {@inheritdoc}
      */
@@ -37,7 +53,7 @@ class AdministratorController extends AdminController
         });
 
         $table->column('id', 'ID')->sortable();
-        $table->column('username', trans('admin.username'));
+        $table->column($this->fieldUsername, trans('admin.' . $this->fieldUsername));
         $table->column('name', trans('admin.name'));
         $table->column('created_at', trans('admin.created_at'));
         $table->column('updated_at', trans('admin.updated_at'));
@@ -76,7 +92,7 @@ class AdministratorController extends AdminController
         $show = new Show($this->model::findOrFail($id));
 
         $show->field('id', 'ID');
-        $show->field('username', trans('admin.username'));
+        $show->field($this->fieldUsername, trans('admin.' . $this->fieldUsername));
         $show->field('name', trans('admin.name'));
         $show->field('created_at', trans('admin.created_at'));
         $show->field('updated_at', trans('admin.updated_at'));
@@ -101,9 +117,9 @@ class AdministratorController extends AdminController
         });
 
         $form->display('id', 'ID');
-        $form->text('username', trans('admin.username'))
+        $form->text($this->fieldUsername, trans('admin.' . $this->fieldUsername))
             ->creationRules(['required', "unique:{$connection}.{$userTable}"])
-            ->updateRules(['required', "unique:{$connection}.{$userTable},username,{{id}}"]);
+            ->updateRules(['required', "unique:{$connection}.{$userTable},{$this->fieldUsername},{{id}}"]);
 
         $form->text('name', trans('admin.name'))->rules('required');
         $form->image('avatar', trans('admin.avatar'));

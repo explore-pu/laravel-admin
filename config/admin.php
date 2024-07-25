@@ -185,11 +185,6 @@ return [
         'menus_table' => 'menus',
         'menus_model' => Elegant\Utils\Models\Menu::class,
         'menus_controller' => Elegant\Utils\Http\Controllers\MenuController::class,
-
-        // Menu table and model.
-        'menu_groups_table' => 'menu_groups',
-        'menu_groups_model' => Elegant\Utils\Models\MenuGroup::class,
-        'menu_groups_controller' => Elegant\Utils\Http\Controllers\MenuGroupController::class,
     ],
 
     /*

@@ -73,11 +73,6 @@ class Admin
         return $this->menu = $menuModel->toTree();
     }
 
-    public function menuGroup()
-    {
-        return MenuGroup::selectOptions();
-    }
-
     /**
      * Set admin title.
      *

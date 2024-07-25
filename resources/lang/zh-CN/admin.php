@@ -114,7 +114,6 @@ return [
     'update'                  => '更新',
     'group'                   => '分组',
     'menus'                   => '菜单',
-    'menu_groups'             => '菜单组',
     'destroy'                 => '销毁',
     'destroy_confirm'         => '确认销毁？',
     'destroy_failed'          => '销毁失败',

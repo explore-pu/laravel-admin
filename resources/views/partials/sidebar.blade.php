@@ -16,15 +16,8 @@
 
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                @foreach(Admin::menuGroup() as $index => $group)
-                    @if($index !== 1)
-                        <li class="nav-header">{{ $group }}</li>
-                    @endif
-                    @foreach(Admin::menu() as $item)
-                        @if($index === $item['group'])
-                            @include('admin::partials.menu', $item)
-                        @endif
-                    @endforeach
+                @foreach(Admin::menu() as $item)
+                    @include('admin::partials.menu', $item)
                 @endforeach
             </ul>
         </nav>

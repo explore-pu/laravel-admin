@@ -27,7 +27,7 @@ trait ModelTree
      */
     public function children()
     {
-        return $this->hasMany(static::class, $this->getParentColumn());
+        return $this->hasMany(static::class, $this->getParentColumn())->with('children');
     }
 
     /**
@@ -173,25 +173,26 @@ trait ModelTree
      */
     protected function buildNestedArray($trash, array $nodes = [], $parentId = 0)
     {
-        $branch = [];
-
         if (empty($nodes)) {
             $nodes = $this->allNodes($trash);
         }
 
-        foreach ($nodes as $node) {
-            if ($node[$this->getParentColumn()] == $parentId) {
-                $children = $this->buildNestedArray($trash, $nodes, $node[$this->getKeyName()]);
-
-                if ($children) {
-                    $node['children'] = $children;
-                }
-
-                $branch[] = $node;
-            }
-        }
-
-        return $branch;
+        return buildTree($nodes, $parentId, $this->getParentColumn());
+//        $branch = [];
+//
+//        foreach ($nodes as $node) {
+//            if ($node[$this->getParentColumn()] == $parentId) {
+//                $children = $this->buildNestedArray($trash, $nodes, $node[$this->getKeyName()]);
+//
+//                if ($children) {
+//                    $node['children'] = $children;
+//                }
+//
+//                $branch[] = $node;
+//            }
+//        }
+//
+//        return $branch;
     }
 
     /**

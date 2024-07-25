@@ -82,7 +82,6 @@ class Administrator extends Model implements AuthenticatableContract
      * If user can access route.
      *
      * @param Route $route
-     *
      * @return bool
      */
     public function canAccessRoute(Route $route)

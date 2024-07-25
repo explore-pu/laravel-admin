@@ -34,11 +34,6 @@ trait BuiltinRoutes
             $router->resource('menus', $menuController, ['except' => ['create', 'show']])->names('menus');
             $router->put('menus/{menu}/restore', $menuController.'@restore')->name('menus.restore');
             $router->delete('menus/{menu}/delete', $menuController.'@delete')->name('menus.delete');
-
-            $menuGroupController = config('elegant-utils.admin.database,menu_groups_controller', MenuGroupController::class);
-            $router->resource('menu_groups', $menuGroupController)->names('menu_groups');
-            $router->put('menu_groups/{menu_group}/restore', $menuGroupController.'@restore')->name('menu_groups.restore');
-            $router->delete('menu_groups/{menu_group}/delete', $menuGroupController.'@delete')->name('menu_groups.delete');
         });
 
         app('router')->group([

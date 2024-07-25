@@ -37,7 +37,6 @@ class MenuController extends AdminController
                     $form->title(trans('admin.new'));
                     $form->action(admin_url('menus'));
 
-                    $form->select('group', trans('admin.group'))->default(1)->options(MenuGroup::selectOptions());
                     $form->select('parent_id', trans('admin.parent_id'))->default(0)->options($this->model::selectOptions());
                     $form->text('title', trans('admin.title'))->rules('required')->prepend(new Form\Field\Icon('icon'));
                     $form->text('uri', trans('admin.uri'));
@@ -116,7 +115,6 @@ class MenuController extends AdminController
 
         $form->display('id', 'ID');
 
-        $form->select('group', trans('admin.group'))->options(MenuGroup::selectOptions());
         $form->select('parent_id', trans('admin.parent_id'))->options($this->model::selectOptions());
         $form->text('title', trans('admin.title'))->rules('required')->prepend(new Form\Field\Icon('icon'));
         $form->text('uri', trans('admin.uri'));

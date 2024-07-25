@@ -418,3 +418,27 @@ if (!function_exists('admin_route')) {
         return app('url')->route($name, $parameters, $absolute);
     }
 }
+if (!function_exists('buildTree')) {
+    /**
+     * @param $name
+     * @param array $parameters
+     * @param bool $absolute
+     * @return mixed
+     */
+    function buildTree(array $elements, $parentId = 0, $parentField = 'parent_id')
+    {
+        $branch = [];
+
+        foreach ($elements as $element) {
+            if ($element[$parentField] == $parentId) {
+                $children = buildTree($elements, $element['id']);
+                if ($children) {
+                    $element['children'] = $children;
+                }
+                $branch[] = $element;
+            }
+        }
+
+        return $branch;
+    }
+}

@@ -58,16 +58,8 @@
     <div class="card-body p-0">
         <div class="dd" id="{{ $id }}">
             <ol class="dd-list">
-                @foreach(Admin::menuGroup() as $index => $group)
-                    @if($index !== 1)
-                        <p class="nav-header m-0">{{ $group }}</p>
-                    @endif
-
-                    @foreach($items as $branch)
-                        @if($index === $branch['group'])
-                            @include($branchView, $branch)
-                        @endif
-                    @endforeach
+                @foreach($items as $branch)
+                    @include($branchView, $branch)
                 @endforeach
             </ol>
         </div>

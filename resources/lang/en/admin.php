@@ -114,7 +114,6 @@ return [
     'update'                  => 'Update',
     'group'                   => 'Group',
     'menus'                   => 'Menu',
-    'menu_groups'             => 'Menu Group',
     'destroy'                 => 'Destroy',
     'destroy_confirm'         => 'Destroy Confirm?',
     'destroy_failed'          => 'Destroy Failed',
