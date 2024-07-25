@@ -17,7 +17,6 @@ class AdminTablesSeeder extends Seeder
     public function run()
     {
         $date = date('Y-m-d H:i:s');
-        $administrator_table = config('elegant-utils.admin.database.administrator_table');
 
         // create a user.
         Administrator::query()->truncate();
@@ -42,9 +41,9 @@ class AdminTablesSeeder extends Seeder
             [
                 'parent_id' => 0,
                 'order' => 2,
-                'title' => Str::singular(ucfirst($administrator_table)),
+                'title' => 'Adminstrator',
                 'icon' => 'fas fa-users',
-                'uri' => $administrator_table,
+                'uri' => 'auth-users',
                 'created_at' => $date,
                 'updated_at' => $date,
             ],
