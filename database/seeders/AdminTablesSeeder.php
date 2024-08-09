@@ -43,7 +43,7 @@ class AdminTablesSeeder extends Seeder
                 'order' => 2,
                 'title' => 'Adminstrator',
                 'icon' => 'fas fa-users',
-                'uri' => 'auth-users',
+                'uri' => 'administrators',
                 'created_at' => $date,
                 'updated_at' => $date,
             ],

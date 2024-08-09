@@ -52,8 +52,8 @@ class Dashboard
                 'icon' => 'fas fa-ban',
             ],
             'logs' => [
-                'name' => 'laravel-admin-utils/logs',
-                'link' => 'https://github.com/laravel-admin-utils/logs',
+                'name' => 'laravel-admin-utils/operation-logs',
+                'link' => 'https://github.com/laravel-admin-utils/operation-logs',
                 'icon' => 'fas fa-history',
             ],
 //            'helpers' => [

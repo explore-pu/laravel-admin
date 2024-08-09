@@ -24,9 +24,9 @@ trait BuiltinRoutes
         ], function ($router) {
             /* @var Router $router */
             $administratorController = config('elegant-utils.admin.database,administrator_controller', AdministratorController::class);
-            $router->resource('auth-users', $administratorController)->names('auth-users');
-            $router->put('auth-users/{auth-user}/restore', $administratorController.'@restore')->name('auth-users.restore');
-            $router->delete('auth-users/{auth-user}/delete', $administratorController.'@delete')->name('auth-users.delete');
+            $router->resource('administrators', $administratorController)->names('administrators');
+            $router->put('administrators/{administrator}/restore', $administratorController.'@restore')->name('administrators.restore');
+            $router->delete('administrators/{administrator}/delete', $administratorController.'@delete')->name('administrators.delete');
 
             $menuController = config('elegant-utils.admin.database,menus_controller', MenuController::class);
             $router->resource('menus', $menuController, ['except' => ['create', 'show']])->names('menus');
