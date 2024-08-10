@@ -125,4 +125,8 @@ return [
     'restore_succeeded'       => 'Restore Succeeded',
     'http_method'             => 'Request method',
     'http_uri'                => 'Request path',
+    'operation_logs'          => 'Operation Logs',
+    'operator'                => 'Operator',
+    'behave'                  => 'Behave',
+    'http_ip'                 => 'Request IP',
 ];

@@ -125,4 +125,8 @@ return [
     'restore_succeeded'       => '恢复成功',
     'http_method'             => '请求方法',
     'http_uri'                => '请求路径',
+    'operation_logs'          => '操作日志',
+    'operator'                => '操作人',
+    'behave'                  => '行为',
+    'http_ip'                 => '请求IP',
 ];

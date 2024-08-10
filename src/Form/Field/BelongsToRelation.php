@@ -54,7 +54,7 @@ trait BelongsToRelation
         $selectable = str_replace('\\', '_', $this->selectable);
         $args = [intval($this instanceof BelongsToMany)];
 
-        return admin_route('handle_selectable', compact('selectable', 'args'));
+        return route('handle_selectable', compact('selectable', 'args'));
     }
 
     /**

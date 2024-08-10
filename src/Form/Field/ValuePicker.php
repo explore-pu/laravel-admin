@@ -65,7 +65,7 @@ class ValuePicker
 
         $args = [$this->multiple, $this->column];
 
-        return admin_route('handle_selectable', compact('selectable', 'args'));
+        return route('handle_selectable', compact('selectable', 'args'));
     }
 
     /**

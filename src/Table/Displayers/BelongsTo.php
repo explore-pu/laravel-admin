@@ -17,7 +17,7 @@ class BelongsTo extends AbstractDisplayer
         $selectable = str_replace('\\', '_', $selectable);
         $args = [$multiple];
 
-        return admin_route('handle_selectable', compact('selectable', 'args'));
+        return route('handle_selectable', compact('selectable', 'args'));
     }
 
     /**

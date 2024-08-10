@@ -6,12 +6,14 @@ use Elegant\Utils\Admin;
 use Elegant\Utils\Form;
 use Elegant\Utils\Layout\Content;
 use Elegant\Utils\Traits\HasResourceActions;
+use Elegant\Utils\Traits\HasResponse;
 use Illuminate\Routing\Controller;
 use Symfony\Component\DomCrawler\Crawler;
 
 class AdminController extends Controller
 {
     use HasResourceActions;
+    use HasResponse;
 
     /**
      * Title for current resource.
