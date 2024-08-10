@@ -41,7 +41,7 @@ trait BuiltinRoutes
             $authController = config('elegant-utils.admin.auth.controller', AuthController::class);
             $router->get('logout', $authController.'@getLogout')->name('logout');
             $router->get('setting', $authController.'@getSetting')->name('setting');
-            $router->put('setting', $authController.'@putSetting')->name('setting_put');
+            $router->put('setting', $authController.'@putSetting')->name('setting.update');
 
             $router->namespace('\Elegant\Utils\Http\Controllers')->group(function ($router) {
                 $router->post('_handle_form_', 'HandleController@handleForm')->name('handle_form');
@@ -64,7 +64,7 @@ trait BuiltinRoutes
 
             /* @var Router $router */
             $router->get('login', $authController.'@getLogin')->name('login');
-            $router->post('login', $authController.'@postLogin')->name('login_post');
+            $router->post('login', $authController.'@postLogin')->name('login.submit');
         });
     }
 }
