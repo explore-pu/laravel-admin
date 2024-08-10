@@ -3,8 +3,8 @@
 namespace Elegant\Utils\Http\Middleware;
 
 use Closure;
-use Elegant\Utils\Facades\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\MessageBag;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,7 +23,7 @@ class Pjax
     {
         $response = $next($request);
 
-        if (!$request->pjax() || $response->isRedirection() || Admin::guard()->guest()) {
+        if (!$request->pjax() || $response->isRedirection() || Auth::guest()) {
             return $response;
         }
 

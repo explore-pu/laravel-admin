@@ -12,7 +12,8 @@
         }
     ],
     "require": {
-        "php": "^8.2"
+        "php": "^8.2",
+        "symfony/dom-crawler": "^7.1"
     },
     "require-dev": {
         "laravel/laravel": "^11.0"

@@ -4,6 +4,7 @@ namespace Elegant\Utils\Console;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class ResourceGenerator
 {
@@ -82,14 +83,16 @@ class ResourceGenerator
         $reservedColumns = $this->getReservedColumns();
 
         $output = '';
+        
+//        dd($this->getTableColumns());
 
         foreach ($this->getTableColumns() as $column) {
-            $name = $column->COLUMN_NAME;
+            $name = $column->Field;
             if (in_array($name, $reservedColumns)) {
                 continue;
             }
-            $type = $column->DATA_TYPE;
-            $default = $column->COLUMN_DEFAULT;
+            $type = $column->Type;
+            $default = $column->Default;
 
             $defaultValue = '';
 
@@ -117,14 +120,12 @@ class ResourceGenerator
                 case 'integer':
                 case 'bigint':
                 case 'smallint':
-                case 'timestamp':
-                    $fieldType = 'number';
-                    break;
                 case 'decimal':
                 case 'float':
                 case 'real':
                     $fieldType = 'decimal';
                     break;
+                case 'timestamp':
                 case 'datetime':
                     $fieldType = 'datetime';
                     $defaultValue = "date('Y-m-d H:i:s')";
@@ -167,7 +168,7 @@ class ResourceGenerator
         $output = '';
 
         foreach ($this->getTableColumns() as $column) {
-            $name = $column->COLUMN_NAME;
+            $name = $column->Field;
 
             // set column label
             $label = $this->formatLabel($column);
@@ -185,7 +186,7 @@ class ResourceGenerator
         $output = '';
 
         foreach ($this->getTableColumns() as $column) {
-            $name = $column->COLUMN_NAME;
+            $name = $column->Field;
             $label = $this->formatLabel($column);
 
             $output .= sprintf($this->formats['table_column'], $name, $label);
@@ -215,8 +216,8 @@ class ResourceGenerator
     protected function getTableColumns()
     {
         $table = $this->getTable();
-
-        return DB::select("select column_name,data_type,column_default,column_comment from information_schema.columns where table_name = '$table'");
+        
+        return DB::select('show full columns from ' . $table);
     }
 
     protected function getTable()
@@ -239,6 +240,6 @@ class ResourceGenerator
      */
     protected function formatLabel($column)
     {
-        return empty($column->COLUMN_COMMENT) ? ucfirst(str_replace(['-', '_'], ' ', $column->COLUMN_NAME)) : $column->COLUMN_COMMENT;
+        return empty($column->Comment) ? ucfirst(str_replace(['-', '_'], ' ', $column->Field)) : $column->Comment;
     }
 }
