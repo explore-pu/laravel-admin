@@ -33,9 +33,9 @@ return [
     |
     */
     'footer' => [
-        'left' => '<div class="float-right d-none d-sm-block"><strong>Env</strong> ' . config('app.env') . '</div>',
-
-        'right' => '<strong>Powered by <a href="https://github.com/explore-pu/laravel-admin" target="_blank">laravel-admin</a></strong>',
+        'left' => '<strong>Powered by <a href="https://github.com/explore-pu/laravel-admin" target="_blank">laravel-admin</a></strong>',
+        
+        'right' => '<div class="float-right d-none d-sm-block"><strong>Env</strong> ' . config('app.env') . '</div>',
     ],
 
     /*
