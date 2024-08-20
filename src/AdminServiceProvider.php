@@ -40,10 +40,10 @@ class AdminServiceProvider extends ServiceProvider
      * @var array
      */
     protected $routeMiddleware = [
-        'admin.pjax'       => Middleware\Pjax::class,
-        'admin.bootstrap'  => Middleware\Bootstrap::class,
-        'admin.session'    => Middleware\Session::class,
-        'admin.sul'        => Middleware\SingleUserLogin::class,
+        'admin.pjax' => Middleware\Pjax::class,
+        'admin.bootstrap' => Middleware\Bootstrap::class,
+        'admin.session' => Middleware\Session::class,
+        'admin.sul' => Middleware\SingleUserLogin::class,
     ];
 
     /**
@@ -66,12 +66,13 @@ class AdminServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'admin');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'admin');
 
         $this->ensureHttps();
 
         if (file_exists($routes = admin_directory('routes.php'))) {
             $this->loadRoutesFrom($routes);
+            $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
         }
 
         $this->registerPublishing();
@@ -149,10 +150,10 @@ PHP;
     protected function registerPublishing()
     {
         if ($this->app->runningInConsole()) {
-            $this->publishes([__DIR__.'/../config' => config_path('elegant-utils')], 'laravel-admin-config');
-            $this->publishes([__DIR__.'/../resources/lang' => lang_path()], 'laravel-admin-lang');
-            $this->publishes([__DIR__.'/../database' => database_path()], 'laravel-admin-database');
-            $this->publishes([__DIR__.'/../resources/assets' => public_path('vendor/laravel-admin')], 'laravel-admin-assets');
+            $this->publishes([__DIR__ . '/../config' => config_path('elegant-utils')], 'laravel-admin-config');
+            $this->publishes([__DIR__ . '/../resources/lang' => lang_path()], 'laravel-admin-lang');
+            $this->publishes([__DIR__ . '/../database' => database_path()], 'laravel-admin-database');
+            $this->publishes([__DIR__ . '/../resources/assets' => public_path('vendor/laravel-admin')], 'laravel-admin-assets');
         }
     }
 

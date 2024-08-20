@@ -11,7 +11,7 @@ return [
     | login page.
     |
     */
-    'name' => 'Laravel-admin',
+    'name' => 'Laravel-Admin',
 
     /*
     |--------------------------------------------------------------------------
@@ -23,7 +23,7 @@ return [
 
         'image' => '/vendor/laravel-admin/img/AdminLTELogo.png',
 
-        'text' => '<span class="font-weight-bolder">Laravel-admin</span>',
+        'text' => '<span class="font-weight-bolder">Laravel-Admin</span>',
     ],
 
     /*
@@ -34,7 +34,7 @@ return [
     */
     'footer' => [
         'left' => '<strong>Powered by <a href="https://github.com/explore-pu/laravel-admin" target="_blank">laravel-admin</a></strong>',
-        
+
         'right' => '<div class="float-right d-none d-sm-block"><strong>Env</strong> ' . config('app.env') . '</div>',
     ],
 
@@ -62,8 +62,6 @@ return [
         'namespace' => 'App\\Admin\\Controllers',
 
         'middleware' => ['web', 'auth', 'admin'],
-
-        'as' => 'admin.',
     ],
 
     /*
@@ -110,20 +108,9 @@ return [
     |
     */
     'auth' => [
-        'field' => [
-            // login username field
-            'username' => 'username',
-            // login password field
-            'password' => 'password',
-        ],
-
-        'view' => 'admin::login',
-
-        'controller' => App\Admin\Controllers\AuthController::class,
-
         'providers' => [
             'users' => [
-                'model'  => env('AUTH_MODEL', Elegant\Utils\Models\Administrator::class),
+                'model'  => env('AUTH_MODEL', App\Models\AuthUser::class),
             ],
         ],
 
@@ -176,15 +163,15 @@ return [
         // Database connection for following tables.
         'connection' => '',
 
-        // Administrator tables and model.
-        'administrator_table' => 'administrators',
-        'administrator_model' => Elegant\Utils\Models\Administrator::class,
-        'administrator_controller' => Elegant\Utils\Http\Controllers\AdministratorController::class,
+        // authenticate users tables and model.
+        'user_table' => 'auth_users',
+        'user_model' => App\Models\AuthUser::class,
+        'user_controller' => App\Admin\Controllers\AuthUserController::class,
 
-        // Menu table and model.
-        'menus_table' => 'menus',
-        'menus_model' => Elegant\Utils\Models\Menu::class,
-        'menus_controller' => Elegant\Utils\Http\Controllers\MenuController::class,
+        // authenticate menu table and model.
+        'menu_table' => 'auth_menus',
+        'menu_model' => App\Models\AuthMenu::class,
+        'menu_controller' => App\Admin\Controllers\AuthMenuController::class,
     ],
 
     /*

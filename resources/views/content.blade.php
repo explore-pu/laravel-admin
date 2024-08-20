@@ -44,7 +44,7 @@
                     @elseif(config('elegant-utils.admin.enable_default_breadcrumb'))
                     <ol class="breadcrumb float-sm-right" >
                         <li class="breadcrumb-item"><a href="{{ admin_url('/') }}"><i class="fas fa-home"></i> {{__('admin.home')}}</a></li>
-                        @for($i = 2; $i <= count(Request::segments()); $i++)
+                        @for($i = 1; $i <= count(Request::segments()); $i++)
                             <li class="breadcrumb-item">
                                 {{ucfirst(Request::segment($i))}}
                             </li>

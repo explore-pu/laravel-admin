@@ -21,7 +21,7 @@ class CreateAdminTables extends Migration
      */
     public function up()
     {
-        Schema::create(config('elegant-utils.admin.database.administrator_table'), function (Blueprint $table) {
+        Schema::create(config('elegant-utils.admin.database.user_table'), function (Blueprint $table) {
             $table->id();
             $table->string('username', 190)->unique();
             $table->string('password', 60);
@@ -32,7 +32,7 @@ class CreateAdminTables extends Migration
             $table->timestamps();
         });
 
-        Schema::create(config('elegant-utils.admin.database.menus_table'), function (Blueprint $table) {
+        Schema::create(config('elegant-utils.admin.database.menu_table'), function (Blueprint $table) {
             $table->id();
             $table->integer('parent_id')->default(0);
             $table->integer('order')->default(0);
@@ -51,7 +51,7 @@ class CreateAdminTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('elegant-utils.admin.database.administrator_table'));
-        Schema::dropIfExists(config('elegant-utils.admin.database.menus_table'));
+        Schema::dropIfExists(config('elegant-utils.admin.database.user_table'));
+        Schema::dropIfExists(config('elegant-utils.admin.database.menu_table'));
     }
 }

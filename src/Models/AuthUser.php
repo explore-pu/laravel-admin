@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Storage;
 /**
  * Class Administrator.
  */
-class Administrator extends Model implements AuthenticatableContract
+class AuthUser extends Model implements AuthenticatableContract
 {
     use Authenticatable;
     use SoftDeletes;
@@ -37,7 +37,7 @@ class Administrator extends Model implements AuthenticatableContract
 
         $this->setConnection($connection);
 
-        $this->setTable(config('elegant-utils.admin.database.administrator_table'));
+        $this->setTable(config('elegant-utils.admin.database.user_table'));
 
         parent::__construct($attributes);
     }

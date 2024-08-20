@@ -1,0 +1,10 @@
+<?php
+
+namespace DummyNamespace;
+
+use Elegant\Utils\Http\Controllers\AuthMenuController as BaseAuthMenuController;
+
+class AuthMenuController extends BaseAuthMenuController
+{
+
+}

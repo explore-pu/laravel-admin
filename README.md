@@ -36,7 +36,7 @@ Then run these commands to publish assets and config：
 php artisan vendor:publish --provider="Elegant\Utils\AdminServiceProvider"
 ```
 
-After run command you can find config file in `config/admin.php`, in this file you can change the install directory,db connection or table names.
+After run command you can find config file in `config/elegant-utils/admin.php`, in this file you can change the install directory,db connection or table names.
 
 At last run following command to finish install.
 
@@ -48,7 +48,7 @@ Open `http://localhost/` in browser,use username `admin` and password `admin` to
 
 Configurations
 ------------
-The file `config/admin.php` contains an array of configurations, you can find the default configurations in there.
+The file `config/elegant-utils/admin.php` contains an array of configurations, you can find the default configurations in there.
 
 ## Extensions
 

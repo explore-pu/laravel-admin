@@ -25,7 +25,7 @@ class ResetPasswordCommand extends Command
      */
     public function handle()
     {
-        $userModel = config('elegant-utils.admin.database.users_model');
+        $userModel = config('elegant-utils.admin.database.user_model');
 
         askForUserName:
         $username = $this->ask('Please enter a username who needs to reset his password');

@@ -5,7 +5,6 @@ namespace Elegant\Utils;
 use Closure;
 use Elegant\Utils\Models\Menu;
 use Elegant\Utils\Models\MenuGroup;
-use Elegant\Utils\Traits\BuiltinRoutes;
 use Elegant\Utils\Traits\HasAssets;
 use Elegant\Utils\Traits\RenderView;
 use Elegant\Utils\Widgets\Navbar;
@@ -17,7 +16,7 @@ use Illuminate\Support\Traits\Macroable;
  */
 class Admin
 {
-    use HasAssets, RenderView, BuiltinRoutes, Macroable;
+    use HasAssets, RenderView, Macroable;
 
     /**
      * @var Navbar
@@ -65,7 +64,7 @@ class Admin
             return $this->menu;
         }
 
-        $menuClass = config('elegant-utils.admin.database.menus_model');
+        $menuClass = config('elegant-utils.admin.database.menu_model');
 
         /** @var Menu $menuModel */
         $menuModel = new $menuClass();

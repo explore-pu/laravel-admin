@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Elegant\Utils\Models\Administrator;
-use Elegant\Utils\Models\Menu;
+use App\Models\AuthUser;
+use App\Models\AuthMenu;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
@@ -19,16 +19,16 @@ class AdminTablesSeeder extends Seeder
         $date = date('Y-m-d H:i:s');
 
         // create a user.
-        Administrator::query()->truncate();
-        Administrator::query()->create([
+        AuthUser::query()->truncate();
+        AuthUser::query()->create([
             'username' => 'admin',
             'password' => bcrypt('admin'),
             'name' => 'Administrator',
         ]);
 
         // add default menus.
-        Menu::query()->truncate();
-        Menu::query()->insert([
+        AuthMenu::query()->truncate();
+        AuthMenu::query()->insert([
             [
                 'parent_id' => 0,
                 'order' => 1,
@@ -41,9 +41,9 @@ class AdminTablesSeeder extends Seeder
             [
                 'parent_id' => 0,
                 'order' => 2,
-                'title' => 'Adminstrator',
+                'title' => 'Users',
                 'icon' => 'fas fa-users',
-                'uri' => 'administrators',
+                'uri' => 'auth/users',
                 'created_at' => $date,
                 'updated_at' => $date,
             ],
@@ -52,7 +52,7 @@ class AdminTablesSeeder extends Seeder
                 'order' => 3,
                 'title' => 'Menus',
                 'icon' => 'fas fa-bars',
-                'uri' => 'menus',
+                'uri' => 'auth/menus',
                 'created_at' => $date,
                 'updated_at' => $date,
             ],

@@ -312,12 +312,9 @@ abstract class Extension
      */
     public static function routes($callback)
     {
-//        dd($callback);
-
         $attributes = array_merge(
             [
                 'middleware' => config('elegant-utils.admin.route.middleware'),
-                'as' => config('elegant-utils.admin.route.as'),
             ],
             static::config('route', [])
         );

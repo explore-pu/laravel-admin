@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\DB;
  *
  * @method where($parent_id, $id)
  */
-class Menu extends Model
+class AuthMenu extends Model
 {
     use SoftDeletes;
     use DefaultDatetimeFormat;
@@ -41,7 +41,7 @@ class Menu extends Model
 
         $this->setConnection($connection);
 
-        $this->setTable(config('elegant-utils.admin.database.menus_table'));
+        $this->setTable(config('elegant-utils.admin.database.menu_table'));
 
         parent::__construct($attributes);
     }

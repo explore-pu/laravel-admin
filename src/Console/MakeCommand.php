@@ -78,7 +78,7 @@ class MakeCommand extends GeneratorCommand
             $this->line('');
             $this->comment('Add the following route to app/Admin/routes.php:');
             $this->line('');
-            $this->info("\$router->resource('{$path}', '{$this->controllerName}')->names('{$path}');");
+            $this->info("Route::resource('{$path}', '{$this->controllerName}')->names('{$path}');");
             $this->line('');
         }
     }

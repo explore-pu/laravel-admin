@@ -9,12 +9,12 @@ use Elegant\Utils\Layout\Row;
 use Elegant\Utils\Models\MenuGroup;
 use Elegant\Utils\Tree;
 
-class MenuController extends AdminController
+class AuthMenuController extends AdminController
 {
 
     public function model()
     {
-        return config('elegant-utils.admin.database.menus_model');
+        return config('elegant-utils.admin.database.menu_model');
     }
 
     /**

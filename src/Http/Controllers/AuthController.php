@@ -25,7 +25,7 @@ class AuthController extends Controller
             return redirect($this->redirectPath());
         }
 
-        return view(config('elegant-utils.admin.auth.view'));
+        return view('admin::login');
     }
 
     /**
@@ -124,7 +124,7 @@ class AuthController extends Controller
      */
     protected function settingForm()
     {
-        $class = config('elegant-utils.admin.database.administrator_model');
+        $class = config('elegant-utils.admin.database.user_model');
 
         $form = new Form(new $class());
 
@@ -203,16 +203,16 @@ class AuthController extends Controller
      */
     protected function username()
     {
-        return config('elegant-utils.admin.auth.field.username');
+        return 'username';
     }
 
     /**
-     * Get the login username to be used by the controller.
+     * Get the login password to be used by the controller.
      *
      * @return string
      */
     protected function password()
     {
-        return config('elegant-utils.admin.auth.field.password');
+        return 'password';
     }
 }

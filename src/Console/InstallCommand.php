@@ -34,9 +34,9 @@ class InstallCommand extends Command
      */
     public function handle()
     {
-        $this->initDatabase();
-
         $this->initAdminDirectory();
+
+        $this->initDatabase();
     }
 
     /**
@@ -48,7 +48,7 @@ class InstallCommand extends Command
     {
         $this->call('migrate');
 
-        $userModel = config('elegant-utils.admin.database.administrator_model');
+        $userModel = config('elegant-utils.admin.database.user_model');
 
         if ($userModel::count() == 0) {
             $this->call('db:seed', ['--class' => 'AdminTablesSeeder']);
@@ -75,9 +75,14 @@ class InstallCommand extends Command
 
         $this->makeDir('Controllers');
 
+        $this->createExampleController();
         $this->createHomeController();
         $this->createAuthController();
-        $this->createExampleController();
+        $this->createAuthUserController();
+        $this->createAuthMenuController();
+
+        $this->createAuthUserModel();
+        $this->createAuthMenuModel();
 
         $this->createBootstrapFile();
         $this->createRoutesFile();
@@ -88,9 +93,26 @@ class InstallCommand extends Command
      *
      * @return void
      */
+    public function createExampleController()
+    {
+        $exampleController = $this->directory.'\Controllers\ExampleController.php';
+        $contents = $this->getStub('ExampleController');
+
+        $this->laravel['files']->put(
+            $exampleController,
+            str_replace('DummyNamespace', config('elegant-utils.admin.route.namespace'), $contents)
+        );
+        $this->line('<info>ExampleController file was created:</info> '.str_replace(base_path(), '', $exampleController));
+    }
+
+    /**
+     * Create HomeController.
+     *
+     * @return void
+     */
     public function createHomeController()
     {
-        $homeController = $this->directory.'/Controllers/HomeController.php';
+        $homeController = $this->directory.'\Controllers\HomeController.php';
         $contents = $this->getStub('HomeController');
 
         $this->laravel['files']->put(
@@ -107,31 +129,76 @@ class InstallCommand extends Command
      */
     public function createAuthController()
     {
-        $authController = $this->directory.'/Controllers/AuthController.php';
+        $controller = $this->directory.'\Controllers\AuthController.php';
         $contents = $this->getStub('AuthController');
 
         $this->laravel['files']->put(
-            $authController,
+            $controller,
             str_replace('DummyNamespace', config('elegant-utils.admin.route.namespace'), $contents)
         );
-        $this->line('<info>AuthController file was created:</info> '.str_replace(base_path(), '', $authController));
+        $this->line('<info>AuthController file was created:</info> '.str_replace(base_path(), '', $controller));
     }
 
     /**
-     * Create HomeController.
+     * Create AuthUserController.
      *
      * @return void
      */
-    public function createExampleController()
+    public function createAuthUserController()
     {
-        $exampleController = $this->directory.'/Controllers/ExampleController.php';
-        $contents = $this->getStub('ExampleController');
+        $controller = $this->directory.'\Controllers\AuthUserController.php';
+        $contents = $this->getStub('AuthUserController');
 
         $this->laravel['files']->put(
-            $exampleController,
+            $controller,
             str_replace('DummyNamespace', config('elegant-utils.admin.route.namespace'), $contents)
         );
-        $this->line('<info>ExampleController file was created:</info> '.str_replace(base_path(), '', $exampleController));
+        $this->line('<info>AuthUserController file was created:</info> '.str_replace(base_path(), '', $controller));
+    }
+
+    /**
+     * Create AuthMenuController.
+     *
+     * @return void
+     */
+    public function createAuthMenuController()
+    {
+        $controller = $this->directory.'\Controllers\AuthMenuController.php';
+        $contents = $this->getStub('AuthMenuController');
+
+        $this->laravel['files']->put(
+            $controller,
+            str_replace('DummyNamespace', config('elegant-utils.admin.route.namespace'), $contents)
+        );
+        $this->line('<info>AuthMenuController file was created:</info> '.str_replace(base_path(), '', $controller));
+    }
+
+    /**
+     * Create AuthUserModel.
+     *
+     * @return void
+     */
+    public function createAuthUserModel()
+    {
+        $model = app_path('Models\AuthUser.php');
+        $contents = $this->getStub('AuthUser');
+
+        $this->laravel['files']->put($model, $contents);
+        $this->line('<info>AuthUser file was created:</info> '.str_replace(base_path(), '', $model));
+    }
+
+    /**
+     * Create AuthMenuModel.
+     *
+     * @return void
+     */
+    public function createAuthMenuModel()
+    {
+        $model = app_path('Models\AuthMenu.php');
+        $contents = $this->getStub('AuthMenu');
+
+        $this->laravel['files']->put($model, $contents);
+        $this->line('<info>AuthMenu file was created:</info> '.str_replace(base_path(), '', $model));
     }
 
     /**
@@ -141,7 +208,7 @@ class InstallCommand extends Command
      */
     protected function createBootstrapFile()
     {
-        $file = $this->directory.'/bootstrap.php';
+        $file = $this->directory.'\bootstrap.php';
 
         $contents = $this->getStub('bootstrap');
         $this->laravel['files']->put($file, $contents);
@@ -155,7 +222,7 @@ class InstallCommand extends Command
      */
     protected function createRoutesFile()
     {
-        $file = $this->directory.'/routes.php';
+        $file = $this->directory.'\routes.php';
 
         $contents = $this->getStub('routes');
         $this->laravel['files']->put($file, str_replace('DummyNamespace', config('elegant-utils.admin.route.namespace'), $contents));

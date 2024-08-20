@@ -1,0 +1,10 @@
+<?php
+
+namespace App\Models;
+
+use Elegant\Utils\Models\AuthMenu as BaseAuthMenu;
+
+class AuthMenu extends BaseAuthMenu
+{
+
+}

@@ -6,24 +6,8 @@ use Elegant\Utils\Form;
 use Elegant\Utils\Show;
 use Elegant\Utils\Table;
 
-class AdministratorController extends AdminController
+class AuthUserController extends AdminController
 {
-    protected $fieldUsername = 'username';
-    
-    public function __construct()
-    {
-        if (method_exists($this, 'fieldUsername')) {
-            $this->fieldUsername = $this->fieldUsername();
-        }
-        
-        parent::__construct();
-    }
-    
-    public function fieldUsername()
-    {
-        return config('elegant-utils.admin.auth.field.username');
-    }
-    
     /**
      * {@inheritdoc}
      */
@@ -34,7 +18,7 @@ class AdministratorController extends AdminController
 
     public function model()
     {
-        return config('elegant-utils.admin.database.administrator_model');
+        return config('elegant-utils.admin.database.user_model');
     }
 
     /**
@@ -47,13 +31,11 @@ class AdministratorController extends AdminController
         $table = new Table(new $this->model());
 
         $table->filter(function (Table\Filter $filter) {
-            // 范围过滤器，调用模型的`onlyTrashed`方法，查询出被软删除的数据。
             $filter->scope('trashed', __('admin.trashed'))->onlyTrashed();
-
         });
 
         $table->column('id', 'ID')->sortable();
-        $table->column($this->fieldUsername, trans('admin.' . $this->fieldUsername));
+        $table->column('username', trans('admin.username'));
         $table->column('name', trans('admin.name'));
         $table->column('created_at', trans('admin.created_at'));
         $table->column('updated_at', trans('admin.updated_at'));
@@ -92,7 +74,7 @@ class AdministratorController extends AdminController
         $show = new Show($this->model::findOrFail($id));
 
         $show->field('id', 'ID');
-        $show->field($this->fieldUsername, trans('admin.' . $this->fieldUsername));
+        $show->field('username', trans('admin.username'));
         $show->field('name', trans('admin.name'));
         $show->field('created_at', trans('admin.created_at'));
         $show->field('updated_at', trans('admin.updated_at'));
@@ -109,7 +91,7 @@ class AdministratorController extends AdminController
     {
         $form = new Form(new $this->model());
 
-        $userTable = config('elegant-utils.admin.database.administrator_table');
+        $userTable = config('elegant-utils.admin.database.user_table');
         $connection = config('elegant-utils.admin.database.connection');
 
         $form->tools(function (Form\Tools $tools) {
@@ -117,9 +99,9 @@ class AdministratorController extends AdminController
         });
 
         $form->display('id', 'ID');
-        $form->text($this->fieldUsername, trans('admin.' . $this->fieldUsername))
+        $form->text('username', trans('admin.username'))
             ->creationRules(['required', "unique:{$connection}.{$userTable}"])
-            ->updateRules(['required', "unique:{$connection}.{$userTable},{$this->fieldUsername},{{id}}"]);
+            ->updateRules(['required', "unique:{$connection}.{$userTable},username,{{id}}"]);
 
         $form->text('name', trans('admin.name'))->rules('required');
         $form->image('avatar', trans('admin.avatar'));

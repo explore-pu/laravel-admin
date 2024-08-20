@@ -29,8 +29,8 @@
 
                     <form action="{{ admin_url('login') }}" method="post">
                         <div class="form-group">
-                            @if($errors->has(config('elegant-utils.admin.auth.field.username')))
-                                @foreach($errors->get(config('elegant-utils.admin.auth.field.username')) as $message)
+                            @if($errors->has('username'))
+                                @foreach($errors->get('username') as $message)
                                     <label class="col-form-label text-danger">
                                         <i class="fas fa-times-circle-o"></i>{{$message}}
                                     </label>
@@ -38,7 +38,7 @@
                                 @endforeach
                             @endif
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control " placeholder="{{ trans('admin.' . config('elegant-utils.admin.auth.field.username')) }}" name="{{ config('elegant-utils.admin.auth.field.username') }}" value="{{ old(config('elegant-utils.admin.auth.field.username')) }}">
+                                <input type="text" class="form-control " placeholder="{{ trans('admin.username') }}" name="username" value="{{ old('username') }}">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <span class="fas fa-envelope"></span>
@@ -47,8 +47,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            @if($errors->has(config('elegant-utils.admin.auth.field.password')))
-                                @foreach($errors->get(config('elegant-utils.admin.auth.field.password')) as $message)
+                            @if($errors->has('password'))
+                                @foreach($errors->get('password') as $message)
                                     <label class="col-form-label text-danger">
                                         <i class="fas fa-times-circle-o"></i>{{$message}}
                                     </label>
@@ -56,7 +56,7 @@
                                 @endforeach
                             @endif
                             <div class="input-group mb-3">
-                                <input type="password" class="form-control" placeholder="{{ trans('admin.' . config('elegant-utils.admin.auth.field.password')) }}" name="{{ config('elegant-utils.admin.auth.field.password') }}">
+                                <input type="password" class="form-control" placeholder="{{ trans('admin.password') }}" name="password">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <span class="fas fa-lock"></span>
@@ -67,7 +67,7 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="icheck-@color">
-                                    <input type="checkbox" id="remember" name="remember" value="1" {{ (!old(config('elegant-utils.admin.auth.field.username')) || old('remember')) ? 'checked' : '' }}>
+                                    <input type="checkbox" id="remember" name="remember" value="1" {{ (!old('username') || old('remember')) ? 'checked' : '' }}>
                                     <label for="remember">
                                         {{ trans('admin.remember_me') }}
                                     </label>
