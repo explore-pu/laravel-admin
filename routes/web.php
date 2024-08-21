@@ -11,7 +11,7 @@ Route::group([
     Route::get('_handle_selectable_', 'HandleController@handleSelectable')->name('handle_selectable');
     Route::get('_handle_renderable_', 'HandleController@handleRenderable')->name('handle_renderable');
     // requirejs配置
-    Route::get('_require_config', 'PagesController@requireConfig')->name('require-config');
+    Route::get('_require_config', 'PagesController@requireConfig')->name('require_config');
 
     Route::fallback('PagesController@error404')->name('error404');
 });

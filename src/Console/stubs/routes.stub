@@ -26,6 +26,5 @@ Route::group(['namespace' => config('elegant-utils.admin.route.namespace')], fun
         Route::put('auth/menus/{menu}/restore', 'AuthMenuController@restore')->name('auth.menus.restore');
         Route::delete('auth/menus/{menu}/delete', 'AuthMenuController@delete')->name('auth.menus.delete');
 
-        //
     });
 });
