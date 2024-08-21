@@ -35,7 +35,7 @@ class AuthMenuController extends AdminController
                 $row->column(6, function (Column $column) {
                     $form = new \Elegant\Utils\Widgets\Form();
                     $form->title(trans('admin.new'));
-                    $form->action(admin_url('menus'));
+                    $form->action(admin_url('auth/menus'));
 
                     $form->select('parent_id', trans('admin.parent_id'))->default(0)->options($this->model::selectOptions());
                     $form->text('title', trans('admin.title'))->rules('required')->prepend(new Form\Field\Icon('icon'));
