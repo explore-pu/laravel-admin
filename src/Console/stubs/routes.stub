@@ -17,14 +17,14 @@ Route::group(['namespace' => config('elegant-utils.admin.route.namespace')], fun
         Route::get('/', 'HomeController@index')->name('home');
 
         // auth_users
-        Route::resource('auth/users', 'AuthUserController')->names('auth.users');
-        Route::put('auth/users/{user}/restore', 'AuthUserController@restore')->name('auth.users.restore');
-        Route::delete('auth/users/{user}/delete', 'AuthUserController@delete')->name('auth.users.delete');
+        Route::resource('auth/users', 'AuthUserController')->names('auth_users');
+        Route::put('auth/users/{user}/restore', 'AuthUserController@restore')->name('auth_users.restore');
+        Route::delete('auth/users/{user}/delete', 'AuthUserController@delete')->name('auth_users.delete');
 
         // auth_menus
-        Route::resource('auth/menus', 'AuthMenuController', ['except' => ['create', 'show']])->names('auth.menus');
-        Route::put('auth/menus/{menu}/restore', 'AuthMenuController@restore')->name('auth.menus.restore');
-        Route::delete('auth/menus/{menu}/delete', 'AuthMenuController@delete')->name('auth.menus.delete');
+        Route::resource('auth/menus', 'AuthMenuController', ['except' => ['create', 'show']])->names('auth_menus');
+        Route::put('auth/menus/{menu}/restore', 'AuthMenuController@restore')->name('auth_menus.restore');
+        Route::delete('auth/menus/{menu}/delete', 'AuthMenuController@delete')->name('auth_menus.delete');
 
         // done Don't delete this line of comment
     });

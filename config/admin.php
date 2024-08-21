@@ -166,12 +166,10 @@ return [
         // authenticate users tables and model.
         'user_table' => 'auth_users',
         'user_model' => App\Models\AuthUser::class,
-        'user_controller' => App\Admin\Controllers\AuthUserController::class,
 
         // authenticate menu table and model.
         'menu_table' => 'auth_menus',
         'menu_model' => App\Models\AuthMenu::class,
-        'menu_controller' => App\Admin\Controllers\AuthMenuController::class,
     ],
 
     /*
