@@ -1,7 +1,4 @@
 define(['jquery', 'NProgress', 'sweetalert2'], function($, NProgress, Swal) {
-
-    $(window).trigger('load.lte.treeview');
-
     $('body').Layout('fixLayoutHeight');
 
     // NProgress init
