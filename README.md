@@ -7,8 +7,8 @@
 > - Modern applications are basically separated from the front and back, which is easy to deploy
 > - It is more secure to deploy the management side and the user side separately
 
-- [Documentation](https://explore-pu.github.io/laravel-admin/)
-- [中文文档](https://explore-pu.github.io/laravel-admin/zh-CN)
+- [Documentation](https://explore-pu.github.io/laravel-admin-docs/)
+- [中文文档](https://explore-pu.github.io/laravel-admin-docs/zh-CN)
 - [Extensions](#extensions)
 
 Requirements
