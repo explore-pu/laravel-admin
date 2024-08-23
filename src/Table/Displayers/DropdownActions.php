@@ -61,6 +61,8 @@ class DropdownActions extends Actions
 
             /** @var RowAction $action */
             $action = new $class();
+            
+            $action->setActions($this);
 
             $this->prepareAction($action);
 

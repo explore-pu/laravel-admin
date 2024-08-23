@@ -3,6 +3,7 @@
 namespace Elegant\Utils\Actions;
 
 use Elegant\Utils\Table\Column;
+use Elegant\Utils\Table\Displayers\DropdownActions;
 use Illuminate\Http\Request;
 
 abstract class RowAction extends TableAction
@@ -11,6 +12,8 @@ abstract class RowAction extends TableAction
      * @var \Illuminate\Database\Eloquent\Model
      */
     protected $row;
+
+    protected $actions = DropdownActions::class;
 
     /**
      * @var Column
@@ -72,6 +75,13 @@ abstract class RowAction extends TableAction
     public function setRow($row)
     {
         $this->row = $row;
+
+        return $this;
+    }
+
+    public function setActions($actions)
+    {
+        $this->actions = $actions;
 
         return $this;
     }
@@ -153,7 +163,13 @@ abstract class RowAction extends TableAction
 
     public function getElementClass()
     {
-        return parent::getElementClass().' dropdown-item';
+        $elementClass = parent::getElementClass();
+
+        if ($this->actions instanceof DropdownActions) {
+            $elementClass .= ' dropdown-item';
+        }
+
+        return $elementClass;
     }
 
     /**
