@@ -45,7 +45,7 @@ abstract class Extension
     /**
      * @var array
      */
-    public $menu = [];
+    public $menus = [];
 
     /**
      * Extension instance.
@@ -159,9 +159,9 @@ abstract class Extension
     /**
      * @return array
      */
-    public function menu()
+    public function menus()
     {
-        return $this->menu;
+        return $this->menus;
     }
 
     /**
@@ -197,9 +197,9 @@ abstract class Extension
         $name = array_search(get_called_class(), Admin::$utils);
 
         if (is_null($key)) {
-            $key = sprintf('admin.extensions.%s', strtolower($name));
+            $key = sprintf('elegant-utils.admin.extensions.%s', strtolower($name));
         } else {
-            $key = sprintf('admin.extensions.%s.%s', strtolower($name), $key);
+            $key = sprintf('elegant-utils.admin.extensions.%s.%s', strtolower($name), $key);
         }
 
         return config($key, $default);
@@ -213,11 +213,13 @@ abstract class Extension
         $extension = static::getInstance();
 
         DB::transaction(function () use ($extension) {
-            if ($menu = $extension->menu()) {
-                if ($extension->validateMenu($menu)) {
-                    extract($menu);
-                    $children = Arr::get($menu, 'children', []);
-                    static::createMenu($title, $path, $icon, 0, $children);
+            if ($menus = $extension->menus()) {
+                foreach ($menus as $menu) {
+                    if ($extension->validateMenu($menu)) {
+                        extract($menu);
+                        $children = Arr::get($menu, 'children', []);
+                        static::createMenu($title, $uri, $icon, 0, $children);
+                    }
                 }
             }
         });
@@ -242,8 +244,10 @@ abstract class Extension
         }
 
         $message = "Invalid menu:\r\n".implode("\r\n", Arr::flatten($validator->errors()->messages()));
-
-        throw new \Exception($message);
+        
+        echo $message;
+        
+        return false;
     }
 
     /**
@@ -255,7 +259,7 @@ abstract class Extension
     {
         return [
             'title'    => 'required',
-            'path'     => ['required', Rule::unique(Config::get('admin.database.menu_table'), 'uri')],
+            'uri'     => ['required', Rule::unique(Config::get('elegant-utils.admin.database.menu_table'), 'uri')],
             'icon'     => 'required',
             'children' => 'nullable|array',
         ];
@@ -277,8 +281,9 @@ abstract class Extension
     protected static function createMenu($title, $uri, $icon = 'fa-bars', $parentId = 0, array $children = [])
     {
         $menuModel = config('elegant-utils.admin.database.menu_model');
-
+        
         $lastOrder = $menuModel::max('order');
+        
         /**
          * @var Model
          */
@@ -289,12 +294,13 @@ abstract class Extension
             'icon'      => $icon,
             'uri'       => $uri,
         ]);
+        
         if (!empty($children)) {
             $extension = static::getInstance();
             foreach ($children as $child) {
                 if ($extension->validateMenu($child)) {
                     $subTitle = Arr::get($child, 'title');
-                    $subUri = Arr::get($child, 'path');
+                    $subUri = Arr::get($child, 'uri');
                     $subIcon = Arr::get($child, 'icon');
                     $subChildren = Arr::get($child, 'children', []);
                     static::createMenu($subTitle, $subUri, $subIcon, $menu->getKey(), $subChildren);
@@ -312,12 +318,9 @@ abstract class Extension
      */
     public static function routes($callback)
     {
-        $attributes = array_merge(
-            [
-                'middleware' => config('elegant-utils.admin.route.middleware'),
-            ],
-            static::config('route', [])
-        );
+        $attributes = array_merge([
+            'middleware' => config('elegant-utils.admin.route.middleware'),
+        ], static::config('route', []));
 
         Route::group($attributes, $callback);
     }
