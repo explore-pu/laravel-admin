@@ -208,7 +208,7 @@ abstract class Extension
     /**
      * Import menu item to laravel-admin.
      */
-    public static function import()
+    public static function importMenus()
     {
         $extension = static::getInstance();
 

@@ -108,6 +108,8 @@ return [
     |
     */
     'auth' => [
+        'controller' => App\Admin\Controllers\AuthController::class,
+        
         'providers' => [
             'users' => [
                 'model'  => env('AUTH_MODEL', App\Models\AuthUser::class),
@@ -120,7 +122,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Single device login / 单设备登录
+    | Single device login
     |--------------------------------------------------------------------------
     |
     | Invalidating and "logging out" a user's sessions that are active on other
@@ -139,7 +141,6 @@ return [
     |
     */
     'upload' => [
-
         // Disk in `config/filesystem.php`.
         'disk' => 'public',
 
@@ -166,10 +167,12 @@ return [
         // authenticate users tables and model.
         'user_table' => 'auth_users',
         'user_model' => App\Models\AuthUser::class,
+        'user_controller' => App\Admin\Controllers\AuthUserController::class,
 
         // authenticate menu table and model.
         'menu_table' => 'auth_menus',
         'menu_model' => App\Models\AuthMenu::class,
+        'menu_controller' => App\Admin\Controllers\AuthMenuController::class,
     ],
 
     /*
@@ -281,7 +284,7 @@ return [
     | The global Table action display class.
     |--------------------------------------------------------------------------
     */
-    'table_action_class' => \Elegant\Utils\Table\Displayers\DropdownActions::class,
+    'table_action_class' => Elegant\Utils\Table\Displayers\DropdownActions::class,
 
     /*
     |--------------------------------------------------------------------------
