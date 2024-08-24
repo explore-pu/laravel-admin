@@ -65,6 +65,17 @@ class SwitchField extends Field
     }
 
     /**
+     * @param array $state
+     * @return $this
+     */
+    public function states(array $state)
+    {
+        $this->state = array_merge($this->state, $state);
+
+        return $this;
+    }
+
+    /**
      * @param string $size lg, sm, xs
      *
      * @return $this

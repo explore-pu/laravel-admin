@@ -17,9 +17,9 @@ class ResourceGenerator
      * @var array
      */
     protected $formats = [
-        'form_field'   => "\$form->%s('%s', __('%s'))",
-        'show_field'   => "\$show->field('%s', __('%s'))",
-        'table_column' => "\$table->column('%s', __('%s'))",
+        'form_field'   => "\$form->%s('%s', '%s')",
+        'show_field'   => "\$show->field('%s', '%s')",
+        'table_column' => "\$table->column('%s', '%s')",
     ];
 
     /**
@@ -42,7 +42,7 @@ class ResourceGenerator
         'password' => 'password|pwd',
         'url'      => 'url|link|src|href',
         'mobile'   => 'mobile|phone',
-        //        'color'    => 'color|rgb',
+        'color'    => 'color|rgb',
         'image'    => 'image|img|avatar|pic|picture|cover',
         'file'     => 'file|attachment',
     ];
@@ -83,8 +83,6 @@ class ResourceGenerator
         $reservedColumns = $this->getReservedColumns();
 
         $output = '';
-        
-//        dd($this->getTableColumns());
 
         foreach ($this->getTableColumns() as $column) {
             $name = $column->Field;
@@ -216,7 +214,7 @@ class ResourceGenerator
     protected function getTableColumns()
     {
         $table = $this->getTable();
-        
+
         return DB::select('show full columns from ' . $table);
     }
 

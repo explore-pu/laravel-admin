@@ -32,9 +32,9 @@ class ExampleController extends AdminController
     {
         $table = new Table(new $this->model());
 
-        $table->column('id', __('ID'))->sortable();
-        $table->column('created_at', __('Created at'));
-        $table->column('updated_at', __('Updated at'));
+        $table->column('id', 'ID')->sortable();
+        $table->column('created_at', 'Created at');
+        $table->column('updated_at', 'Updated at');
 
         return $table;
     }
@@ -49,9 +49,9 @@ class ExampleController extends AdminController
     {
         $show = new Show($this->model::findOrFail($id));
 
-        $show->field('id', __('ID'));
-        $show->field('created_at', __('Created at'));
-        $show->field('updated_at', __('Updated at'));
+        $show->field('id', 'ID');
+        $show->field('created_at', 'Created at');
+        $show->field('updated_at', 'Updated at');
 
         return $show;
     }
@@ -65,9 +65,9 @@ class ExampleController extends AdminController
     {
         $form = new Form(new $this->model());
 
-        $form->display('id', __('ID'));
-        $form->display('created_at', __('Created At'));
-        $form->display('updated_at', __('Updated At'));
+        $form->display('id', 'ID');
+        $form->display('created_at', 'Created At');
+        $form->display('updated_at', 'Updated At');
 
         return $form;
     }
