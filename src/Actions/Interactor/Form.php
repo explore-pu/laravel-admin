@@ -212,6 +212,20 @@ class Form extends Interactor
     }
 
     /**
+     * @param $column
+     * @param $label
+     * @return Field\CheckBoxTree
+     */
+    public function checkboxTree($column, $label = '')
+    {
+        admin_assets_require('icheck');
+
+        $field = new Field\CheckBoxTree($column, $this->formatLabel($label));
+
+        return $this->addField($field);
+    }
+
+    /**
      * @param string $column
      * @param string $label
      *

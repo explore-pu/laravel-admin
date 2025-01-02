@@ -72,6 +72,7 @@ trait HasFields
         'checkbox'       => Field\Checkbox::class,
         'checkboxButton' => Field\CheckboxButton::class,
         'checkboxCard'   => Field\CheckboxCard::class,
+        'checkboxTree'   => Field\CheckBoxTree::class,
         'checktree'      => Field\CheckTree::class,
         //        'color'          => Field\Color::class,
         'currency'       => Field\Currency::class,

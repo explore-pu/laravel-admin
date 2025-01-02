@@ -26,6 +26,7 @@ use Illuminate\Http\Request;
  * @method Field\Select         select($column, $label = '')
  * @method Field\MultipleSelect multipleSelect($column, $label = '')
  * @method Field\Checkbox       checkbox($column, $label = '')
+ * @method Field\CheckBoxTree   checkboxTree($column, $label = '')
  * @method Field\Radio          radio($column, $label = '')
  * @method Field\File           file($column, $label = '')
  * @method Field\Image          image($column, $label = '')

@@ -165,7 +165,7 @@ abstract class RowAction extends TableAction
     {
         $elementClass = parent::getElementClass();
 
-        if ($this->actions instanceof DropdownActions) {
+        if ($this->actions instanceof DropdownActions || $this->actions === 'Elegant\Utils\Table\Displayers\DropdownActions') {
             $elementClass .= ' dropdown-item';
         }
 

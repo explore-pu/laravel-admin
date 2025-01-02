@@ -386,9 +386,9 @@ class Form extends AbstractForm implements Renderable
     public function destroy($id)
     {
         try {
-            if (($ret = $this->callDeleting($id)) instanceof Response) {
-                return $ret;
-            }
+//            if (($ret = $this->callDeleting($id)) instanceof Response) {
+//                return $ret;
+//            }
 
             collect(explode(',', $id))->filter()->each(function ($id) {
                 $builder = $this->model()->newQuery();
@@ -402,9 +402,9 @@ class Form extends AbstractForm implements Renderable
                 $model->delete();
             });
 
-            if (($ret = $this->callDeleted()) instanceof Response) {
-                return $ret;
-            }
+//            if (($ret = $this->callDeleted()) instanceof Response) {
+//                return $ret;
+//            }
         } catch (Exception $exception) {
             return $this->response()->error(trans('admin.destroy_failed').":{$exception->getMessage()}")->send();
         }
