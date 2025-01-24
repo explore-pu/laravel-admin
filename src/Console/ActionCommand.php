@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Console;
+namespace Elegance\Admin\Console;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
@@ -112,7 +112,7 @@ CODE;
             return $namespace;
         }
 
-        $segments = explode('\\', config('elegant-utils.admin.route.namespace'));
+        $segments = explode('\\', config('admin.route.namespace'));
 
         array_pop($segments);
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Console;
+namespace Elegance\Admin\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;

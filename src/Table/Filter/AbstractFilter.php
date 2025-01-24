@@ -1,16 +1,16 @@
 <?php
 
-namespace Elegant\Utils\Table\Filter;
+namespace Elegance\Admin\Table\Filter;
 
-use Elegant\Utils\Admin;
-use Elegant\Utils\Table\Filter;
-use Elegant\Utils\Table\Filter\Presenter\Checkbox;
-use Elegant\Utils\Table\Filter\Presenter\DateTime;
-use Elegant\Utils\Table\Filter\Presenter\MultipleSelect;
-use Elegant\Utils\Table\Filter\Presenter\Presenter;
-use Elegant\Utils\Table\Filter\Presenter\Radio;
-use Elegant\Utils\Table\Filter\Presenter\Select;
-use Elegant\Utils\Table\Filter\Presenter\Text;
+use Elegance\Admin\Admin;
+use Elegance\Admin\Table\Filter;
+use Elegance\Admin\Table\Filter\Presenter\Checkbox;
+use Elegance\Admin\Table\Filter\Presenter\DateTime;
+use Elegance\Admin\Table\Filter\Presenter\MultipleSelect;
+use Elegance\Admin\Table\Filter\Presenter\Presenter;
+use Elegance\Admin\Table\Filter\Presenter\Radio;
+use Elegance\Admin\Table\Filter\Presenter\Select;
+use Elegance\Admin\Table\Filter\Presenter\Text;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 

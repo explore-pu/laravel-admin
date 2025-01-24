@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Exception;
+namespace Elegance\Admin\Exception;
 
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\ViewErrorBag;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Table\Displayers;
+namespace Elegance\Admin\Table\Displayers;
 
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Arr;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Actions;
+namespace Elegance\Admin\Actions;
 
 class SweatAlert2
 {

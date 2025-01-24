@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Http\Middleware;
+namespace Elegance\Admin\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;

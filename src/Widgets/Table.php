@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Widgets;
+namespace Elegance\Admin\Widgets;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Arr;

@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils;
+namespace Elegance\Admin;
 
-use Elegant\Utils\Http\Middleware;
-use Elegant\Utils\Layout\Content;
+use Elegance\Admin\Http\Middleware;
+use Elegance\Admin\Layout\Content;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Blade;
@@ -42,8 +42,8 @@ class AdminServiceProvider extends ServiceProvider
     protected $routeMiddleware = [
         'admin.pjax' => Middleware\Pjax::class,
         'admin.bootstrap' => Middleware\Bootstrap::class,
-        'admin.session' => Middleware\Session::class,
-        'admin.sul' => Middleware\SingleUserLogin::class,
+        'admin.authorization' => Middleware\Authorization::class,
+//        'admin.sul' => Middleware\SingleUserLogin::class,
     ];
 
     /**
@@ -55,7 +55,8 @@ class AdminServiceProvider extends ServiceProvider
         'admin' => [
             'admin.pjax',
             'admin.bootstrap',
-            //'admin.session',
+            'admin.authorization',
+//            'admin.sul',
         ],
     ];
 
@@ -112,7 +113,7 @@ PHP;
         });
 
         Blade::directive('color', function () {
-            $color = config('elegant-utils.admin.theme.color');
+            $color = config('admin.theme.color');
 
             return <<<PHP
 <?php echo "{$color}";?>
@@ -136,7 +137,7 @@ PHP;
      */
     protected function ensureHttps()
     {
-        if (config('elegant-utils.admin.https')) {
+        if (config('admin.https')) {
             url()->forceScheme('https');
             $this->app['request']->server->set('HTTPS', true);
         }
@@ -150,7 +151,7 @@ PHP;
     protected function registerPublishing()
     {
         if ($this->app->runningInConsole()) {
-            $this->publishes([__DIR__ . '/../config' => config_path('elegant-utils')], 'laravel-admin-config');
+            $this->publishes([__DIR__ . '/../config' => config_path()], 'laravel-admin-config');
             $this->publishes([__DIR__ . '/../resources/lang' => lang_path()], 'laravel-admin-lang');
             $this->publishes([__DIR__ . '/../database' => database_path()], 'laravel-admin-database');
             $this->publishes([__DIR__ . '/../resources/assets' => public_path('vendor/laravel-admin')], 'laravel-admin-assets');
@@ -202,25 +203,11 @@ PHP;
      */
     public function register()
     {
-        $this->loadAdminAuthConfig();
-
         $this->registerRouteMiddleware();
 
         $this->commands($this->commands);
 
         $this->macroRouter();
-    }
-
-    /**
-     * Setup auth configuration.
-     *
-     * @return void
-     */
-    protected function loadAdminAuthConfig()
-    {
-        config(['auth.providers.users.model' => config('elegant-utils.admin.auth.providers.users.model')]);
-        config(['app.timezone' => env('APP_TIMEZONE', 'UTC')]);
-        config(['app.locale' => env('APP_LOCALE', 'en')]);
     }
 
     /**
@@ -235,7 +222,7 @@ PHP;
             app('router')->aliasMiddleware($key, $middleware);
         }
 
-        if (config('elegant-utils.admin.single_device_login')) {
+        if (config('admin.single_device_login')) {
             array_push($this->middlewareGroups['admin'], 'admin.sul');
         }
 

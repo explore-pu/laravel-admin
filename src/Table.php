@@ -1,17 +1,17 @@
 <?php
 
-namespace Elegant\Utils;
+namespace Elegance\Admin;
 
 use Closure;
-use Elegant\Utils\Exception\Handler;
-use Elegant\Utils\Table\Column;
-use Elegant\Utils\Table\ColumnGroup;
-use Elegant\Utils\Table\Concerns;
-use Elegant\Utils\Table\Displayers;
-use Elegant\Utils\Table\Model;
-use Elegant\Utils\Table\Row;
-use Elegant\Utils\Table\Tools;
-use Elegant\Utils\Traits\ShouldSnakeAttributes;
+use Elegance\Admin\Exception\Handler;
+use Elegance\Admin\Table\Column;
+use Elegance\Admin\Table\ColumnGroup;
+use Elegance\Admin\Table\Concerns;
+use Elegance\Admin\Table\Displayers;
+use Elegance\Admin\Table\Model;
+use Elegance\Admin\Table\Row;
+use Elegance\Admin\Table\Tools;
+use Elegance\Admin\Traits\ShouldSnakeAttributes;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Database\Eloquent\Relations;
 use Illuminate\Support\Collection;
@@ -44,7 +44,7 @@ class Table
     /**
      * The table data model instance.
      *
-     * @var \Elegant\Utils\Table\Model|\Illuminate\Database\Eloquent\Builder
+     * @var \Elegance\Admin\Table\Model|\Illuminate\Database\Eloquent\Builder
      */
     protected $model;
 

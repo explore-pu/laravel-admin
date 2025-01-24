@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils\Table\Column;
+namespace Elegance\Admin\Table\Column;
 
-use Elegant\Utils\Admin;
-use Elegant\Utils\Table\Model;
+use Elegance\Admin\Admin;
+use Elegance\Admin\Table\Model;
 
 class InputFilter extends Filter
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils\Form\Concerns;
+namespace Elegance\Admin\Form\Concerns;
 
-use Elegant\Utils\Form;
-use Elegant\Utils\Form\Field;
+use Elegance\Admin\Form;
+use Elegance\Admin\Form\Field;
 use Illuminate\Support\Arr;
 
 trait ValidatesField

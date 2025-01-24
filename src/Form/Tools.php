@@ -1,11 +1,11 @@
 <?php
 
-namespace Elegant\Utils\Form;
+namespace Elegance\Admin\Form;
 
-use Elegant\Utils\Form\Actions\_List;
-use Elegant\Utils\Form\Actions\Action;
-use Elegant\Utils\Form\Actions\Delete;
-use Elegant\Utils\Form\Actions\View;
+use Elegance\Admin\Form\Actions\_List;
+use Elegance\Admin\Form\Actions\Action;
+use Elegance\Admin\Form\Actions\Delete;
+use Elegance\Admin\Form\Actions\View;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Collection;

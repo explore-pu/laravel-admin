@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils;
+namespace Elegance\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
@@ -197,9 +197,9 @@ abstract class Extension
         $name = array_search(get_called_class(), Admin::$utils);
 
         if (is_null($key)) {
-            $key = sprintf('elegant-utils.admin.extensions.%s', strtolower($name));
+            $key = sprintf('admin.extensions.%s', strtolower($name));
         } else {
-            $key = sprintf('elegant-utils.admin.extensions.%s.%s', strtolower($name), $key);
+            $key = sprintf('admin.extensions.%s.%s', strtolower($name), $key);
         }
 
         return config($key, $default);
@@ -244,9 +244,9 @@ abstract class Extension
         }
 
         $message = "Invalid menu:\r\n".implode("\r\n", Arr::flatten($validator->errors()->messages()));
-        
+
         echo $message;
-        
+
         return false;
     }
 
@@ -259,7 +259,7 @@ abstract class Extension
     {
         return [
             'title'    => 'required',
-            'uri'     => ['required', Rule::unique(Config::get('elegant-utils.admin.database.menu_table'), 'uri')],
+            'uri'     => ['required', Rule::unique(Config::get('admin.database.menu_table'), 'uri')],
             'icon'     => 'required',
             'children' => 'nullable|array',
         ];
@@ -280,10 +280,10 @@ abstract class Extension
      */
     protected static function createMenu($title, $uri, $icon = 'fa-bars', $parentId = 0, array $children = [])
     {
-        $menuModel = config('elegant-utils.admin.database.menu_model');
-        
+        $menuModel = config('admin.database.menu_model');
+
         $lastOrder = $menuModel::max('order');
-        
+
         /**
          * @var Model
          */
@@ -294,7 +294,7 @@ abstract class Extension
             'icon'      => $icon,
             'uri'       => $uri,
         ]);
-        
+
         if (!empty($children)) {
             $extension = static::getInstance();
             foreach ($children as $child) {
@@ -319,7 +319,7 @@ abstract class Extension
     public static function routes($callback)
     {
         $attributes = array_merge([
-            'middleware' => config('elegant-utils.admin.route.middleware'),
+            'middleware' => config('admin.route.middleware'),
         ], static::config('route', []));
 
         Route::group($attributes, $callback);

@@ -1,10 +1,10 @@
 <?php
 
-namespace Elegant\Utils\Form;
+namespace Elegance\Admin\Form;
 
-use Elegant\Utils\AbstractForm;
-use Elegant\Utils\Admin;
-use Elegant\Utils\Form;
+use Elegance\Admin\AbstractForm;
+use Elegance\Admin\Admin;
+use Elegance\Admin\Form;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
@@ -93,7 +93,7 @@ class NestedForm extends AbstractForm
     protected $original = [];
 
     /**
-     * @var \Elegant\Utils\Form
+     * @var \Elegance\Admin\Form
      */
     protected $form;
 
@@ -277,7 +277,7 @@ class NestedForm extends AbstractForm
                 $value = $field->prepare($value);
             }
 
-            if (($field instanceof \Elegant\Utils\Form\Field\Hidden) || $value != $field->original()) {
+            if (($field instanceof \Elegance\Admin\Form\Field\Hidden) || $value != $field->original()) {
                 if (is_array($columns)) {
                     foreach ($columns as $name => $column) {
                         Arr::set($prepared, $column, $value[$name]);

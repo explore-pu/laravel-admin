@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Form\Field;
+namespace Elegance\Admin\Form\Field;
 
-use Elegant\Utils\Form\Field;
+use Elegance\Admin\Form\Field;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
@@ -310,6 +310,13 @@ class Select extends Field
         }
 
         return $stringOptionAttributes;
+    }
+
+    public function renderPrepend()
+    {
+        $this->view = 'admin::form.select-prepend';
+
+        return $this->render();
     }
 
     /**

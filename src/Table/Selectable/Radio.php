@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Table\Selectable;
+namespace Elegance\Admin\Table\Selectable;
 
-use Elegant\Utils\Table\Displayers\AbstractDisplayer;
+use Elegance\Admin\Table\Displayers\AbstractDisplayer;
 
 class Radio extends AbstractDisplayer
 {

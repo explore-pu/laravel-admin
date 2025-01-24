@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Traits;
+namespace Elegance\Admin\Traits;
 
-use Elegant\Utils\Table\Model as TableModel;
+use Elegance\Admin\Table\Model as TableModel;
 
 trait ShouldSnakeAttributes
 {

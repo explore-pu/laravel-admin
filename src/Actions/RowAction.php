@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils\Actions;
+namespace Elegance\Admin\Actions;
 
-use Elegant\Utils\Table\Column;
-use Elegant\Utils\Table\Displayers\DropdownActions;
+use Elegance\Admin\Table\Column;
+use Elegance\Admin\Table\Displayers\DropdownActions;
 use Illuminate\Http\Request;
 
 abstract class RowAction extends TableAction
@@ -165,7 +165,7 @@ abstract class RowAction extends TableAction
     {
         $elementClass = parent::getElementClass();
 
-        if ($this->actions instanceof DropdownActions || $this->actions === 'Elegant\Utils\Table\Displayers\DropdownActions') {
+        if ($this->actions instanceof DropdownActions || $this->actions === 'Elegance\Admin\Table\Displayers\DropdownActions') {
             $elementClass .= ' dropdown-item';
         }
 

@@ -1,12 +1,12 @@
 <?php
 
-namespace Elegant\Utils\Http\Controllers;
+namespace Elegance\Admin\Http\Controllers;
 
-use Elegant\Utils\Admin;
-use Elegant\Utils\Form;
-use Elegant\Utils\Layout\Content;
-use Elegant\Utils\Traits\HasResourceActions;
-use Elegant\Utils\Traits\HasResponse;
+use Elegance\Admin\Admin;
+use Elegance\Admin\Form;
+use Elegance\Admin\Layout\Content;
+use Elegance\Admin\Traits\HasResourceActions;
+use Elegance\Admin\Traits\HasResponse;
 use Illuminate\Routing\Controller;
 use Symfony\Component\DomCrawler\Crawler;
 
@@ -20,21 +20,21 @@ class AdminController extends Controller
      *
      * @var string
      */
-    protected $title = 'Title';
+    protected mixed $title = 'Title';
 
     /**
      * Model for current resource.
      *
      * @var string
      */
-    protected $model = 'Model::class';
+    protected string $model = 'Model::class';
 
     /**
      * Set description for following 4 action pages.
      *
      * @var array
      */
-    protected $description = [
+    protected array $description = [
         // 'index'  => 'Index',
         // 'show'   => 'Show',
         // 'edit'   => 'Edit',
@@ -56,26 +56,10 @@ class AdminController extends Controller
         }
     }
 
-    protected function title()
-    {
-        return $this->title;
-    }
-
-    protected function model()
-    {
-        return $this->model;
-    }
-
-    protected function description()
-    {
-        return $this->description;
-    }
-
     /**
      * Index interface.
      *
      * @param Content $content
-     *
      * @return Content
      */
     public function index(Content $content)
@@ -89,12 +73,11 @@ class AdminController extends Controller
     /**
      * Show interface.
      *
-     * @param mixed   $id
+     * @param int $id
      * @param Content $content
-     *
      * @return Content
      */
-    public function show($id, Content $content)
+    public function show(int $id, Content $content)
     {
         return $content
             ->title($this->title)
@@ -103,28 +86,10 @@ class AdminController extends Controller
     }
 
     /**
-     * Edit interface.
-     *
-     * @param mixed   $id
-     * @param Content $content
-     *
-     * @return Content
-     */
-    public function edit($id, Content $content)
-    {
-        $content
-            ->title($this->title)
-            ->description($this->description['edit'] ?? trans('admin.edit'));
-
-        return $this->renderModalForm($this->form()->edit($id), $content);
-    }
-
-    /**
      * Create interface.
      *
      * @param Content $content
-     *
-     * @return Content
+     * @return Content|string
      */
     public function create(Content $content)
     {
@@ -136,12 +101,27 @@ class AdminController extends Controller
     }
 
     /**
-     * @param Form    $form
-     * @param Content $content
+     * Edit interface.
      *
-     * @return mixed
+     * @param int $id
+     * @param Content $content
+     * @return Content|string
      */
-    public function renderModalForm($form, $content)
+    public function edit(int $id, Content $content)
+    {
+        $content
+            ->title($this->title)
+            ->description($this->description['edit'] ?? trans('admin.edit'));
+
+        return $this->renderModalForm($this->form()->edit($id), $content);
+    }
+
+    /**
+     * @param Form $form
+     * @param Content $content
+     * @return Content|string
+     */
+    public function renderModalForm(Form $form, Content $content)
     {
         if (!request()->has('_modal')) {
             return $content->body($form);

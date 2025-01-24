@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Form\Actions;
+namespace Elegance\Admin\Form\Actions;
 
 use Illuminate\Http\Request;
 

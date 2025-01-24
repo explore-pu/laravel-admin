@@ -11,7 +11,7 @@ class CreateAdminTables extends Migration
      */
     public function getConnection()
     {
-        return config('elegant-utils.admin.database.connection') ?: config('database.default');
+        return config('admin.database.connection') ?: config('database.default');
     }
 
     /**
@@ -21,25 +21,47 @@ class CreateAdminTables extends Migration
      */
     public function up()
     {
-        Schema::create(config('elegant-utils.admin.database.user_table'), function (Blueprint $table) {
+        Schema::table(config('admin.database.user_table'), function (Blueprint $table) {
+            $table->string('avatar')->nullable()->after('password');
+            $table->softDeletes()->after('updated_at');
+        });
+
+        Schema::create(config('admin.database.role_table'), function (Blueprint $table) {
             $table->id();
-            $table->string('username', 190)->unique();
-            $table->string('password', 60);
-            $table->string('name');
-            $table->string('avatar')->nullable();
-            $table->string('remember_token', 100)->nullable();
+            $table->string('name')->unique();
+            $table->string('slug')->unique();
+            $table->timestamps();
             $table->softDeletes();
+        });
+
+        Schema::create(config('admin.database.user_role_relational.table'), function (Blueprint $table) {
+            $table->unsignedBigInteger(config('admin.database.user_role_relational.user_id'))->index();
+            $table->unsignedBigInteger(config('admin.database.user_role_relational.role_id'))->index();
             $table->timestamps();
         });
 
-        Schema::create(config('elegant-utils.admin.database.menu_table'), function (Blueprint $table) {
+        Schema::create(config('admin.database.permission_table'), function (Blueprint $table) {
             $table->id();
-            $table->integer('parent_id')->default(0);
-            $table->integer('order')->default(0);
+            $table->unsignedBigInteger('parent_id')->default(0)->index();
+            $table->tinyInteger('type')->default(1)->index()->comment('1:menu,2:page,3:action');
             $table->string('title', 50);
-            $table->string('icon', 50);
-            $table->string('uri')->nullable();
+            $table->string('icon', 50)->nullable();
+            $table->string('method', 50);
+            $table->string('uri', 100);
+            $table->integer('order')->default(0);
+            $table->timestamps();
             $table->softDeletes();
+        });
+
+        Schema::create(config('admin.database.role_permission_relational.table'), function (Blueprint $table) {
+            $table->unsignedBigInteger(config('admin.database.role_permission_relational.role_id'))->index();
+            $table->unsignedBigInteger(config('admin.database.role_permission_relational.permission_id'))->index();
+            $table->timestamps();
+        });
+
+        Schema::create(config('admin.database.user_permission_relational.table'), function (Blueprint $table) {
+            $table->unsignedBigInteger(config('admin.database.user_permission_relational.user_id'))->index();
+            $table->unsignedBigInteger(config('admin.database.user_permission_relational.permission_id'))->index();
             $table->timestamps();
         });
     }
@@ -51,7 +73,11 @@ class CreateAdminTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('elegant-utils.admin.database.user_table'));
-        Schema::dropIfExists(config('elegant-utils.admin.database.menu_table'));
+        Schema::dropColumns(config('admin.database.user_table'), ['avatar', 'deleted_at']);
+        Schema::dropIfExists(config('admin.database.role_table'));
+        Schema::dropIfExists(config('admin.database.user_role_relational.table'));
+        Schema::dropIfExists(config('admin.database.permission_table'));
+        Schema::dropIfExists(config('admin.database.role_permission_relational.table'));
+        Schema::dropIfExists(config('admin.database.user_permission_relational.table'));
     }
 }

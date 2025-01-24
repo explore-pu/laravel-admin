@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils\Table\Concerns;
+namespace Elegance\Admin\Table\Concerns;
 
 use Closure;
-use Elegant\Utils\Table\Tools\Footer;
+use Elegance\Admin\Table\Tools\Footer;
 
 trait HasFooter
 {

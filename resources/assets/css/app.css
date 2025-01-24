@@ -21,6 +21,11 @@ input.label {
     border-radius: inherit !important;
 }
 
+.input-group>.input-group-prepend>select {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
 .box-show {
     border-radius: 0 !important;
     box-shadow: none !important;

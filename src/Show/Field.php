@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils\Show;
+namespace Elegance\Admin\Show;
 
-use Elegant\Utils\Show;
-use Elegant\Utils\Widgets\Carousel;
+use Elegance\Admin\Show;
+use Elegance\Admin\Widgets\Carousel;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Model;
@@ -223,7 +223,7 @@ class Field implements Renderable
                 } elseif ($server) {
                     $src = $server.$path;
                 } else {
-                    $disk = config('elegant-utils.admin.upload.disk');
+                    $disk = config('admin.upload.disk');
 
                     if (config("filesystems.disks.{$disk}")) {
                         $src = Storage::disk($disk)->url($path);
@@ -259,7 +259,7 @@ class Field implements Renderable
                 } elseif ($server) {
                     $image = $server.$path;
                 } else {
-                    $disk = config('elegant-utils.admin.upload.disk');
+                    $disk = config('admin.upload.disk');
 
                     if (config("filesystems.disks.{$disk}")) {
                         $image = Storage::disk($disk)->url($path);
@@ -301,7 +301,7 @@ class Field implements Renderable
             } elseif ($server) {
                 $url = $server.$path;
             } else {
-                $storage = Storage::disk(config('elegant-utils.admin.upload.disk'));
+                $storage = Storage::disk(config('admin.upload.disk'));
                 if ($storage->exists($path)) {
                     $url = $storage->url($path);
                     $size = ($storage->size($path) / 1000).'KB';

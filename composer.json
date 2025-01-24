@@ -1,5 +1,5 @@
 {
-    "name": "elegant-utils/laravel-admin",
+    "name": "elegance/laravel-admin",
     "description": "laravel admin",
     "type": "library",
     "keywords": ["laravel", "admin", "table", "form", "tree"],
@@ -12,7 +12,6 @@
         }
     ],
     "require": {
-        "php": "^8.2",
         "symfony/dom-crawler": "^7.1"
     },
     "require-dev": {
@@ -20,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Elegant\\Utils\\": "src/"
+            "Elegance\\Admin\\": "src/"
         },
         "files": [
             "src/helpers.php"
@@ -29,10 +28,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Elegant\\Utils\\AdminServiceProvider"
+                "Elegance\\Admin\\AdminServiceProvider"
             ],
             "aliases": {
-                "Admin": "Elegant\\Utils\\Facades\\Admin"
+                "Admin": "Elegance\\Admin\\Facades\\Admin"
             }
         }
     }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Table\Actions;
+namespace Elegance\Admin\Table\Actions;
 
-use Elegant\Utils\Actions\RowAction;
+use Elegance\Admin\Actions\RowAction;
 
 class View extends RowAction
 {

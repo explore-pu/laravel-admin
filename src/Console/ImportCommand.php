@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Console;
+namespace Elegance\Admin\Console;
 
-use Elegant\Utils\Admin;
+use Elegance\Admin\Admin;
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 

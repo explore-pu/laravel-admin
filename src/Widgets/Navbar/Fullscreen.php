@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Widgets\Navbar;
+namespace Elegance\Admin\Widgets\Navbar;
 
-use Elegant\Utils\Admin;
+use Elegance\Admin\Admin;
 use Illuminate\Contracts\Support\Renderable;
 
 /**

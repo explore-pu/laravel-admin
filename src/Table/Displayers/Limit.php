@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Table\Displayers;
+namespace Elegance\Admin\Table\Displayers;
 
-use Elegant\Utils\Facades\Admin;
+use Elegance\Admin\Facades\Admin;
 use Illuminate\Support\Str;
 
 class Limit extends AbstractDisplayer

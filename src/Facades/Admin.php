@@ -1,17 +1,17 @@
 <?php
 
-namespace Elegant\Utils\Facades;
+namespace Elegance\Admin\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * Class Admin.
  *
- * @method static \Elegant\Utils\Table table($model, \Closure $callable)
- * @method static \Elegant\Utils\Form form($model, \Closure $callable)
- * @method static \Elegant\Utils\Show show($model, $callable = null)
- * @method static \Elegant\Utils\Tree tree($model, \Closure $callable = null)
- * @method static \Elegant\Utils\Layout\Content content(\Closure $callable = null)
+ * @method static \Elegance\Admin\Table table($model, \Closure $callable)
+ * @method static \Elegance\Admin\Form form($model, \Closure $callable)
+ * @method static \Elegance\Admin\Show show($model, $callable = null)
+ * @method static \Elegance\Admin\Tree tree($model, \Closure $callable = null)
+ * @method static \Elegance\Admin\Layout\Content content(\Closure $callable = null)
  * @method static \Illuminate\Contracts\View\Factory|\Illuminate\View\View|void css($css = null)
  * @method static \Illuminate\Contracts\View\Factory|\Illuminate\View\View|void js($js = null)
  * @method static \Illuminate\Contracts\View\Factory|\Illuminate\View\View|void headerJs($js = null)
@@ -30,12 +30,12 @@ use Illuminate\Support\Facades\Facade;
  * @method static void routes()
  * @method static string view()
  *
- * @see \Elegant\Utils\Admin
+ * @see \Elegance\Admin\Admin
  */
 class Admin extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \Elegant\Utils\Admin::class;
+        return \Elegance\Admin\Admin::class;
     }
 }

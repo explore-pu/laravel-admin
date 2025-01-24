@@ -33,14 +33,23 @@
             <a class="nav-link" data-toggle="dropdown" href="#">
                 <i class="far fa-user"></i>
             </a>
-            <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-                <a href="{{ admin_url('logout') }}" class="dropdown-item">
-                    <i class="fas fa-sign-out-alt mr-2"></i> {{ trans('admin.logout') }}
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="{{ admin_url('setting') }}" class="dropdown-item">
-                    <i class="fas fa-file mr-2"></i> {{ trans('admin.setting') }}
-                </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <div class="card-body box-profile">
+                    <div class="text-center">
+                        <img class="profile-user-img img-fluid img-circle" src="{{ Auth::user()->avatar }}" alt="User profile picture">
+                    </div>
+
+                    <h3 class="profile-username text-center">{{ Auth::user()->name }}</h3>
+
+                    <div class="row">
+                        <div class="col">
+                            <a href="{{ route('setting') }}" class="btn btn-primary btn-block"><b>{{ trans('admin.setting') }}</b></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{ route('logout') }}" class="btn btn-primary btn-block"><b>{{ trans('admin.logout') }}</b></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </li>
 {{--        <li class="nav-item">--}}

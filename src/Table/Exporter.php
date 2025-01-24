@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils\Table;
+namespace Elegance\Admin\Table;
 
-use Elegant\Utils\Table;
-use Elegant\Utils\Table\Exporters\CsvExporter;
+use Elegance\Admin\Table;
+use Elegance\Admin\Table\Exporters\CsvExporter;
 
 class Exporter
 {

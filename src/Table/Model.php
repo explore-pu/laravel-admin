@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils\Table;
+namespace Elegance\Admin\Table;
 
-use Elegant\Utils\Http\Middleware\Pjax;
-use Elegant\Utils\Table;
+use Elegance\Admin\Http\Middleware\Pjax;
+use Elegance\Admin\Table;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;

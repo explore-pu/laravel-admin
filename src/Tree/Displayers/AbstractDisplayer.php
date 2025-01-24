@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Tree\Displayers;
+namespace Elegance\Admin\Tree\Displayers;
 
-use Elegant\Utils\Tree;
+use Elegance\Admin\Tree;
 
 abstract class AbstractDisplayer
 {

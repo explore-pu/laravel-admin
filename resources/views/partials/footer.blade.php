@@ -1,4 +1,4 @@
 <footer class="main-footer">
-    {!! config('elegant-utils.admin.footer.left') !!}
-    {!! config('elegant-utils.admin.footer.right') !!}
+    {!! config('admin.footer.left') !!}
+    {!! config('admin.footer.right') !!}
 </footer>

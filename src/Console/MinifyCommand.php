@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils\Console;
+namespace Elegance\Admin\Console;
 
-use Elegant\Utils\Admin;
-use Elegant\Utils\Facades\Admin as AdminFacade;
+use Elegance\Admin\Admin;
+use Elegance\Admin\Facades\Admin as AdminFacade;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use MatthiasMullie\Minify;
@@ -73,7 +73,7 @@ class MinifyCommand extends Command
 
     protected function loadExcepts()
     {
-        $excepts = config('elegant-utils.admin.minify_assets.excepts', []);
+        $excepts = config('admin.minify_assets.excepts', []);
 
         $this->excepts = array_merge($excepts, Admin::$minifyIgnores);
     }

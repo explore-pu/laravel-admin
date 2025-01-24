@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Table\Actions;
+namespace Elegance\Admin\Table\Actions;
 
-use Elegant\Utils\Actions\BatchAction;
+use Elegance\Admin\Actions\BatchAction;
 use Illuminate\Database\Eloquent\Collection;
 
 class BatchDelete extends BatchAction
@@ -23,7 +23,7 @@ class BatchDelete extends BatchAction
     /**
      * @param Collection $collection
      *
-     * @return \Elegant\Utils\Actions\Response
+     * @return \Elegance\Admin\Actions\Response
      */
     public function handle(Collection $collection)
     {

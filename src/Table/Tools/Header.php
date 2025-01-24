@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Table\Tools;
+namespace Elegance\Admin\Table\Tools;
 
-use Elegant\Utils\Table;
+use Elegance\Admin\Table;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Query\Builder;

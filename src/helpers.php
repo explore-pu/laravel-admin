@@ -1,6 +1,6 @@
 <?php
 
-use Elegant\Utils\Admin;
+use Elegance\Admin\Admin;
 use Illuminate\Support\MessageBag;
 
 if (!function_exists('admin_directory')) {
@@ -14,7 +14,7 @@ if (!function_exists('admin_directory')) {
      */
     function admin_directory($path = '')
     {
-        return ucfirst(config('elegant-utils.admin.directory')).($path ? DIRECTORY_SEPARATOR.$path : $path);
+        return ucfirst(config('admin.directory')).($path ? DIRECTORY_SEPARATOR.$path : $path);
     }
 }
 
@@ -34,7 +34,7 @@ if (!function_exists('admin_url')) {
             return $path;
         }
 
-        $secure = $secure ?: (config('elegant-utils.admin.https'));
+        $secure = $secure ?: (config('admin.https'));
 
         return url(admin_base_path($path), $parameters, $secure);
     }
@@ -50,7 +50,7 @@ if (!function_exists('admin_base_path')) {
      */
     function admin_base_path($path = '')
     {
-        $prefix = '/'.trim(config('elegant-utils.admin.route.prefix'), '/');
+        $prefix = '/'.trim(config('admin.route.prefix'), '/');
 
         $prefix = ($prefix == '/') ? '' : $prefix;
 
@@ -149,7 +149,7 @@ if (!function_exists('admin_asset')) {
      */
     function admin_asset($path)
     {
-        return (config('elegant-utils.admin.https')) ? secure_asset($path) : asset($path);
+        return (config('admin.https')) ? secure_asset($path) : asset($path);
     }
 }
 
@@ -162,7 +162,7 @@ if (!function_exists('admin_assets_require')) {
      */
     function admin_assets_require($assets)
     {
-        \Elegant\Utils\Assets::require($assets);
+        \Elegance\Admin\Assets::require($assets);
     }
 }
 
@@ -176,10 +176,10 @@ if (!function_exists('admin_color')) {
     function admin_color($tpl = '')
     {
         if ($tpl) {
-            return str_replace('%s', config('elegant-utils.admin.theme.color'), $tpl);
+            return str_replace('%s', config('admin.theme.color'), $tpl);
         }
 
-        return config('elegant-utils.admin.theme.color');
+        return config('admin.theme.color');
     }
 }
 
@@ -367,8 +367,8 @@ if (!function_exists('admin_attrs')) {
 
 function admin_login_page_backgroud()
 {
-    if (config('elegant-utils.admin.login_background_image')) {
-        $image = config('elegant-utils.admin.login_background_image');
+    if (config('admin.login_background_image')) {
+        $image = config('admin.login_background_image');
     } else {
         $hour = date('H');
 
@@ -413,29 +413,32 @@ if (!function_exists('admin_route')) {
      */
     function admin_route($name, $parameters = [], $absolute = true)
     {
-        $name = config('elegant-utils.admin.route.as', '') . $name;
+        $name = config('admin.route.as', '') . $name;
 
         return app('url')->route($name, $parameters, $absolute);
     }
 }
-if (!function_exists('buildTree')) {
+
+if (!function_exists('build_tree')) {
     /**
-     * @param $name
-     * @param array $parameters
-     * @param bool $absolute
-     * @return mixed
+     * @param array $items
+     * @param string|int $parent_id
+     * @param string $parent_field
+     * @return array
      */
-    function buildTree(array $elements, $parentId = 0, $parentField = 'parent_id')
+    function build_tree(array $items, string|int $parent_id = 0, string $parent_field = 'parent_id'): array
     {
         $branch = [];
 
-        foreach ($elements as $element) {
-            if ($element[$parentField] == $parentId) {
-                $children = buildTree($elements, $element['id']);
+        foreach ($items as $item) {
+            if ($item[$parent_field] == $parent_id) {
+                $children = build_tree($items, $item['id'], $parent_field);
+
                 if ($children) {
-                    $element['children'] = $children;
+                    $item['children'] = $children;
                 }
-                $branch[] = $element;
+
+                $branch[] = $item;
             }
         }
 

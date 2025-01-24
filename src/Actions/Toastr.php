@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Actions;
+namespace Elegance\Admin\Actions;
 
 use Illuminate\Support\Arr;
 

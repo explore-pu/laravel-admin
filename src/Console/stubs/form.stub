@@ -2,7 +2,7 @@
 
 namespace DummyNamespace;
 
-use Elegant\Utils\Widgets\Form;
+use Elegance\Admin\Widgets\Form;
 use Illuminate\Http\Request;
 
 class DummyClass extends Form

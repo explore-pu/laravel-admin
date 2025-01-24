@@ -2,10 +2,10 @@
 
 namespace DummyNamespace;
 
-use Elegant\Utils\Http\Controllers\AdminController;
-use Elegant\Utils\Form;
-use Elegant\Utils\Table;
-use Elegant\Utils\Show;
+use Elegance\Admin\Http\Controllers\AdminController;
+use Elegance\Admin\Form;
+use Elegance\Admin\Table;
+use Elegance\Admin\Show;
 
 class ExampleController extends AdminController
 {
@@ -14,14 +14,14 @@ class ExampleController extends AdminController
      *
      * @var string
      */
-    protected $title = 'Example controller';
+    protected mixed $title = 'Example';
 
     /**
      * Model for current resource.
      *
      * @var string
      */
-    protected $model = 'Model::class';
+    protected string $model = 'Model::class';
 
     /**
      * Make a table builder.

@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Form\Field;
+namespace Elegance\Admin\Form\Field;
 
-use Elegant\Utils\Form\Field;
+use Elegance\Admin\Form\Field;
 use Illuminate\Support\Arr;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
@@ -31,7 +31,7 @@ class File extends Field
      */
     public function defaultDirectory()
     {
-        return config('elegant-utils.admin.upload.directory.file');
+        return config('admin.upload.directory.file');
     }
 
     /**

@@ -1,12 +1,12 @@
 <?php
 
-namespace Elegant\Utils\Tree\Displayers;
+namespace Elegance\Admin\Tree\Displayers;
 
-use Elegant\Utils\Admin;
-use Elegant\Utils\Tree\Actions\ColumnEdit;
-use Elegant\Utils\Tree\Actions\Destroy;
-use Elegant\Utils\Tree\Actions\Edit;
-use Elegant\Utils\Actions\TreeAction;
+use Elegance\Admin\Admin;
+use Elegance\Admin\Tree\Actions\ColumnEdit;
+use Elegance\Admin\Tree\Actions\Destroy;
+use Elegance\Admin\Tree\Actions\Edit;
+use Elegance\Admin\Actions\TreeAction;
 
 class IconActions extends Actions
 {

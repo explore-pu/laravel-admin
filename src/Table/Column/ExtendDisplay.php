@@ -1,11 +1,11 @@
 <?php
 
-namespace Elegant\Utils\Table\Column;
+namespace Elegance\Admin\Table\Column;
 
 use Carbon\Carbon;
-use Elegant\Utils\Table\Column;
-use Elegant\Utils\Table\Displayers;
-use Elegant\Utils\Table\Model;
+use Elegance\Admin\Table\Column;
+use Elegance\Admin\Table\Displayers;
+use Elegance\Admin\Table\Model;
 use Illuminate\Support\Arr;
 
 /**

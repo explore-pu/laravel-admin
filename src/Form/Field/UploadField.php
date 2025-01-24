@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Form\Field;
+namespace Elegance\Admin\Form\Field;
 
-use Elegant\Utils\Form;
+use Elegance\Admin\Form;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
@@ -101,7 +101,7 @@ trait UploadField
      */
     protected function initStorage()
     {
-        $this->disk(config('elegant-utils.admin.upload.disk'));
+        $this->disk(config('admin.upload.disk'));
     }
 
     /**
@@ -449,7 +449,7 @@ trait UploadField
             return $this->storage->url($path);
         }
 
-        return Storage::disk(config('elegant-utils.admin.upload.disk'))->url($path);
+        return Storage::disk(config('admin.upload.disk'))->url($path);
     }
 
     /**

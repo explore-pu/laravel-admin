@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Table\Concerns;
+namespace Elegance\Admin\Table\Concerns;
 
-use Elegant\Utils\Admin;
+use Elegance\Admin\Admin;
 
 trait HasHotKeys
 {

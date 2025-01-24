@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Table\Filter\Presenter;
+namespace Elegance\Admin\Table\Filter\Presenter;
 
-use Elegant\Utils\Admin;
+use Elegance\Admin\Admin;
 use Illuminate\Support\Arr;
 
 class DateTime extends Presenter

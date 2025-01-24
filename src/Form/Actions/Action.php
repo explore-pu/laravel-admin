@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Form\Actions;
+namespace Elegance\Admin\Form\Actions;
 
-use Elegant\Utils\Actions\Action as BaseAction;
+use Elegance\Admin\Actions\Action as BaseAction;
 use Illuminate\Database\Eloquent\Model;
 
 class Action extends BaseAction

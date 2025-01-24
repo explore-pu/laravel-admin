@@ -1,13 +1,13 @@
 <?php
 
-namespace Elegant\Utils\Table\Tools;
+namespace Elegance\Admin\Table\Tools;
 
-use Elegant\Utils\Admin;
-use Elegant\Utils\Form\Field;
-use Elegant\Utils\Form\Field\MultipleSelect;
-use Elegant\Utils\Form\Field\Select;
-use Elegant\Utils\Form\Field\Text;
-use Elegant\Utils\Table;
+use Elegance\Admin\Admin;
+use Elegance\Admin\Form\Field;
+use Elegance\Admin\Form\Field\MultipleSelect;
+use Elegance\Admin\Form\Field\Select;
+use Elegance\Admin\Form\Field\Text;
+use Elegance\Admin\Table;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Collection;
 

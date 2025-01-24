@@ -1,3 +1,20 @@
+<style>
+    .select2-container--bootstrap4 .select2-selection--single {
+        height: calc(1.5em + .75rem + 5px) !important;
+    }
+
+    .select2-container--bootstrap4 .select2-selection--single .select2-selection__rendered {
+        line-height: calc(1.5em + .75rem + 5px);
+    }
+
+    .select2-container--bootstrap4 .select2-selection__clear {
+        width: 1em;
+        height: 1em;
+        margin-top: .8em;
+        line-height: .8em;
+    }
+</style>
+
 <div {!! admin_attrs($group_attrs) !!}>
 
 <label for="{{$id}}" class="{{$viewClass['label']}}">{{$label}}</label>

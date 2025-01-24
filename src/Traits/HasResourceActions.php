@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Traits;
+namespace Elegance\Admin\Traits;
 
-use Elegant\Utils\Http\Controllers\HandleController;
+use Elegance\Admin\Http\Controllers\HandleController;
 
 trait HasResourceActions
 {
@@ -20,10 +20,9 @@ trait HasResourceActions
      * Update the specified resource in storage.
      *
      * @param int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @return mixed
      */
-    public function update($id)
+    public function update(int $id)
     {
         return $this->form()->update($id);
     }
@@ -32,10 +31,9 @@ trait HasResourceActions
      * Remove the specified resource.
      *
      * @param int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @return mixed
      */
-    public function destroy($id)
+    public function destroy(int $id)
     {
         return $this->form()->destroy($id);
     }
@@ -44,10 +42,9 @@ trait HasResourceActions
      * restore the specified resource.
      *
      * @param int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @return mixed
      */
-    public function restore($id)
+    public function restore(int $id)
     {
         return $this->form()->restore($id);
     }
@@ -56,10 +53,9 @@ trait HasResourceActions
      * delete the specified resource from storage.
      *
      * @param int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @return mixed
      */
-    public function delete($id)
+    public function delete(int $id)
     {
         return $this->form()->delete($id);
     }

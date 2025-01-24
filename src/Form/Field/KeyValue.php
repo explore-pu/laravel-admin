@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Elegant\Utils\Form\Field;
+namespace Elegance\Admin\Form\Field;
 
-use Elegant\Utils\Form\Field;
+use Elegance\Admin\Form\Field;
 use Illuminate\Support\Arr;
 
 class KeyValue extends Field

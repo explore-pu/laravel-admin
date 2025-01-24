@@ -10,7 +10,7 @@
     @if(!$actions->isEmpty())
     <ul class="dropdown-menu" role="menu">
         @foreach($actions as $action)
-            @if($action instanceof \Elegant\Utils\Actions\BatchAction)
+            @if($action instanceof \Elegance\Admin\Actions\BatchAction)
                 <li>{!! $action->render() !!}</li>
             @else
                 <li><a href="#" class="{{ $action->getElementClass(false) }}">{!! $action->render() !!} </a></li>

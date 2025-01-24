@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Table\Filter\Presenter;
+namespace Elegance\Admin\Table\Filter\Presenter;
 
-use Elegant\Utils\Facades\Admin;
+use Elegance\Admin\Facades\Admin;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;

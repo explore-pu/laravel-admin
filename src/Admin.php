@@ -1,15 +1,12 @@
 <?php
 
-namespace Elegant\Utils;
+namespace Elegance\Admin;
 
 use Closure;
-use Elegant\Utils\Models\Menu;
-use Elegant\Utils\Models\MenuGroup;
-use Elegant\Utils\Traits\BuiltinRoutes;
-use Elegant\Utils\Traits\HasAssets;
-use Elegant\Utils\Traits\RenderView;
-use Elegant\Utils\Widgets\Navbar;
-use Illuminate\Support\Facades\Auth;
+use Elegance\Admin\Traits\BuiltinRoutes;
+use Elegance\Admin\Traits\HasAssets;
+use Elegance\Admin\Traits\RenderView;
+use Elegance\Admin\Widgets\Navbar;
 use Illuminate\Support\Traits\Macroable;
 
 /**
@@ -23,11 +20,6 @@ class Admin
      * @var Navbar
      */
     protected $navbar;
-
-    /**
-     * @var array
-     */
-    protected $menu = [];
 
     /**
      * @var string
@@ -55,25 +47,6 @@ class Admin
     protected static $booted = false;
 
     /**
-     * Left sider-bar menu.
-     *
-     * @return array
-     */
-    public function menu()
-    {
-        if (!empty($this->menu)) {
-            return $this->menu;
-        }
-
-        $menuClass = config('elegant-utils.admin.database.menu_model');
-
-        /** @var Menu $menuModel */
-        $menuModel = new $menuClass();
-
-        return $this->menu = $menuModel->toTree();
-    }
-
-    /**
      * Set admin title.
      *
      * @param string $title
@@ -92,7 +65,7 @@ class Admin
      */
     public function title()
     {
-        return self::$metaTitle ? self::$metaTitle : config('elegant-utils.admin.title');
+        return self::$metaTitle ?? config('admin.title');
     }
 
     /**
@@ -114,7 +87,7 @@ class Admin
     /**
      * Get navbar object.
      *
-     * @return \Elegant\Utils\Widgets\Navbar
+     * @return \Elegance\Admin\Widgets\Navbar
      */
     public function getNavbar()
     {
@@ -161,7 +134,7 @@ class Admin
     {
         $this->fireBootingCallbacks();
 
-        require config('elegant-utils.admin.bootstrap', admin_directory('bootstrap.php'));
+        require config('admin.bootstrap', admin_directory('bootstrap.php'));
 
         $this->fireBootedCallbacks();
 

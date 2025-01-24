@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils\Table\Tools;
+namespace Elegance\Admin\Table\Tools;
 
-use Elegant\Utils\Admin;
-use Elegant\Utils\Table;
+use Elegance\Admin\Admin;
+use Elegance\Admin\Table;
 
 class CreateButton extends AbstractTool
 {

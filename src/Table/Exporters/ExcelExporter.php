@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Table\Exporters;
+namespace Elegance\Admin\Table\Exporters;
 
 use Illuminate\Support\Str;
 use Maatwebsite\Excel\Concerns\Exportable;

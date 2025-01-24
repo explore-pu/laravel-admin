@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Console;
+namespace Elegance\Admin\Console;
 
 class ControllerCommand extends MakeCommand
 {

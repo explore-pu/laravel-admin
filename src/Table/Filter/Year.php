@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Table\Filter;
+namespace Elegance\Admin\Table\Filter;
 
 class Year extends Date
 {

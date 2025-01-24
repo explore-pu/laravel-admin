@@ -1,30 +1,25 @@
 <?php
 
-namespace Elegant\Utils\Http\Controllers;
+namespace Elegance\Admin\Http\Controllers;
 
-use Elegant\Utils\Facades\Admin;
-use Elegant\Utils\Form;
-use Elegant\Utils\Layout\Content;
+use Elegance\Admin\Form;
+use Elegance\Admin\Http\Requests\LoginRequest;
+use Elegance\Admin\Layout\Content;
+use Illuminate\Auth\AuthenticationException;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Lang;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
     /**
      * Show the login page.
-     *
-     * @return \Illuminate\Contracts\View\Factory|Redirect|\Illuminate\View\View
      */
-    public function getLogin()
+    public function create()
     {
-        if (Auth::guard()->check()) {
-            return redirect($this->redirectPath());
-        }
-
         return view('admin::login');
     }
 
@@ -32,56 +27,19 @@ class AuthController extends Controller
      * Handle a login request.
      *
      * @param Request $request
-     *
-     * @return mixed
+     * @return RedirectResponse|Response
+     * @throws AuthenticationException
+     * @throws ValidationException
      */
-    public function postLogin(Request $request)
+    public function store(LoginRequest $request)
     {
-        $this->loginValidator($request->all())->validate();
+        $request->authenticate();
 
-        $credentials = $request->only([$this->username(), $this->password()]);
-        $remember = $request->get('remember', false);
+        $request->session()->regenerate();
 
-        if (Auth::attempt($credentials, $remember)) {
-            if (config('elegant-utils.admin.single_device_login')) {
-                Auth::guard()->logoutOtherDevices($credentials[$this->password()]);
-            }
+        admin_toastr(trans('admin.login_successful'));
 
-            return $this->sendLoginResponse($request);
-        }
-
-        return back()->withInput()->withErrors([
-            $this->username() => $this->getFailedLoginMessage(),
-        ]);
-    }
-
-    /**
-     * Get a validator for an incoming login request.
-     *
-     * @param array $data
-     *
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function loginValidator(array $data)
-    {
-        return Validator::make($data, [
-            $this->username()   => 'required',
-            $this->password()   => 'required',
-        ]);
-    }
-
-    /**
-     * User logout.
-     *
-     * @return Redirect
-     */
-    public function getLogout(Request $request)
-    {
-        Auth::guard()->logout();
-
-        $request->session()->invalidate();
-
-        return redirect('/');
+        return redirect($this->redirectPath());
     }
 
     /**
@@ -91,16 +49,14 @@ class AuthController extends Controller
      *
      * @return Content
      */
-    public function getSetting(Content $content)
+    public function edit(Content $content)
     {
         $form = $this->settingForm();
-        $form->tools(
-            function (Form\Tools $tools) {
-                $tools->disableList();
-                $tools->disableDelete();
-                $tools->disableView();
-            }
-        );
+        $form->tools(function (Form\Tools $tools) {
+            $tools->disableList();
+            $tools->disableDelete();
+            $tools->disableView();
+        });
 
         return $content
             ->title(trans('admin.user_setting'))
@@ -112,7 +68,7 @@ class AuthController extends Controller
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function putSetting()
+    public function update()
     {
         return $this->settingForm()->update(Auth::user()->id);
     }
@@ -124,12 +80,12 @@ class AuthController extends Controller
      */
     protected function settingForm()
     {
-        $class = config('elegant-utils.admin.database.user_model');
+        $class = config('admin.database.user_model');
 
         $form = new Form(new $class());
 
-        $form->display('username', trans('admin.username'));
         $form->text('name', trans('admin.name'))->rules('required');
+        $form->display('email', trans('admin.email'));
         $form->image('avatar', trans('admin.avatar'));
         $form->password('password', trans('admin.password'))->rules('confirmed|required');
         $form->password('password_confirmation', trans('admin.password_confirmation'))->rules('required')
@@ -137,7 +93,7 @@ class AuthController extends Controller
                 return $form->model()->password;
             });
 
-        $form->setAction(admin_url('setting'));
+        $form->setAction(route('setting'));
 
         $form->ignore(['password_confirmation']);
 
@@ -157,13 +113,15 @@ class AuthController extends Controller
     }
 
     /**
-     * @return string|\Symfony\Component\Translation\TranslatorInterface
+     * User logout.
      */
-    protected function getFailedLoginMessage()
+    public function logout(Request $request)
     {
-        return Lang::has('auth.failed')
-            ? trans('auth.failed')
-            : 'These credentials do not match our records.';
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        return redirect('/');
     }
 
     /**
@@ -178,41 +136,5 @@ class AuthController extends Controller
         }
 
         return property_exists($this, 'redirectTo') ? $this->redirectTo : '/';
-    }
-
-    /**
-     * Send the response after the user was authenticated.
-     *
-     * @param \Illuminate\Http\Request $request
-     *
-     * @return \Illuminate\Http\Response
-     */
-    protected function sendLoginResponse(Request $request)
-    {
-        admin_toastr(trans('admin.login_successful'));
-
-        $request->session()->regenerate();
-
-        return redirect($this->redirectPath());
-    }
-
-    /**
-     * Get the login username to be used by the controller.
-     *
-     * @return string
-     */
-    protected function username()
-    {
-        return 'username';
-    }
-
-    /**
-     * Get the login password to be used by the controller.
-     *
-     * @return string
-     */
-    protected function password()
-    {
-        return 'password';
     }
 }

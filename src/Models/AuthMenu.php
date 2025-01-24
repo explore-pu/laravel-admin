@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils\Models;
+namespace Elegance\Admin\Models;
 
-use Elegant\Utils\Traits\DefaultDatetimeFormat;
-use Elegant\Utils\Traits\ModelTree;
+use Elegance\Admin\Traits\DefaultDatetimeFormat;
+use Elegance\Admin\Traits\ModelTree;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
@@ -37,11 +37,11 @@ class AuthMenu extends Model
      */
     public function __construct(array $attributes = [])
     {
-        $connection = config('elegant-utils.admin.database.connection') ?: config('database.default');
+        $connection = config('admin.database.connection') ?: config('database.default');
 
         $this->setConnection($connection);
 
-        $this->setTable(config('elegant-utils.admin.database.menu_table'));
+        $this->setTable(config('admin.database.menu_table'));
 
         parent::__construct($attributes);
     }
@@ -52,7 +52,7 @@ class AuthMenu extends Model
      */
     public function allNodes(bool $trash = false): array
     {
-        $connection = config('elegant-utils.admin.database.connection') ?: config('database.default');
+        $connection = config('admin.database.connection') ?: config('database.default');
 
         $titleColumn = $this->getTitleColumn();
         $orderColumn = DB::connection($connection)->getQueryGrammar()->wrap($this->getOrderColumn());

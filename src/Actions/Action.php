@@ -1,10 +1,10 @@
 <?php
 
-namespace Elegant\Utils\Actions;
+namespace Elegance\Admin\Actions;
 
-use Elegant\Utils\Actions\Interactor\Form;
-use Elegant\Utils\Admin;
-use Elegant\Utils\Form\Field;
+use Elegance\Admin\Actions\Interactor\Form;
+use Elegance\Admin\Admin;
+use Elegance\Admin\Form\Field;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 

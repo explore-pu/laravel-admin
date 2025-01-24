@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Traits;
+namespace Elegance\Admin\Traits;
 
-use Elegant\Utils\Actions\Response;
+use Elegance\Admin\Actions\Response;
 
 trait HasResponse
 {
@@ -15,7 +15,7 @@ trait HasResponse
      * @param bool $swal
      * @return Response
      */
-    public function response($swal = true)
+    public function response(bool $swal = true)
     {
         if (is_null($this->response)) {
             $this->response = new Response();

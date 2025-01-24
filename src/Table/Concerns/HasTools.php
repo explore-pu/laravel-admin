@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils\Table\Concerns;
+namespace Elegance\Admin\Table\Concerns;
 
 use Closure;
-use Elegant\Utils\Table\Tools;
+use Elegance\Admin\Table\Tools;
 
 trait HasTools
 {

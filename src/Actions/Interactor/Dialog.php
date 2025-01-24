@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Actions\Interactor;
+namespace Elegance\Admin\Actions\Interactor;
 
-use Elegant\Utils\Admin;
+use Elegance\Admin\Admin;
 
 class Dialog extends Interactor
 {

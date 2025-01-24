@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils\Table\Displayers;
+namespace Elegance\Admin\Table\Displayers;
 
-use Elegant\Utils\Admin;
-use Elegant\Utils\Table\Simple;
+use Elegance\Admin\Admin;
+use Elegance\Admin\Table\Simple;
 use Illuminate\Contracts\Support\Renderable;
 
 class Modal extends AbstractDisplayer

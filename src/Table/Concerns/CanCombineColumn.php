@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils\Table\Concerns;
+namespace Elegance\Admin\Table\Concerns;
 
-use Elegant\Utils\Table\Column;
-use Elegant\Utils\Table\ColumnGroup;
+use Elegance\Admin\Table\Column;
+use Elegance\Admin\Table\ColumnGroup;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 

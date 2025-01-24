@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Form\Actions;
+namespace Elegance\Admin\Form\Actions;
 
-use Elegant\Utils\Admin;
+use Elegance\Admin\Admin;
 use Illuminate\Contracts\Support\Renderable;
 
 class View implements Renderable

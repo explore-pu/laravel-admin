@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Widgets;
+namespace Elegance\Admin\Widgets;
 
-use Elegant\Utils\Widgets\Navbar\RefreshButton;
+use Elegance\Admin\Widgets\Navbar\RefreshButton;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Renderable;
 

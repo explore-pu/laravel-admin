@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Table\Displayers;
+namespace Elegance\Admin\Table\Displayers;
 
 use Illuminate\Database\Eloquent\Relations\BelongsToMany as Relation;
 use Illuminate\Support\Arr;

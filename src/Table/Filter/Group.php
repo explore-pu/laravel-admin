@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Table\Filter;
+namespace Elegance\Admin\Table\Filter;
 
-use Elegant\Utils\Admin;
+use Elegance\Admin\Admin;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 

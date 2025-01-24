@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Tree\Actions;
+namespace Elegance\Admin\Tree\Actions;
 
-use Elegant\Utils\Actions\TreeAction;
+use Elegance\Admin\Actions\TreeAction;
 
 class Restore extends TreeAction
 {

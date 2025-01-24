@@ -1,12 +1,12 @@
 <?php
 
-namespace Elegant\Utils\Http\Controllers;
+namespace Elegance\Admin\Http\Controllers;
 
-use Elegant\Utils\Actions\Action;
-use Elegant\Utils\Actions\Response;
-use Elegant\Utils\Actions\RowAction;
-use Elegant\Utils\Actions\TableAction;
-use Elegant\Utils\Widgets\Form;
+use Elegance\Admin\Actions\Action;
+use Elegance\Admin\Actions\Response;
+use Elegance\Admin\Actions\RowAction;
+use Elegance\Admin\Actions\TableAction;
+use Elegance\Admin\Widgets\Form;
 use Exception;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Model;
@@ -160,7 +160,7 @@ class HandleController extends Controller
         $class = str_replace('_', '\\', $class);
 
         if (class_exists($class)) {
-            /** @var \Elegant\Utils\Table\Selectable $selectable */
+            /** @var \Elegance\Admin\Table\Selectable $selectable */
             $selectable = new $class(...array_values($args));
 
             return $selectable->render();

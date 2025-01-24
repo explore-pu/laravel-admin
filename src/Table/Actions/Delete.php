@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils\Table\Actions;
+namespace Elegance\Admin\Table\Actions;
 
-use Elegant\Utils\Actions\Response;
-use Elegant\Utils\Actions\RowAction;
+use Elegance\Admin\Actions\Response;
+use Elegance\Admin\Actions\RowAction;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 

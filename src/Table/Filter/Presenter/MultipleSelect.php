@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Table\Filter\Presenter;
+namespace Elegance\Admin\Table\Filter\Presenter;
 
-use Elegant\Utils\Facades\Admin;
+use Elegance\Admin\Facades\Admin;
 
 class MultipleSelect extends Select
 {

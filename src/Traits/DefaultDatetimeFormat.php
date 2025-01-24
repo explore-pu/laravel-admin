@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Traits;
+namespace Elegance\Admin\Traits;
 
 use Carbon\Carbon;
 

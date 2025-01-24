@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils\Http\Middleware;
+namespace Elegance\Admin\Http\Middleware;
 
 use Closure;
-use Elegant\Utils\Facades\Admin;
+use Elegance\Admin\Facades\Admin;
 use Illuminate\Http\Request;
 
 class Bootstrap

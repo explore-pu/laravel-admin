@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Traits;
+namespace Elegance\Admin\Traits;
 
-use Elegant\Utils\Tree;
+use Elegance\Admin\Tree;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
@@ -177,22 +177,7 @@ trait ModelTree
             $nodes = $this->allNodes($trash);
         }
 
-        return buildTree($nodes, $parentId, $this->getParentColumn());
-//        $branch = [];
-//
-//        foreach ($nodes as $node) {
-//            if ($node[$this->getParentColumn()] == $parentId) {
-//                $children = $this->buildNestedArray($trash, $nodes, $node[$this->getKeyName()]);
-//
-//                if ($children) {
-//                    $node['children'] = $children;
-//                }
-//
-//                $branch[] = $node;
-//            }
-//        }
-//
-//        return $branch;
+        return build_tree($nodes, $parentId, $this->getParentColumn());
     }
 
     /**

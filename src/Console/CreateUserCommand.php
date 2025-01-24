@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Console;
+namespace Elegance\Admin\Console;
 
 use Illuminate\Console\Command;
 
@@ -25,7 +25,7 @@ class CreateUserCommand extends Command
      */
     public function handle()
     {
-        $userModel = config('elegant-utils.admin.database.user_model');
+        $userModel = config('admin.database.user_model');
         $username = $this->ask('Please enter a username to login');
         $password = bcrypt($this->secret('Please enter a password to login'));
         $name = $this->ask('Please enter a name to display');

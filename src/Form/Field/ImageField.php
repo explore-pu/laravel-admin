@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Form\Field;
+namespace Elegance\Admin\Form\Field;
 
 use Illuminate\Support\Str;
 use Intervention\Image\Constraint;
@@ -31,7 +31,7 @@ trait ImageField
      */
     public function defaultDirectory()
     {
-        return config('elegant-utils.admin.upload.directory.image');
+        return config('admin.upload.directory.image');
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils;
+namespace Elegance\Admin;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;

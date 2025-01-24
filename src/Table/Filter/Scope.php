@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Table\Filter;
+namespace Elegance\Admin\Table\Filter;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Collection;

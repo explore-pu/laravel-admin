@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Http\Middleware;
+namespace Elegance\Admin\Http\Middleware;
 
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Session\Middleware\AuthenticateSession;
@@ -16,6 +16,6 @@ class SingleUserLogin extends AuthenticateSession
 
         $request->session()->flush();
 
-        throw new AuthenticationException('Unauthenticated.', [], route(config('elegant-utils.admin.route.as') . 'login'));
+        throw new AuthenticationException('Unauthenticated.', [], route('login'));
     }
 }

@@ -1,13 +1,13 @@
 <?php
 
-use Elegant\Utils\Facades\Admin;
+use Elegance\Admin\Admin;
 use Illuminate\Support\Facades\Route;
 
 Admin::routes();
 
 Route::group([
-    'namespace' => config('elegant-utils.admin.route.namespace'),
-    'middleware' => config('elegant-utils.admin.route.middleware'),
+    'namespace' => config('admin.route.namespace'),
+    'middleware' => config('admin.route.middleware')
 ], function () {
     // home
     Route::get('/', 'HomeController@index')->name('home');

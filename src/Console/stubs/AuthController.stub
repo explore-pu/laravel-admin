@@ -2,7 +2,7 @@
 
 namespace DummyNamespace;
 
-use Elegant\Utils\Http\Controllers\AuthController as BaseAuthController;
+use Elegance\Admin\Http\Controllers\AuthController as BaseAuthController;
 
 class AuthController extends BaseAuthController
 {

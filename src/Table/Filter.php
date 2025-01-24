@@ -1,10 +1,10 @@
 <?php
 
-namespace Elegant\Utils\Table;
+namespace Elegance\Admin\Table;
 
-use Elegant\Utils\Table\Filter\AbstractFilter;
-use Elegant\Utils\Table\Filter\Layout\Layout;
-use Elegant\Utils\Table\Filter\Scope;
+use Elegance\Admin\Table\Filter\AbstractFilter;
+use Elegance\Admin\Table\Filter\Layout\Layout;
+use Elegance\Admin\Table\Filter\Scope;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Arr;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Widgets;
+namespace Elegance\Admin\Widgets;
 
 class StepForm extends Form
 {

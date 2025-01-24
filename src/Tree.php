@@ -1,12 +1,13 @@
 <?php
 
-namespace Elegant\Utils;
+namespace Elegance\Admin;
 
 use Closure;
-use Elegant\Utils\Tree\HasActions;
-use Elegant\Utils\Tree\Tools;
+use Elegance\Admin\Tree\HasActions;
+use Elegance\Admin\Tree\Tools;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\JsonResponse;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 
@@ -23,6 +24,11 @@ class Tree implements Renderable
      * @var string
      */
     protected $elementId = 'tree-';
+
+    /**
+     * @var string
+     */
+    protected $path;
 
     /**
      * @var Model
@@ -286,7 +292,10 @@ class Tree implements Renderable
     /**
      * Render a tree.
      *
-     * @return \Illuminate\Http\JsonResponse|string
+     * @return JsonResponse|string
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
+     * @throws \Throwable
      */
     public function render()
     {

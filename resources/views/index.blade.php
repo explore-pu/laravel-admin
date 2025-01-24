@@ -9,12 +9,12 @@
     <title>{{ Admin::title() }} @if($header) | {{ $header }}@endif</title>
     <link rel="icon" href="/vendor/laravel-admin/img/favicon.ico">
     <script src="{{ admin_asset('vendor/laravel-admin/require.js') }}"></script>
-    <script src="{{ admin_url('_require_config') }}"></script>
+    <script src="{{ route('require_config') }}"></script>
 </head>
 
-<body class="hold-transition {{ join(' ', config('elegant-utils.admin.theme.layout')) }} {{ 'accent-'.config('elegant-utils.admin.theme.color') }}">
+<body class="hold-transition {{ join(' ', config('admin.theme.layout')) }} {{ 'accent-'.config('admin.theme.color') }}">
 
-@if($alert = config('elegant-utils.admin.top_alert'))
+@if($alert = config('admin.top_alert'))
     <div style="text-align: center;padding: 5px;font-size: 12px;background-color: #ffffd5;color: #ff0000;">
         {!! $alert !!}
     </div>

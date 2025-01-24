@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Table\Column;
+namespace Elegance\Admin\Table\Column;
 
 use Illuminate\Contracts\Support\Renderable;
 

@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 Route::group([
-    'namespace' => 'Elegant\Utils\Http\Controllers',
-    'middleware' => config('elegant-utils.admin.route.middleware'),
+    'namespace' => 'Elegance\Admin\Http\Controllers',
+    'middleware' => config('admin.route.middleware'),
 ], function () {
     Route::post('_handle_form_', 'HandleController@handleForm')->name('handle_form');
     Route::post('_handle_action_', 'HandleController@handleAction')->name('handle_action');

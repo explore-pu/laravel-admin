@@ -1,11 +1,11 @@
 <?php
 
-namespace Elegant\Utils\Table;
+namespace Elegance\Admin\Table;
 
 use Closure;
-use Elegant\Utils\Actions\RowAction;
-use Elegant\Utils\Table;
-use Elegant\Utils\Table\Displayers\AbstractDisplayer;
+use Elegance\Admin\Actions\RowAction;
+use Elegance\Admin\Table;
+use Elegance\Admin\Table\Displayers\AbstractDisplayer;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Database\Eloquent\Model as BaseModel;
 use Illuminate\Support\Arr;
@@ -478,7 +478,7 @@ class Column
     public function action($action)
     {
         if (!is_subclass_of($action, RowAction::class)) {
-            throw new \InvalidArgumentException("Action class [$action] must be sub-class of [Elegant\Utils\Actions\TableAction]");
+            throw new \InvalidArgumentException("Action class [$action] must be sub-class of [Elegance\Admin\Actions\TableAction]");
         }
 
         $table = $this->table;

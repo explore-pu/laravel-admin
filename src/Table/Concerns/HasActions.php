@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils\Table\Concerns;
+namespace Elegance\Admin\Table\Concerns;
 
 use Closure;
-use Elegant\Utils\Table;
+use Elegance\Admin\Table;
 
 trait HasActions
 {
@@ -62,7 +62,7 @@ trait HasActions
             return $this->actionsClass;
         }
 
-        if ($class = config('elegant-utils.admin.table_action_class')) {
+        if ($class = config('admin.table_action_class')) {
             return $class;
         }
 

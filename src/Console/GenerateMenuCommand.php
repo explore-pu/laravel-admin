@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Console;
+namespace Elegance\Admin\Console;
 
-use Elegant\Utils\Models\Menu;
+use Elegance\Admin\Models\Menu;
 use Illuminate\Console\Command;
 use Illuminate\Routing\Route;
 use Illuminate\Routing\Router;

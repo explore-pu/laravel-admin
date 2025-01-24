@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Tree\Displayers;
+namespace Elegance\Admin\Tree\Displayers;
 
 abstract class Actions extends AbstractDisplayer
 {

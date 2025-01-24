@@ -25,16 +25,16 @@ Installation
 First, install laravel 11.0, and make sure that the database connection settings are correct.
 
 ```
-composer require elegant-utils/laravel-admin
+composer require elegance/laravel-admin
 ```
 
 Then run these commands to publish assets and config：
 
 ```
-php artisan vendor:publish --provider="Elegant\Utils\AdminServiceProvider"
+php artisan vendor:publish --provider="Elegance\Admin\AdminServiceProvider"
 ```
 
-After run command you can find config file in `config/elegant-utils/admin.php`, in this file you can change the install directory,db connection or table names.
+After run command you can find config file in `config/admin.php`, in this file you can change the install directory,db connection or table names.
 
 At last run following command to finish install.
 
@@ -42,11 +42,11 @@ At last run following command to finish install.
 php artisan admin:install
 ```
 
-Open `http://localhost/` in browser,use username `admin` and password `admin` to login.
+Open `http://localhost/` in browser,use username `admin@admin.com` and password `admin` to login.
 
 Configurations
 ------------
-The file `config/elegant-utils/admin.php` contains an array of configurations, you can find the default configurations in there.
+The file `config/admin.php` contains an array of configurations, you can find the default configurations in there.
 
 ## Extensions
 

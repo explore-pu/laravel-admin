@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Show;
+namespace Elegance\Admin\Show;
 
-use Elegant\Utils\Show;
+use Elegance\Admin\Show;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Collection;
 

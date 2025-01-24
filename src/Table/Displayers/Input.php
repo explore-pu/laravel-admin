@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Table\Displayers;
+namespace Elegance\Admin\Table\Displayers;
 
-use Elegant\Utils\Admin;
+use Elegance\Admin\Admin;
 
 class Input extends AbstractDisplayer
 {

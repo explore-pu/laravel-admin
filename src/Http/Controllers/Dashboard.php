@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Http\Controllers;
+namespace Elegance\Admin\Http\Controllers;
 
-use Elegant\Utils\Admin;
+use Elegance\Admin\Admin;
 use Illuminate\Support\Arr;
 
 class Dashboard
@@ -46,11 +46,6 @@ class Dashboard
     public static function utils()
     {
         $utils = [
-            'authorization' => [
-                'name' => 'laravel-admin-utils/authorization',
-                'link' => 'https://github.com/laravel-admin-utils/authorization',
-                'icon' => 'fas fa-ban',
-            ],
             'logs' => [
                 'name' => 'laravel-admin-utils/operation-logs',
                 'link' => 'https://github.com/laravel-admin-utils/operation-logs',

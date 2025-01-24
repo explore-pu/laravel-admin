@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Table\Tools;
+namespace Elegance\Admin\Table\Tools;
 
-use Elegant\Utils\Table;
+use Elegance\Admin\Table;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 class Paginator extends AbstractTool

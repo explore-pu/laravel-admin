@@ -1,10 +1,10 @@
 <?php
 
-namespace Elegant\Utils\Traits;
+namespace Elegance\Admin\Traits;
 
 use DOMDocument;
 use DOMElement;
-use Elegant\Utils\Assets;
+use Elegance\Admin\Assets;
 
 trait HasAssets
 {

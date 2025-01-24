@@ -1,10 +1,10 @@
 <?php
 
-namespace Elegant\Utils\Table\Concerns;
+namespace Elegance\Admin\Table\Concerns;
 
-use Elegant\Utils\Table;
-use Elegant\Utils\Table\Exporter;
-use Elegant\Utils\Table\Exporters\AbstractExporter;
+use Elegance\Admin\Table;
+use Elegance\Admin\Table\Exporter;
+use Elegance\Admin\Table\Exporters\AbstractExporter;
 
 trait CanExportTable
 {

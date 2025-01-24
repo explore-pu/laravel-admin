@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Console;
+namespace Elegance\Admin\Console;
 
 use Illuminate\Console\Command;
 
@@ -38,15 +38,15 @@ class ExportSeedCommand extends Command
 
         $replaces = [
             'DummyClass'      => $name,
-            'ClassMenu'       => config('elegant-utils.admin.database.menu_model'),
-            'ArrayMenu'       => $this->getTableDataArrayAsString(config('elegant-utils.admin.database.menu_table'), $exceptFields),
+            'ClassMenu'       => config('admin.database.menu_model'),
+            'ArrayMenu'       => $this->getTableDataArrayAsString(config('admin.database.menu_table'), $exceptFields),
         ];
 
         if ($exportUsers) {
             $replaces = array_merge($replaces, [
-                'ClassUsers'            => config('elegant-utils.admin.database.users_model'),
+                'ClassUsers'            => config('admin.database.users_model'),
 
-                'ArrayUsers'                 => $this->getTableDataArrayAsString(config('elegant-utils.admin.database.users_table'), $exceptFields),
+                'ArrayUsers'                 => $this->getTableDataArrayAsString(config('admin.database.users_table'), $exceptFields),
             ]);
         } else {
             $contents = preg_replace('/\/\/ users tables[\s\S]*?(?=\/\/ finish)/mu', '', $contents);

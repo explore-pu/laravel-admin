@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Show;
+namespace Elegance\Admin\Show;
 
 class Divider extends Field
 {

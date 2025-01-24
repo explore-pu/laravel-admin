@@ -1,14 +1,14 @@
 <?php
 
-namespace Elegant\Utils\Table\Displayers;
+namespace Elegance\Admin\Table\Displayers;
 
-use Elegant\Utils\Actions\RowAction;
-use Elegant\Utils\Admin;
-use Elegant\Utils\Table\Actions\Delete;
-use Elegant\Utils\Table\Actions\Destroy;
-use Elegant\Utils\Table\Actions\Edit;
-use Elegant\Utils\Table\Actions\EditModal;
-use Elegant\Utils\Table\Actions\View;
+use Elegance\Admin\Actions\RowAction;
+use Elegance\Admin\Admin;
+use Elegance\Admin\Table\Actions\Delete;
+use Elegance\Admin\Table\Actions\Destroy;
+use Elegance\Admin\Table\Actions\Edit;
+use Elegance\Admin\Table\Actions\EditModal;
+use Elegance\Admin\Table\Actions\View;
 use Illuminate\Support\Arr;
 
 class DropdownActions extends Actions
@@ -61,7 +61,7 @@ class DropdownActions extends Actions
 
             /** @var RowAction $action */
             $action = new $class();
-            
+
             $action->setActions($this);
 
             $this->prepareAction($action);

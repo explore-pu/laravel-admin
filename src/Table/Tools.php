@@ -1,12 +1,12 @@
 <?php
 
-namespace Elegant\Utils\Table;
+namespace Elegance\Admin\Table;
 
-use Elegant\Utils\Actions\TableAction;
-use Elegant\Utils\Table;
-use Elegant\Utils\Table\Tools\AbstractTool;
-use Elegant\Utils\Table\Tools\BatchActions;
-use Elegant\Utils\Table\Tools\FilterButton;
+use Elegance\Admin\Actions\TableAction;
+use Elegance\Admin\Table;
+use Elegance\Admin\Table\Tools\AbstractTool;
+use Elegance\Admin\Table\Tools\BatchActions;
+use Elegance\Admin\Table\Tools\FilterButton;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Collection;

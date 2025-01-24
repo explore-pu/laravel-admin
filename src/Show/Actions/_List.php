@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Show\Actions;
+namespace Elegance\Admin\Show\Actions;
 
 use Illuminate\Contracts\Support\Renderable;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils\Form\Concerns;
+namespace Elegance\Admin\Form\Concerns;
 
-use Elegant\Utils\Form\Builder;
-use Elegant\Utils\Form\Field;
+use Elegance\Admin\Form\Builder;
+use Elegance\Admin\Form\Field;
 use Illuminate\Contracts\Support\Arrayable;
 
 trait HasResponse

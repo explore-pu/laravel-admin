@@ -62,6 +62,19 @@ return [
         'namespace' => 'App\\Admin\\Controllers',
 
         'middleware' => ['web', 'auth', 'admin'],
+
+        // The name of the route that needs to be excluded during authentication
+        'excepts' => [
+            'logout',
+            'setting',
+            'setting.update',
+            'handle_form',
+            'handle_action',
+            'handle_selectable',
+            'handle_renderable',
+            'require_config',
+            'error404',
+        ]
     ],
 
     /*
@@ -108,13 +121,14 @@ return [
     |
     */
     'auth' => [
-        'controller' => App\Admin\Controllers\AuthController::class,
-        
-        'providers' => [
-            'users' => [
-                'model'  => env('AUTH_MODEL', App\Models\AuthUser::class),
-            ],
-        ],
+        // If necessary, you can extend this controller and rewrite
+        'controller' => Elegance\Admin\Http\Controllers\AuthController::class,
+
+        // Login username field
+        'username' => 'email',
+
+        // Login password field
+        'password' => 'password',
 
         // Add "remember me" to login form
         'remember' => true,
@@ -165,14 +179,49 @@ return [
         'connection' => '',
 
         // authenticate users tables and model.
-        'user_table' => 'auth_users',
-        'user_model' => App\Models\AuthUser::class,
-        'user_controller' => App\Admin\Controllers\AuthUserController::class,
+        'user_table' => 'users',
+        // The user model is consistent with the AUTH model
+        'user_model' => App\Models\User::class,
+        // If necessary, you can extend this controller and rewrite
+        'user_controller' => Elegance\Admin\Http\Controllers\UserController::class,
 
-        // authenticate menu table and model.
-        'menu_table' => 'auth_menus',
-        'menu_model' => App\Models\AuthMenu::class,
-        'menu_controller' => App\Admin\Controllers\AuthMenuController::class,
+        // roles tables and model and controller.
+        'role_table' => 'roles',
+        // If necessary, you can extend this model and rewrite
+        'role_model' => Elegance\Admin\Models\Role::class,
+        // If necessary, you can extend this controller and rewrite
+        'role_controller' => Elegance\Admin\Http\Controllers\RoleController::class,
+
+        // permissions tables and model.
+        'permission_table' => 'permissions',
+        // If necessary, you can extend this model and rewrite
+        'permission_model' => Elegance\Admin\Models\Permission::class,
+        // If necessary, you can extend this controller and rewrite
+        'permission_controller' => Elegance\Admin\Http\Controllers\PermissionController::class,
+
+        // Limit the maximum number of administrator roles that can be selected, default is 0, 0 means no limit
+        'user_maximum_roles' => 0,
+
+        // User and role association information
+        'user_role_relational' => [
+            'table' => 'user_roles',
+            'user_id' => 'user_id',
+            'role_id' => 'role_id',
+        ],
+
+        // User and permissions association information
+        'user_permission_relational' => [
+            'table' => 'user_permissions',
+            'user_id' => 'user_id',
+            'permission_id' => 'permission_id',
+        ],
+
+        // Role and permissions association information
+        'role_permission_relational' => [
+            'table' => 'role_permissions',
+            'role_id' => 'role_id',
+            'permission_id' => 'permission_id',
+        ],
     ],
 
     /*
@@ -210,10 +259,10 @@ return [
 
         /*
         |--------------------------------------------------------------------------
-        | Default color for a, card, form and buttons.
+        | Default color for a and card and form and buttons.
         |--------------------------------------------------------------------------
         |
-        | Available options: primary secondary secondary info warning danger
+        | Available options: primary secondary info warning danger
         */
         'color' => 'info',
     ],
@@ -274,7 +323,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Alert message that will displayed on top of the page.
+    | Alert message that will be displayed on top of the page.
     |--------------------------------------------------------------------------
     */
     'top_alert' => '',
@@ -284,7 +333,7 @@ return [
     | The global Table action display class.
     |--------------------------------------------------------------------------
     */
-    'table_action_class' => Elegant\Utils\Table\Displayers\DropdownActions::class,
+    'table_action_class' => Elegance\Admin\Table\Displayers\DropdownActions::class,
 
     /*
     |--------------------------------------------------------------------------

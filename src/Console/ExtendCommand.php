@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Console;
+namespace Elegance\Admin\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
@@ -73,7 +73,7 @@ class ExtendCommand extends Command
     {
         $this->filesystem = $filesystem;
 
-        $this->extensionDir = config('elegant-utils.admin.extension_dir');
+        $this->extensionDir = config('admin.extension_dir');
 
         InputExtensionDir:
         if (empty($this->extensionDir)) {

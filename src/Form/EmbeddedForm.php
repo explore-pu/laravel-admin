@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils\Form;
+namespace Elegance\Admin\Form;
 
-use Elegant\Utils\AbstractForm;
-use Elegant\Utils\Form;
+use Elegance\Admin\AbstractForm;
+use Elegance\Admin\Form;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 

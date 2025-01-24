@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Table\Column;
+namespace Elegance\Admin\Table\Column;
 
-use Elegant\Utils\Table\Column;
+use Elegance\Admin\Table\Column;
 
 /**
  * @mixin Column

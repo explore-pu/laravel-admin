@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils;
+namespace Elegance\Admin;
 
-use Elegant\Utils\Form\Field;
-use Elegant\Utils\Form\Layout\Row;
+use Elegance\Admin\Form\Field;
+use Elegance\Admin\Form\Layout\Row;
 
 abstract class AbstractForm
 {

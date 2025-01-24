@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Table\Concerns;
+namespace Elegance\Admin\Table\Concerns;
 
 trait HasElementNames
 {

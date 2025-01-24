@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Table\Column;
+namespace Elegance\Admin\Table\Column;
 
-use Elegant\Utils\Table\Displayers;
+use Elegance\Admin\Table\Displayers;
 
 trait InlineEditing
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Table\Displayers;
+namespace Elegance\Admin\Table\Displayers;
 
-use Elegant\Utils\Widgets\Carousel as CarouselWidget;
+use Elegance\Admin\Widgets\Carousel as CarouselWidget;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Facades\Storage;
 
@@ -26,7 +26,7 @@ class Carousel extends AbstractDisplayer
             } elseif ($server) {
                 $image = rtrim($server, '/').'/'.ltrim($path, '/');
             } else {
-                $image = Storage::disk(config('elegant-utils.admin.upload.disk'))->url($path);
+                $image = Storage::disk(config('admin.upload.disk'))->url($path);
             }
 
             $caption = '';

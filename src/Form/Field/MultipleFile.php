@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegant\Utils\Form\Field;
+namespace Elegance\Admin\Form\Field;
 
-use Elegant\Utils\Form;
-use Elegant\Utils\Form\Field;
+use Elegance\Admin\Form;
+use Elegance\Admin\Form\Field;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Support\ViewErrorBag;
@@ -33,7 +33,7 @@ class MultipleFile extends Field
      */
     public function defaultDirectory()
     {
-        return config('elegant-utils.admin.upload.directory.file');
+        return config('admin.upload.directory.file');
     }
 
     /**

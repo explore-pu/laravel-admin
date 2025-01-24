@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegant\Utils\Console;
+namespace Elegance\Admin\Console;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Database\Eloquent\Model;
@@ -215,7 +215,7 @@ class MakeCommand extends GeneratorCommand
             return $namespace;
         }
 
-        return config('elegant-utils.admin.route.namespace');
+        return config('admin.route.namespace');
     }
 
     /**

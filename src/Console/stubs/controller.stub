@@ -3,10 +3,10 @@
 namespace DummyNamespace;
 
 use DummyModelNamespace;
-use Elegant\Utils\Http\Controllers\AdminController;
-use Elegant\Utils\Form;
-use Elegant\Utils\Table;
-use Elegant\Utils\Show;
+use Elegance\Admin\Http\Controllers\AdminController;
+use Elegance\Admin\Form;
+use Elegance\Admin\Table;
+use Elegance\Admin\Show;
 
 class DummyClass extends AdminController
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegant\Utils\Table\Filter\Presenter;
+namespace Elegance\Admin\Table\Filter\Presenter;
 
-use Elegant\Utils\Table\Filter\AbstractFilter;
+use Elegance\Admin\Table\Filter\AbstractFilter;
 
 abstract class Presenter
 {
