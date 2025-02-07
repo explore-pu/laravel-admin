@@ -68,6 +68,11 @@ class Admin
         return self::$metaTitle ?? config('admin.title');
     }
 
+    public function getUtils()
+    {
+        return self::$utils;
+    }
+
     /**
      * Set navbar.
      *

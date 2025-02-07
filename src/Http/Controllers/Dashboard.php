@@ -2,21 +2,46 @@
 
 namespace Elegance\Admin\Http\Controllers;
 
-use Elegance\Admin\Admin;
+use Elegance\Admin\Facades\Admin;
+use Elegance\Admin\Widgets\Echarts;
 use Illuminate\Support\Arr;
 
 class Dashboard
 {
     /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Echarts
      */
-    public static function title()
+    public static function echartLine()
     {
-        return view('admin::dashboard.title');
+        $echart = new Echarts('line-demo');
+
+        $echart->scripts(self::lineScripts());
+
+        return $echart;
     }
 
     /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Echarts
+     */
+    public static function echartBar()
+    {
+        $echart = new Echarts('bar-demo');
+
+        $echart->scripts(self::barScripts());
+
+        return $echart;
+    }
+
+    /**
+     * @return string
+     */
+    public static function title()
+    {
+        return Admin::view('admin::dashboard.title');
+    }
+
+    /**
+     * @return string
      */
     public static function environment()
     {
@@ -37,20 +62,20 @@ class Dashboard
             ['name' => 'URL',               'value' => config('app.url')],
         ];
 
-        return view('admin::dashboard.environment', compact('envs'));
+        return Admin::view('admin::dashboard.environment', compact('envs'));
     }
 
     /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return string
      */
     public static function utils()
     {
         $utils = [
-            'logs' => [
-                'name' => 'laravel-admin-utils/operation-logs',
-                'link' => 'https://github.com/laravel-admin-utils/operation-logs',
-                'icon' => 'fas fa-history',
-            ],
+//            'logs' => [
+//                'name' => 'laravel-admin-utils/operation-logs',
+//                'link' => 'https://github.com/laravel-admin-utils/operation-logs',
+//                'icon' => 'fas fa-history',
+//            ],
 //            'helpers' => [
 //                'name' => 'laravel-admin-ext/helpers',
 //                'link' => 'https://github.com/laravel-admin-utils/helpers',
@@ -100,14 +125,14 @@ class Dashboard
 
         foreach ($utils as &$util) {
             $name = explode('/', $util['name']);
-            $util['installed'] = array_key_exists(end($name), Admin::$utils);
+            $util['installed'] = array_key_exists(end($name), Admin::getUtils());
         }
 
-        return view('admin::dashboard.utils', compact('utils'));
+        return Admin::view('admin::dashboard.utils', compact('utils'));
     }
 
     /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return string
      */
     public static function dependencies()
     {
@@ -116,5 +141,59 @@ class Dashboard
         $dependencies = json_decode($json, true)['require'];
 
         return Admin::view('admin::dashboard.dependencies', compact('dependencies'));
+    }
+
+    /**
+     * @return string
+     */
+    protected static function lineScripts()
+    {
+        return <<<SCRIPT
+
+const option = {
+  xAxis: {
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      data: [150, 230, 224, 218, 135, 147, 260],
+      type: 'line'
+    }
+  ]
+};
+
+myChart.setOption(option);
+SCRIPT;
+    }
+
+    /**
+     * @return string
+     */
+    protected static function barScripts()
+    {
+        return <<<SCRIPT
+
+const option = {
+  xAxis: {
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      data: [120, 200, 150, 80, 70, 110, 130],
+      type: 'bar'
+    }
+  ]
+};
+
+myChart.setOption(option);
+SCRIPT;
     }
 }

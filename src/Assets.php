@@ -124,6 +124,15 @@ class Assets
                 'jquery'
             ],
         ],
+        'echarts' => [
+            'js' => [
+                'js/echarts/echarts.min'
+            ],
+            'deps' => [
+                'jquery'
+            ],
+            'export' => 'echarts',
+        ],
         'nestable' => [
             'js' => [
                 'js/nestable/jquery.nestable'

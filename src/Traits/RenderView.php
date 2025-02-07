@@ -10,13 +10,13 @@ trait RenderView
 {
     /**
      * @param string $view
-     * @param array  $data
-     *
-     * @throws \Throwable
+     * @param array $data
      *
      * @return string
+     *@throws \Throwable
+     *
      */
-    public static function view(string $view, $data = []): string
+    public static function view(string $view, array $data = []): string
     {
         list($head, $body) = static::getDOMDocument($view, $data);
 

@@ -43,10 +43,10 @@
 
                     <div class="row">
                         <div class="col">
-                            <a href="{{ route('setting') }}" class="btn btn-primary btn-block"><b>{{ trans('admin.setting') }}</b></a>
+                            <a href="{{ route('setting') }}" class="btn btn-@color btn-block"><b>{{ trans('admin.setting') }}</b></a>
                         </div>
                         <div class="col">
-                            <a href="{{ route('logout') }}" class="btn btn-primary btn-block"><b>{{ trans('admin.logout') }}</b></a>
+                            <a href="{{ route('logout') }}" class="btn btn-@color btn-block"><b>{{ trans('admin.logout') }}</b></a>
                         </div>
                     </div>
                 </div>

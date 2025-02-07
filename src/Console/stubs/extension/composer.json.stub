@@ -12,11 +12,7 @@
         }
     ],
     "require": {
-        "php": ">=7.0.0",
-        "encore/laravel-admin": "~1.6"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "~6.0"
+        "elegance/laravel-admin": "^1.1"
     },
     "autoload": {
         "psr-4": {

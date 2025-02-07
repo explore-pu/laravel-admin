@@ -12,7 +12,7 @@ class :class_name extends Extension
 
     public $assets = __DIR__.'/../resources/assets';
 
-    public $menu = [
+    public $menus = [
         'title' => ':title',
         'path'  => ':path',
         'icon'  => 'fa-gears',

@@ -1,6 +1,6 @@
 <?php
 
-use Elegance\Admin\Admin;
+use Elegance\Admin\Facades\Admin;
 use Illuminate\Support\Facades\Route;
 
 Admin::routes();

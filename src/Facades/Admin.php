@@ -28,7 +28,8 @@ use Illuminate\Support\Facades\Facade;
  * @method static void booted(\Closure $builder)
  * @method static void bootstrap()
  * @method static void routes()
- * @method static string view()
+ * @method static string view(string $view, array $data = [])
+ * @method static array getUtils()
  *
  * @see \Elegance\Admin\Admin
  */
@@ -36,6 +37,6 @@ class Admin extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \Elegance\Admin\Admin::class;
+        return 'admin';
     }
 }

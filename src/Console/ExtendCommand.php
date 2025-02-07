@@ -149,7 +149,7 @@ TREE;
         // make composer.json
         $composerContents = str_replace(
             [':package', ':namespace', ':class_name'],
-            [$this->package, str_replace('\\', '\\\\', $this->namespace).'\\\\', $this->className],
+            [$this->package, $this->namespace.'\\\\', $this->className],
             file_get_contents(__DIR__.'/stubs/extension/composer.json.stub')
         );
         $this->putFile('composer.json', $composerContents);
@@ -157,7 +157,7 @@ TREE;
         // make class
         $classContents = str_replace(
             [':namespace', ':class_name', ':title', ':path', ':base_package'],
-            [$this->namespace, $this->className, Str::title($this->className), basename($this->package), basename($this->package)],
+            [str_replace('\\\\', '\\', $this->namespace), $this->className, Str::title($this->className), basename($this->package), basename($this->package)],
             file_get_contents(__DIR__.'/stubs/extension/extension.stub')
         );
         $this->putFile("src/{$this->className}.php", $classContents);
@@ -165,7 +165,7 @@ TREE;
         // make service provider
         $providerContents = str_replace(
             [':namespace', ':class_name', ':base_package', ':package'],
-            [$this->namespace, $this->className, basename($this->package), $this->package],
+            [str_replace('\\\\', '\\', $this->namespace), $this->className, basename($this->package), $this->package],
             file_get_contents(__DIR__.'/stubs/extension/service-provider.stub')
         );
         $this->putFile("src/{$this->className}ServiceProvider.php", $providerContents);
@@ -173,7 +173,7 @@ TREE;
         // make controller
         $controllerContent = str_replace(
             [':namespace', ':class_name', ':base_package'],
-            [$this->namespace, $this->className, basename($this->package)],
+            [str_replace('\\\\', '\\', $this->namespace), $this->className, basename($this->package)],
             file_get_contents(__DIR__.'/stubs/extension/controller.stub')
         );
         $this->putFile("src/Http/Controllers/{$this->className}Controller.php", $controllerContent);
@@ -181,7 +181,7 @@ TREE;
         // make routes
         $routesContent = str_replace(
             [':namespace', ':class_name', ':path'],
-            [$this->namespace, $this->className, basename($this->package)],
+            [str_replace('\\\\', '\\', $this->namespace), $this->className, basename($this->package)],
             file_get_contents(__DIR__.'/stubs/extension/routes.stub')
         );
         $this->putFile('routes/web.php', $routesContent);

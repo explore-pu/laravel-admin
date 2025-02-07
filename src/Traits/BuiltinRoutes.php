@@ -12,7 +12,7 @@ trait BuiltinRoutes
      *
      * @return void
      */
-    public static function routes(): void
+    public function routes(): void
     {
         $authController = config('admin.auth.controller', Controllers\AuthController::class);
 

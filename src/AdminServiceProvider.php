@@ -208,6 +208,10 @@ PHP;
         $this->commands($this->commands);
 
         $this->macroRouter();
+
+        $this->app->singleton('admin', function ($app) {
+            return new Admin();
+        });
     }
 
     /**
