@@ -79,6 +79,9 @@ define(['jquery', 'NProgress', 'sweetalert2'], function($, NProgress, Swal) {
         $('.sidebar li.nav-item:not(.has-treeview) a.nav-link').click(function () {
             $('.sidebar a.nav-link').removeClass('active');
             $(this).addClass('active').parents('.has-treeview').children('a').addClass('active');
+            if (window.innerWidth < 992) {
+                $('[data-widget="pushmenu"]').PushMenu('collapse');
+            }
         });
 
         $('[data-toggle="popover"]').popover();
