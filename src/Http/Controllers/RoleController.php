@@ -37,6 +37,25 @@ class RoleController extends AdminController
         $table = new Table(new $this->model());
         $table->model()->with('permissions')->orderByDesc('id');
 
+        $table->tools(function (Table\Tools $tools) {
+            $tools->batch(function (Table\Tools\BatchActions $actions) {
+                $actions->disableDelete();
+            });
+        });
+
+        $table->filter(function(Table\Filter $filter){
+            $filter->disableIdFilter();
+            $filter->scope('trashed', trans('admin.trashed'))->onlyTrashed();
+
+            $filter->column(6, function (Table\Filter $filter) {
+                $filter->like('name', trans('admin.name'));
+            });
+
+            $filter->column(6, function (Table\Filter $filter) {
+                $filter->like('slug', trans('admin.slug'));
+            });
+        });
+
         $table->column('id', 'ID')->sortable();
         $table->column('name', trans('admin.name'));
         $table->column('slug', trans('admin.slug'));
@@ -58,19 +77,6 @@ class RoleController extends AdminController
             if ($actions->getKey() !== 1) {
                 $actions->add(new Table\Actions\Permission());
             }
-        });
-
-        $table->tools(function (Table\Tools $tools) {
-            $tools->batch(function (Table\Tools\BatchActions $actions) {
-                $actions->disableDelete();
-            });
-        });
-
-        $table->filter(function(Table\Filter $filter){
-            $filter->disableIdFilter();
-            $filter->scope('trashed', trans('admin.trashed'))->onlyTrashed();
-            $filter->like('name', trans('admin.name'));
-            $filter->like('slug', trans('admin.slug'));
         });
 
         return $table;

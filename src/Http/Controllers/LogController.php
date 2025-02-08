@@ -31,6 +31,27 @@ class LogController extends AdminController
         $table = new Table(new $model());
         $table->model()->orderByDesc('id');
 
+        $table->filter(function (Table\Filter $filter) use ($model) {
+            $filter->disableIdFilter();
+
+            $filter->column(6, function (Table\Filter $filter) {
+                $userModel = config('admin.database.user_model');
+                $filter->equal('user_id', trans('admin.operator'))->select($userModel::pluck('name', 'id'));
+            });
+
+            $filter->column(6, function (Table\Filter $filter) use ($model) {
+                $filter->equal('method', trans('admin.http_method'))->select(array_combine($model::$methods, $model::$methods));
+            });
+
+            $filter->column(6, function (Table\Filter $filter) {
+                $filter->like('path', trans('admin.http_uri'));
+            });
+
+            $filter->column(6, function (Table\Filter $filter) {
+                $filter->equal('ip', trans('admin.http_ip'));
+            });
+        });
+
         $table->column('id', 'ID')->sortable();
         $table->column('user.name', trans('admin.operator'));
         $table->column('operation', trans('admin.behave'))->display(function ($operation) {
@@ -64,15 +85,6 @@ class LogController extends AdminController
         });
 
         $table->disableCreateButton();
-
-        $table->filter(function (Table\Filter $filter) use ($model) {
-            $userModel = config('admin.database.user_model');
-
-            $filter->equal('user_id', trans('admin.operator'))->select($userModel::pluck('name', 'id'));
-            $filter->equal('method', trans('admin.http_method'))->select(array_combine($model::$methods, $model::$methods));
-            $filter->like('path', trans('admin.http_uri'));
-            $filter->equal('ip', trans('admin.http_ip'));
-        });
 
         return $table;
     }

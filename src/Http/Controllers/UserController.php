@@ -36,7 +36,16 @@ class UserController extends AdminController
         $table->model()->orderByDesc('id');
 
         $table->filter(function (Table\Filter $filter) {
+            $filter->disableIdFilter();
             $filter->scope('trashed', __('admin.trashed'))->onlyTrashed();
+
+            $filter->column(6, function (Table\Filter $filter) {
+                $filter->like('email', trans('admin.email'));
+            });
+
+            $filter->column(6, function (Table\Filter $filter) {
+                $filter->like('name', trans('admin.name'));
+            });
         });
 
         $table->column('id', 'ID')->sortable();
