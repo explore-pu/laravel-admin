@@ -64,6 +64,18 @@ class CreateAdminTables extends Migration
             $table->unsignedBigInteger(config('admin.database.user_permission_relational.permission_id'))->index();
             $table->timestamps();
         });
+
+        Schema::create(config('admin.database.log_table'), function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id')->index();
+            $table->string('operation');
+            $table->string('method', 10);
+            $table->string('path');
+            $table->string('ip');
+            $table->text('input');
+            $table->timestamps();
+            $table->softDeletes();
+        });
     }
 
     /**
@@ -79,5 +91,6 @@ class CreateAdminTables extends Migration
         Schema::dropIfExists(config('admin.database.permission_table'));
         Schema::dropIfExists(config('admin.database.role_permission_relational.table'));
         Schema::dropIfExists(config('admin.database.user_permission_relational.table'));
+        Schema::dropIfExists(config('admin.database.log_table'));
     }
 }

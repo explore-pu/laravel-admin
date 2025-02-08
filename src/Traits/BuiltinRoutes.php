@@ -50,6 +50,10 @@ trait BuiltinRoutes
             Route::resource('permissions', $permissionController)->names('permissions');
             Route::put('permissions/{permission}/restore', $permissionController . '@restore')->name('permissions.restore');
             Route::delete('permissions/{permission}/delete', $permissionController . '@delete')->name('permissions.delete');
+
+            // logs
+            $logController = config('admin.database.log_controller', Controllers\LogController::class);
+            Route::resource('logs', $logController)->only(['index', 'destroy'])->names('logs');
         });
     }
 }

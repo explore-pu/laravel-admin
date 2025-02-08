@@ -199,6 +199,13 @@ return [
         // If necessary, you can extend this controller and rewrite
         'permission_controller' => Elegance\Admin\Http\Controllers\PermissionController::class,
 
+        // permissions tables and model.
+        'log_table' => 'logs',
+        // If necessary, you can extend this model and rewrite
+        'log_model' => Elegance\Admin\Models\Log::class,
+        // If necessary, you can extend this controller and rewrite
+        'log_controller' => Elegance\Admin\Http\Controllers\LogController::class,
+
         // Limit the maximum number of administrator roles that can be selected, default is 0, 0 means no limit
         'user_maximum_roles' => 0,
 
@@ -222,6 +229,42 @@ return [
             'role_id' => 'role_id',
             'permission_id' => 'permission_id',
         ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Enable authorization
+    |--------------------------------------------------------------------------
+    |
+    | Whether enable authorization for admin route.
+    */
+    'enable_authorization' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Operation_logs
+    |--------------------------------------------------------------------------
+    |
+    | Log configuration items
+    |
+    */
+    'operation_logs' => [
+        // switch
+        'enable' => true,
+        // Only logging allowed methods in the list
+        'allowed_methods' => ['GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'CONNECT', 'OPTIONS', 'TRACE', 'PATCH'],
+        // Do not log routes containing
+        'excepts' => [
+            "require_config",
+            "logs.index",
+            "logs.destroy",
+            "error404",
+        ],
+        // Secrecy the input fields
+        'secrecy_keys' => [
+            'password',
+            'password_confirmation',
+        ]
     ],
 
     /*

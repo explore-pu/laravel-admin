@@ -44,7 +44,7 @@ class PermissionController extends AdminController
         $tree->branch(function ($branch) {
             $type = $this->type($branch['type']);
 
-            $payload = "<i class='{$branch['icon']}'></i>";
+            $payload = "<i class='fa-fw {$branch['icon']}'></i>";
 
             $payload .= "&nbsp;<strong>{$branch['title']}</strong>";
 
@@ -62,7 +62,7 @@ class PermissionController extends AdminController
         });
 
         $tree->actions(function (Tree\Displayers\Actions $actions) {
-//            $actions->useColumnEdit('title', trans('title'));
+//            $actions->useColumnEdit('title', trans('admin.title'));
             if ($actions->trashed && $actions->requestTrashed) {
                 $actions->disableEdit();
                 $actions->disableDestroy();

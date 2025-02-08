@@ -43,6 +43,7 @@ class AdminServiceProvider extends ServiceProvider
         'admin.pjax' => Middleware\Pjax::class,
         'admin.bootstrap' => Middleware\Bootstrap::class,
         'admin.authorization' => Middleware\Authorization::class,
+        'admin.log' => Middleware\OperationLog::class,
 //        'admin.sul' => Middleware\SingleUserLogin::class,
     ];
 
@@ -56,6 +57,7 @@ class AdminServiceProvider extends ServiceProvider
             'admin.pjax',
             'admin.bootstrap',
             'admin.authorization',
+            'admin.log',
 //            'admin.sul',
         ],
     ];

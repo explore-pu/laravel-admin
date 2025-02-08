@@ -16,6 +16,10 @@ class Authorization
      */
     public function handle(Request $request, Closure $next)
     {
+        if (!config('admin.enable_authorization')) {
+            return $next($request);
+        }
+
         if (!Auth::user() || $this->shouldPassThrough($request)) {
             return $next($request);
         }

@@ -339,6 +339,26 @@ class AdminTablesSeeder extends Seeder
                 'created_at' => $date,
                 'updated_at' => $date,
             ],
+            [
+                'parent_id' => 0,
+                'type' => 1,
+                'title' => 'LOGS LIST',
+                'icon' => 'fas fa-history',
+                'method' => 'GET',
+                'uri' => '/logs',
+                'created_at' => $date,
+                'updated_at' => $date,
+            ],
+            [
+                'parent_id' => 31,
+                'type' => 3,
+                'title' => 'LOGS DESTROY',
+                'icon' => 'far fa-circle',
+                'method' => 'DELETE',
+                'uri' => '/logs/{log}',
+                'created_at' => $date,
+                'updated_at' => $date,
+            ],
         ]);
     }
 }

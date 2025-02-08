@@ -51,6 +51,26 @@ class LoginRequest extends FormRequest
             Auth::guard()->logoutOtherDevices($this->input($this->password()));
         }
 
+        if (config('admin.operation_logs.enable')) {
+            $input = $this->input();
+
+            foreach (config('admin.operation_logs.secrecy_keys') as $key) {
+                if (isset($input[$key])) {
+                    $input[$key] = '******';
+                }
+            }
+
+            $logModel = config('admin.database.log_model');
+            $logModel::create([
+                'user_id' => Auth::user()->id,
+                'operation' => 'login',
+                'method'  => $this->method(),
+                'path'    => $this->path(),
+                'ip'      => $this->getClientIp(),
+                'input'   => json_encode($input),
+            ]);
+        }
+
         RateLimiter::clear($this->throttleKey());
     }
 
