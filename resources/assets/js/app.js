@@ -2,6 +2,8 @@ define(['jquery', 'NProgress', 'sweetalert2'], function($, NProgress, Swal) {
 
     $('body').Layout('fixLayoutHeight');
 
+    $('[data-widget="sidebar-search"]').SidebarSearch('search');
+
     $(window).trigger('load.lte.treeview');
 
     // NProgress init

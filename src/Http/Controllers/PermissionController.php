@@ -15,7 +15,7 @@ class PermissionController extends AdminController
      * @var array|string[]
      */
     protected array $methods = [
-        'HEAD' => 'HEAD',
+        'GET' => 'GET',
         'POST' => 'POST',
         'PATCH' => 'PATCH',
         'PUT' => 'PUT',
@@ -93,7 +93,7 @@ class PermissionController extends AdminController
         $form->text('title', trans('admin.title'))->rules('required')
             ->prepend(new Form\Field\Icon('icon'));
         $form->text('uri', trans('admin.uri'))
-            ->prepend((new Form\Field\Select('method'))->options($this->methods)->default('HEAD'));
+            ->prepend((new Form\Field\Select('method'))->options($this->methods)->default('GET'));
 
         $form->display('created_at', trans('admin.created_at'));
         $form->display('updated_at', trans('admin.updated_at'));

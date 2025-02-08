@@ -159,7 +159,7 @@ class User extends Model implements AuthenticatableContract
                 $permission->uri = ltrim($permission->uri, '/');
             }
 
-            return $permission->method === end($methods) && $permission->uri === $uri;
+            return in_array($permission->method, $methods) && $permission->uri === $uri;
         })->isNotEmpty();
     }
 }

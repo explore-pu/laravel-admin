@@ -1,3 +1,7 @@
+.sidebar-search-results .text-light {
+    color: black !important;
+}
+
 input.content {
     min-height: 0 !important;
     padding: 6px 12px !important;

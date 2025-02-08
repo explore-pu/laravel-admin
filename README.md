@@ -42,7 +42,7 @@ At last run following command to finish install.
 php artisan admin:install
 ```
 
-Open `http://localhost/` in browser,use username `admin@admin.com` and password `admin` to login.
+Open `http://localhost/` in browser,use email `admin@admin.com` and password `admin` to login.
 
 Configurations
 ------------

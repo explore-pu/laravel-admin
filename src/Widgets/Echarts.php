@@ -7,19 +7,38 @@ use Illuminate\Contracts\Support\Renderable;
 
 class Echarts extends Widget implements Renderable
 {
+    /**
+     * @var string
+     */
     protected $view = 'admin::widgets.echarts';
 
+    /**
+     * @var string
+     */
     protected string $element = '';
 
+    /**
+     * @var string
+     */
     protected string $scripts = '';
 
+    /**
+     * @var int
+     */
     protected int $height = 300;
 
+    /**
+     * @param string $element
+     */
     public function __construct(string $element)
     {
         $this->element = $element;
     }
 
+    /**
+     * @param string $scripts
+     * @return $this
+     */
     public function scripts(string $scripts): static
     {
         $this->scripts = $scripts;
@@ -27,6 +46,10 @@ class Echarts extends Widget implements Renderable
         return $this;
     }
 
+    /**
+     * @param int $height
+     * @return $this
+     */
     public function height(int $height): static
     {
         $this->height = $height;
@@ -34,6 +57,9 @@ class Echarts extends Widget implements Renderable
         return $this;
     }
 
+    /**
+     * @return string
+     */
     public function render(): string
     {
         return Admin::view($this->view, [
