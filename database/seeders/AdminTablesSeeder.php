@@ -270,7 +270,7 @@ class AdminTablesSeeder extends Seeder
                 'updated_at' => $date,
             ],
             [
-                'parent_id' => 22,
+                'parent_id' => 23,
                 'type' => 3,
                 'title' => 'PERMISSIONS STORE',
                 'icon' => 'far fa-circle',
@@ -290,7 +290,7 @@ class AdminTablesSeeder extends Seeder
                 'updated_at' => $date,
             ],
             [
-                'parent_id' => 22,
+                'parent_id' => 25,
                 'type' => 3,
                 'title' => 'PERMISSIONS UPDATE',
                 'icon' => 'far fa-circle',
