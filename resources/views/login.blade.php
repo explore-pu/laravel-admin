@@ -45,14 +45,14 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            @foreach($errors->get('password') as $message)
+                            @foreach($errors->get(config('admin.auth.password')) as $message)
                                 <label class="col-form-label text-danger">
                                     <i class="fas fa-times-circle-o"></i>{{$message}}
                                 </label>
                                 <br>
                             @endforeach
                             <div class="input-group mb-3">
-                                <input type="password" class="form-control" placeholder="{{ trans('admin.password') }}" name="password">
+                                <input type="password" class="form-control" placeholder="{{ trans('admin.' . config('admin.auth.password')) }}" name="{{ config('admin.auth.password') }}">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <span class="fas fa-lock"></span>
@@ -63,7 +63,7 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="icheck-@color">
-                                    <input type="checkbox" id="remember" name="remember" value="1" {{ (!old('username') || old('remember')) ? 'checked' : '' }}>
+                                    <input type="checkbox" id="remember" name="remember" value="1" {{ (config('admin.auth.remember') || old('remember'))  ? 'checked' : '' }}>
                                     <label for="remember">
                                         {{ trans('admin.remember_me') }}
                                     </label>
