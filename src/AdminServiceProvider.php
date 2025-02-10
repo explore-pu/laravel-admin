@@ -44,7 +44,7 @@ class AdminServiceProvider extends ServiceProvider
         'admin.bootstrap' => Middleware\Bootstrap::class,
         'admin.authorization' => Middleware\Authorization::class,
         'admin.log' => Middleware\OperationLog::class,
-//        'admin.sul' => Middleware\SingleUserLogin::class,
+        'admin.sul' => Middleware\SingleUserLogin::class,
     ];
 
     /**
@@ -58,7 +58,6 @@ class AdminServiceProvider extends ServiceProvider
             'admin.bootstrap',
             'admin.authorization',
             'admin.log',
-//            'admin.sul',
         ],
     ];
 
