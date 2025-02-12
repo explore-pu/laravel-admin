@@ -121,6 +121,11 @@ class Form extends AbstractForm implements Renderable
     public $confirm = '';
 
     /**
+     * @var bool
+     */
+    protected bool $outline = true;
+
+    /**
      * Form constructor.
      *
      * @param array $data
@@ -392,6 +397,7 @@ class Form extends AbstractForm implements Renderable
             'width'      => $this->width,
             'confirm'    => $this->confirm,
             'title'      => $this->title(),
+            'outline'    => $this->outline,
         ];
     }
 

@@ -40,9 +40,7 @@ class Assets
     /**
      * @var array
      */
-    public static $requireAlias = [
-        'icheck' => 'css!css/icheck-bootstrap/icheck-bootstrap.min',
-    ];
+    public static $requireAlias = [];
 
     /**
      * @var array
@@ -106,7 +104,13 @@ class Assets
             ],
             'deps' => [
                 'bootstrap',
+                'icheck',
             ],
+        ],
+        'icheck' => [
+            'css' => [
+                'css/icheck-bootstrap/icheck-bootstrap.min'
+            ]
         ],
         'sweetalert2' => [
             'js' => [

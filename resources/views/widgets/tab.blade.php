@@ -1,11 +1,11 @@
 <div {!! $attributes !!}>
-    <ul class="nav nav-tabs nav-tabs">
+    <ul class="nav nav-tabs">
 
         @foreach($tabs as $id => $tab)
             @if($tab['type'] == \Elegance\Admin\Widgets\Tab::TYPE_CONTENT)
-                <li {{ $id == $active ? 'class=active' : '' }}><a href="#tab_{{ $tab['id'] }}" data-toggle="tab">{{ $tab['title'] }}</a></li>
+                <li class="nav-item"><a class="nav-link{{ $id == $active ? ' active' : '' }}" href="#tab_{{ $tab['id'] }}" data-toggle="tab">{{ $tab['title'] }}</a></li>
             @elseif($tab['type'] == \Elegance\Admin\Widgets\Tab::TYPE_LINK)
-                <li {{ $id == $active ? 'class=active' : '' }}><a href="{{ $tab['href'] }}">{{ $tab['title'] }}</a></li>
+                <li class="nav-item"><a class="nav-link{{ $id == $active ? ' active' : '' }}" href="{{ $tab['href'] }}">{{ $tab['title'] }}</a></li>
             @endif
         @endforeach
 
