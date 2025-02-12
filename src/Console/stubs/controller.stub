@@ -15,14 +15,14 @@ class DummyClass extends AdminController
      *
      * @var string
      */
-    protected $title = 'DummyTitle';
+    protected string $title = 'DummyTitle';
 
     /**
      * Model for current resource.
      *
      * @var string
      */
-    protected $model = DummyModel::class;
+    protected string $model = DummyModel::class;
 
     /**
      * Make a table builder.

@@ -20,7 +20,7 @@ class AdminController extends Controller
      *
      * @var string
      */
-    protected mixed $title = 'Title';
+    protected string $title = 'Title';
 
     /**
      * Model for current resource.
