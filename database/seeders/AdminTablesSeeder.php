@@ -70,7 +70,7 @@ class AdminTablesSeeder extends Seeder
                 'updated_at' => $date,
             ],
             [
-                'parent_id' => 3,
+                'parent_id' => 2,
                 'type' => 3,
                 'title' => 'USERS STORE',
                 'icon' => 'far fa-circle',
@@ -90,7 +90,7 @@ class AdminTablesSeeder extends Seeder
                 'updated_at' => $date,
             ],
             [
-                'parent_id' => 5,
+                'parent_id' => 2,
                 'type' => 3,
                 'title' => 'USERS UPDATE',
                 'icon' => 'far fa-circle',
@@ -170,7 +170,7 @@ class AdminTablesSeeder extends Seeder
                 'updated_at' => $date,
             ],
             [
-                'parent_id' => 13,
+                'parent_id' => 12,
                 'type' => 3,
                 'title' => 'ROLES STORE',
                 'icon' => 'far fa-circle',
@@ -190,7 +190,7 @@ class AdminTablesSeeder extends Seeder
                 'updated_at' => $date,
             ],
             [
-                'parent_id' => 15,
+                'parent_id' => 12,
                 'type' => 3,
                 'title' => 'ROLES UPDATE',
                 'icon' => 'far fa-circle',
@@ -270,7 +270,7 @@ class AdminTablesSeeder extends Seeder
                 'updated_at' => $date,
             ],
             [
-                'parent_id' => 23,
+                'parent_id' => 22,
                 'type' => 3,
                 'title' => 'PERMISSIONS STORE',
                 'icon' => 'far fa-circle',
@@ -290,7 +290,7 @@ class AdminTablesSeeder extends Seeder
                 'updated_at' => $date,
             ],
             [
-                'parent_id' => 25,
+                'parent_id' => 22,
                 'type' => 3,
                 'title' => 'PERMISSIONS UPDATE',
                 'icon' => 'far fa-circle',
