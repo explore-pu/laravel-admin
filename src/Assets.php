@@ -108,6 +108,9 @@ class Assets
             ],
         ],
         'icheck' => [
+            'js' => [
+                'js/icheck-bootstrap/icheck.min'
+            ],
             'css' => [
                 'css/icheck-bootstrap/icheck-bootstrap.min'
             ]
@@ -174,13 +177,13 @@ class Assets
             'js' => [
                 'js/bootstrap-fileinput/fileinput.min'
             ],
+            'css' => [
+                'css/bootstrap-fileinput/fileinput.min'
+            ],
         ],
         'fileinput' => [
             'js' => [
                 'js/bootstrap-fileinput/themes/fas/theme.min'
-            ],
-            'css' => [
-                'css/bootstrap-fileinput/fileinput.min'
             ],
             'deps' => [
                 'fileinput-base'
