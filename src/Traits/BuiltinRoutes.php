@@ -10,26 +10,33 @@ trait BuiltinRoutes
     /**
      * Register the laravel-admin builtin routes.
      *
+     * @param array $excepts
      * @return void
      */
-    public function routes(): void
+    public function routes(array $excepts = []): void
     {
         $authController = config('admin.auth.controller', Controllers\AuthController::class);
 
-        // Guest routing
-        Route::group(['middleware' => ['web', 'guest']], function () use ($authController) {
-            // login
-            Route::get('login', $authController . '@create')->name('login');
-            Route::post('login', $authController . '@store');
-        });
+        if (!in_array('login', $excepts)) {
+            // Guest routing
+            Route::group(['middleware' => ['web', 'guest']], function () use ($authController) {
+                // login
+                Route::get('login', $authController . '@create')->name('login');
+                Route::post('login', $authController . '@store');
+            });
+        }
 
-        Route::group(['middleware' => config('admin.route.middleware')], function () use ($authController) {
-            // logout
-            Route::get('logout', $authController . '@logout')->name('logout');
+        Route::group(['middleware' => config('admin.route.middleware')], function () use ($authController, $excepts) {
+            if (!in_array('logout', $excepts)) {
+                // logout
+                Route::get('logout', $authController . '@logout')->name('logout');
+            }
 
-            // self setting
-            Route::get('setting', $authController . '@edit')->name('setting');
-            Route::put('setting', $authController . '@update')->name('setting.update');
+            if (!in_array('setting', $excepts)) {
+                // self setting
+                Route::get('setting', $authController . '@edit')->name('setting');
+                Route::put('setting', $authController . '@update')->name('setting.update');
+            }
 
             // users
             $userController = config('admin.database.user_controller', Controllers\UserController::class);

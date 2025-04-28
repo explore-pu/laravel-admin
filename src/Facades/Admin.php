@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static void booting(\Closure $builder)
  * @method static void booted(\Closure $builder)
  * @method static void bootstrap()
- * @method static void routes()
+ * @method static void routes(array $excepts = [])
  * @method static string view(string $view, array $data = [])
  * @method static array getUtils()
  *

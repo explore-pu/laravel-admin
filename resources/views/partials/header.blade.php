@@ -29,29 +29,35 @@
         {!! Admin::getNavbar()->render() !!}
 
         <!-- Notifications Dropdown Menu -->
-        <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="far fa-user"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <div class="card-body box-profile">
-                    <div class="text-center">
-                        <img class="profile-user-img img-fluid img-circle" src="{{ Auth::user()->avatar }}" alt="User profile picture">
-                    </div>
-
-                    <h3 class="profile-username text-center">{{ Auth::user()->name }}</h3>
-
-                    <div class="row">
-                        <div class="col">
-                            <a href="{{ route('setting') }}" class="btn btn-@color btn-block"><b>{{ trans('admin.setting') }}</b></a>
+        @if(Route::has('setting') || Route::has('logout'))
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="far fa-user"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <div class="card-body box-profile">
+                        <div class="text-center">
+                            <img class="profile-user-img img-fluid img-circle" src="{{ Auth::user()->avatar }}" alt="User profile picture">
                         </div>
-                        <div class="col">
-                            <a href="{{ route('logout') }}" class="btn btn-@color btn-block"><b>{{ trans('admin.logout') }}</b></a>
+
+                        <h3 class="profile-username text-center">{{ Auth::user()->name }}</h3>
+
+                        <div class="row">
+                            @if(Route::has('setting'))
+                                <div class="col">
+                                    <a href="{{ route('setting') }}" class="btn btn-@color btn-block"><b>{{ trans('admin.setting') }}</b></a>
+                                </div>
+                            @endif
+                            @if(Route::has('logout'))
+                                <div class="col">
+                                    <a href="{{ route('logout') }}" class="btn btn-@color btn-block"><b>{{ trans('admin.logout') }}</b></a>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
-            </div>
-        </li>
+            </li>
+        @endif
 {{--        <li class="nav-item">--}}
 {{--            <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">--}}
 {{--                <i class="fas fa-th-large"></i>--}}
