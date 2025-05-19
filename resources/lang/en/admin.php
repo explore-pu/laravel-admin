@@ -67,6 +67,8 @@ return [
     'roles'                 => 'Roles',
     'permissions'           => 'Permissions',
     'authorization'         => 'Authorization',
+    'route_permissions'     => 'Routing permissions',
+    'data_permissions'      => 'Data Permissions',
     'slug'                  => 'Slug',
     'created_at'            => 'Created At',
     'updated_at'            => 'Updated At',

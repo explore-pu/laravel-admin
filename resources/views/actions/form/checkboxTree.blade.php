@@ -77,12 +77,10 @@
         list-style: none;
     }
     ul ul {
-        padding-left: 22px;
-        display: flex;
-        flex-wrap: wrap;
+        padding-left: 33px;
     }
     ul:has(ul) {
-        padding-left: 22px;
+        padding-left: 33px;
         display: block;
     }
 </style>

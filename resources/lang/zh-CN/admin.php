@@ -67,6 +67,8 @@ return [
     'roles'                 => '角色',
     'permissions'           => '权限',
     'authorization'         => '授权',
+    'route_permissions'     => '路由权限',
+    'data_permissions'      => '数据权限',
     'slug'                  => '标识',
     'created_at'            => '创建时间',
     'updated_at'            => '更新时间',

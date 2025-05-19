@@ -36,7 +36,7 @@ class Permission extends RowAction
 
         $permissionModel = config('admin.database.permission_model');
 
-        $this->checkboxTree('permissions', trans('admin.permissions'))
+        $this->checkboxTree('permissions', trans('admin.route_permissions'))
             ->options((new $permissionModel())->toTree())->value($this->row->permissions->pluck('id')->toArray());
     }
 }

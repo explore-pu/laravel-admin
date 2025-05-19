@@ -125,7 +125,7 @@ class User extends Model implements AuthenticatableContract
     /**
      * If User can see menu item.
      */
-    public function menus()
+    public function menus(): array
     {
         if ($this->isAdministrator()) {
             $permissionModel = config('admin.database.permission_model');
@@ -145,7 +145,7 @@ class User extends Model implements AuthenticatableContract
      * @param Route $route
      * @return bool
      */
-    public function canAccessRoute(Route $route)
+    public function canAccessRoute(Route $route): bool
     {
         if ($this->isAdministrator()) {
             return true;
@@ -161,5 +161,21 @@ class User extends Model implements AuthenticatableContract
 
             return in_array($permission->method, $methods) && $permission->uri === $uri;
         })->isNotEmpty();
+    }
+
+    /**
+     * If user can access data power.
+     *
+     * @param $data_power
+     * @return bool
+     */
+    public function canAccessData($data_power): bool
+    {
+        // If you do not have the data power configured, you can pass it directly
+        if (!config('admin.data_powers')) {
+            return true;
+        }
+
+        return in_array($data_power, $this->roles()->pluck('data_power')->unique()->toArray());
     }
 }

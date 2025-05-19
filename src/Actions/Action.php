@@ -38,6 +38,7 @@ use Illuminate\Http\Request;
  * @method Field\Hidden         hidden($column, $label = '')
  * @method $this                modalLarge()
  * @method $this                modalSmall()
+ * @method $this                addModalBodyClass(array $classes)
  */
 abstract class Action implements Renderable
 {

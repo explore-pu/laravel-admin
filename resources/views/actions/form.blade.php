@@ -62,7 +62,7 @@ _promise.then($.admin.action.then).catch($.admin.action.catch);
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <form>
-                    <div class="modal-body">
+                    <div class="{{ $modal_body }}">
                         @include('admin::form.fields')
                     </div>
                     <div class="modal-footer">

@@ -133,6 +133,13 @@ class RoleController extends AdminController
             });
         });
 
+        // If data power in configured
+        if (config('admin.data_powers')) {
+            $form->radio('data_power', trans('admin.data_permissions'))
+                ->options(config('admin.data_powers'))
+                ->required();
+        }
+
         $form->display('created_at', trans('admin.created_at'));
         $form->display('updated_at', trans('admin.updated_at'));
 

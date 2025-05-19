@@ -30,6 +30,7 @@ class CreateAdminTables extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('slug')->unique();
+            $table->tinyInteger('data_power')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

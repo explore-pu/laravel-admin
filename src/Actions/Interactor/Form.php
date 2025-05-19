@@ -37,6 +37,11 @@ class Form extends Interactor
     /**
      * @var string
      */
+    protected $modalBody = ['modal-body'];
+
+    /**
+     * @var string
+     */
     protected $confirm = '';
 
     /**
@@ -373,6 +378,18 @@ class Form extends Interactor
     }
 
     /**
+     * @param array $classes
+     *
+     * @return $this
+     */
+    public function addModalBodyClass(array $classes)
+    {
+        $this->modalBody = array_merge($this->modalBody, $classes);
+
+        return $this;
+    }
+
+    /**
      * @param string $content
      * @param string $selector
      *
@@ -548,6 +565,7 @@ class Form extends Interactor
             'rows'          => $this->rows,
             'modal_id'      => $this->getModalId(),
             'modal_size'    => $this->modalSize,
+            'modal_body'    => implode(' ', $this->modalBody),
             'confirm'       => $this->confirm,
         ]);
 
