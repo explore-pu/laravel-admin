@@ -248,7 +248,7 @@ return [
     | Configure the power of the role to obtain data
     | e.g: ['all', 'self_team']
     */
-    'data_power' => [],
+    'data_powers' => [],
 
     /*
     |--------------------------------------------------------------------------
