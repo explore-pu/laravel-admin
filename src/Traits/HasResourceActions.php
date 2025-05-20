@@ -19,10 +19,10 @@ trait HasResourceActions
     /**
      * Update the specified resource in storage.
      *
-     * @param int $id
+     * @param int|string $id
      * @return mixed
      */
-    public function update(int $id)
+    public function update(int|string $id)
     {
         return $this->form()->update($id);
     }
@@ -30,10 +30,10 @@ trait HasResourceActions
     /**
      * Remove the specified resource.
      *
-     * @param int $id
+     * @param int|string $id
      * @return mixed
      */
-    public function destroy(int $id)
+    public function destroy(int|string $id)
     {
         return $this->form()->destroy($id);
     }
@@ -41,10 +41,10 @@ trait HasResourceActions
     /**
      * restore the specified resource.
      *
-     * @param int $id
+     * @param int|string $id
      * @return mixed
      */
-    public function restore(int $id)
+    public function restore(int|string $id)
     {
         return $this->form()->restore($id);
     }
@@ -52,10 +52,10 @@ trait HasResourceActions
     /**
      * delete the specified resource from storage.
      *
-     * @param int $id
+     * @param int|string $id
      * @return mixed
      */
-    public function delete(int $id)
+    public function delete(int|string $id)
     {
         return $this->form()->delete($id);
     }

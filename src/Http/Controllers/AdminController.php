@@ -73,11 +73,11 @@ class AdminController extends Controller
     /**
      * Show interface.
      *
-     * @param int $id
+     * @param int|string $id
      * @param Content $content
      * @return Content
      */
-    public function show(int $id, Content $content)
+    public function show(int|string $id, Content $content)
     {
         return $content
             ->title($this->title)
@@ -103,11 +103,11 @@ class AdminController extends Controller
     /**
      * Edit interface.
      *
-     * @param int $id
+     * @param int|string $id
      * @param Content $content
      * @return Content|string
      */
-    public function edit(int $id, Content $content)
+    public function edit(int|string $id, Content $content)
     {
         $content
             ->title($this->title)

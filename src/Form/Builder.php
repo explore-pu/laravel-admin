@@ -530,13 +530,14 @@ class Builder
         }
 
         $reserved = [
+            $this->getModel()->getKeyName(),
             $this->getModel()->getCreatedAtColumn(),
             $this->getModel()->getUpdatedAtColumn(),
         ];
 
-        if ($this->getModel()->incrementing) {
-            $reserved[] = $this->getModel()->getKeyName();
-        }
+//        if ($this->getModel()->incrementing) {
+//            $reserved[] = $this->getModel()->getKeyName();
+//        }
 
         $this->fields()->each(function (Field $field) use ($reserved) {
             if (in_array($field->column(), $reserved, true)) {
