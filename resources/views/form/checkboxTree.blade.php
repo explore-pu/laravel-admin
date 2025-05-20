@@ -61,7 +61,7 @@
 
                 $('{{ $selector }}:disabled').prop('checked', false).attr({'disabled' : false});
                 $.each($('{{ $selector }}'), function (k, v) {
-                    if ($.inArray(parseInt($(v).val()), data_fileds.flat()) !== -1) {
+                    if ($.inArray($(v).val(), data_fileds.flat().map(item => item.toString())) !== -1) {
                         $(v).prop('checked', true).attr({'disabled' : true});
                     }
                 });
