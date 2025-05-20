@@ -35,7 +35,7 @@ class RoleController extends AdminController
     public function table()
     {
         $table = new Table(new $this->model());
-        $table->model()->with('permissions')->orderByDesc('id');
+        $table->model()->with('permissions')->orderByDesc('created_at');
 
         $table->tools(function (Table\Tools $tools) {
             $tools->batch(function (Table\Tools\BatchActions $actions) {

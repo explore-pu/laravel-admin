@@ -29,7 +29,7 @@ class LogController extends AdminController
         $model = $this->model;
 
         $table = new Table(new $model());
-        $table->model()->orderByDesc('id');
+        $table->model()->orderByDesc('created_at');
 
         $table->filter(function (Table\Filter $filter) use ($model) {
             $filter->disableIdFilter();

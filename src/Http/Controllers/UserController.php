@@ -33,7 +33,7 @@ class UserController extends AdminController
     {
         $table = new Table(new $this->model());
 
-        $table->model()->orderByDesc('id');
+        $table->model()->orderByDesc('created_at');
 
         $table->filter(function (Table\Filter $filter) {
             $filter->disableIdFilter();
