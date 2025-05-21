@@ -117,7 +117,7 @@ class User extends Model implements AuthenticatableContract
      */
     public function isPower($power):bool
     {
-        return $this->roles->where('data_power', $power)->isNotEmpty();
+        return $this->roles->where('power', $power)->isNotEmpty();
     }
 
     /**
