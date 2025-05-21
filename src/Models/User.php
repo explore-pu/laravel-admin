@@ -191,13 +191,13 @@ class User extends Model implements AuthenticatableContract
      * @param $data_power
      * @return bool
      */
-    public function canAccessData($data_power): bool
+    public function canAccessPower($power): bool
     {
         // If you do not have the data power configured, you can pass it directly
         if (!config('admin.data_powers')) {
             return true;
         }
 
-        return in_array($data_power, $this->roles()->pluck('data_power')->unique()->toArray());
+        return $this->isPower($power);
     }
 }
