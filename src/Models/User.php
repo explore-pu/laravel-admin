@@ -99,6 +99,28 @@ class User extends Model implements AuthenticatableContract
     }
 
     /**
+     * Determine whether it is role slug
+     *
+     * @param $slug
+     * @return bool
+     */
+    public function isRole($slug):bool
+    {
+        return $this->roles->where('slug', $slug)->isNotEmpty();
+    }
+
+    /**
+     * Determine whether it is role data power
+     *
+     * @param $power
+     * @return bool
+     */
+    public function isPower($power):bool
+    {
+        return $this->roles->where('data_power', $power)->isNotEmpty();
+    }
+
+    /**
      * Get avatar attribute.
      *
      * @param string $avatar
